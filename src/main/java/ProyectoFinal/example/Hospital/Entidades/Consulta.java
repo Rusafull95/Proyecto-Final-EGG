@@ -12,8 +12,7 @@ public class Consulta {
     @GeneratedValue(generator="uuid")
     @GenericGenerator(name="uuid", strategy = "uuid2")
     private String id;
-    private String nombre;
+    private Integer numero;
     private String Descripcion;
-    private String especialidad;
     
 }

@@ -8,13 +8,17 @@ package ProyectoFinal.example.Hospital.Entidades;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Medico {
     @Id
     private String numeroDeMatricula;
-    private String nombre;
-    private String Apellido;
-    private List<String> especialidad;
+    @OneToMany
+    private List<Especialidad> especialidades;
+    @OneToMany
     private List<Turnos> ListaDeTurnos;
+    @OneToOne
+    private Usuario usuario;
 }

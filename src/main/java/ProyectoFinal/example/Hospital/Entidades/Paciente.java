@@ -9,17 +9,21 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 @Entity
 public class Paciente {
     @Id
     private Integer dni;
-    private String nombre;
-    private String apellido;
     private String domicilio;
     private String obraSocial;
+    @Temporal(TemporalType.DATE)
     private Date fechaDeNacimiento;
-    private List<Consulta> historial;
+    @OneToOne
+    private Usuario usuario;
     
     
     

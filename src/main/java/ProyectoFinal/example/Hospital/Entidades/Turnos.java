@@ -5,22 +5,37 @@
  */
 package ProyectoFinal.example.Hospital.Entidades;
 
+import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
 import java.util.Date;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 import javax.persistence.Id;
-import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 @Entity
 public class Turnos {
     @Id
-    @GeneratedValue(generator="uuid")
-    @GenericGenerator(name="uuid", strategy = "uuid2")
-    private String codigo;
+    private Integer codigo;
+    @Temporal(TemporalType.DATE)
     private Date cita;
-    private boolean realizado;
+    @OneToOne
     private Paciente paciente;
+    @OneToOne
     private Medico medico;
+    @Enumerated(EnumType.STRING)
+    private EstadoDelTurno estado;
+    @OneToOne
+    private Consulta consulta;
+    @OneToOne
+    private Especialidad especialidad;
+    @OneToOne
+    private Secretaria secretaria;
     
     
     
