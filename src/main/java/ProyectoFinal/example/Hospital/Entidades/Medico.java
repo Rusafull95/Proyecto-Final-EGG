@@ -21,4 +21,40 @@ public class Medico {
     private List<Turnos> ListaDeTurnos;
     @OneToOne
     private Usuario usuario;
+
+    public Medico() {
+    }
+
+    public String getNumeroDeMatricula() {
+        return numeroDeMatricula;
+    }
+
+    public void setNumeroDeMatricula(String numeroDeMatricula) {
+        this.numeroDeMatricula = numeroDeMatricula;
+    }
+
+    public List<Especialidad> getEspecialidades() {
+        return especialidades;
+    }
+
+    public void setEspecialidades(List<Especialidad> especialidades) {
+        this.especialidades = especialidades;
+    }
+
+    public List<Turnos> getListaDeTurnos() {
+        return ListaDeTurnos;
+    }
+
+    public void setListaDeTurnos(List<Turnos> ListaDeTurnos) {
+        this.ListaDeTurnos = ListaDeTurnos;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    
 }
