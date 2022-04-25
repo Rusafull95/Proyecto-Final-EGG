@@ -15,17 +15,18 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Usuario {
+
     @Id
     @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid" , strategy = "uuid2")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     private String nombre;
     private String apellido;
-    private Integer password;
+    private String password;
     private String mail;
-   @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private Rol rol;
-   private boolean alta;
+    private boolean alta;
 
     public Usuario() {
     }
@@ -54,11 +55,11 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public Integer getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -86,5 +87,4 @@ public class Usuario {
         this.alta = alta;
     }
 
-    
 }
