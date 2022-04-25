@@ -17,7 +17,7 @@ public class Consulta {
 
     public Consulta() {
     }
-    
+
     public String getId() {
         return id;
     }
@@ -41,6 +41,5 @@ public class Consulta {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
-    
-    
+ 
 }
