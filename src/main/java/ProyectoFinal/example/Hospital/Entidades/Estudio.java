@@ -1,4 +1,3 @@
-
 package ProyectoFinal.example.Hospital.Entidades;
 
 import javax.persistence.Entity;
@@ -9,11 +8,12 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Estudio {
-     @Id
-    @GeneratedValue(generator="uuid")
-    @GenericGenerator(name="uuid", strategy = "uuid2")
+
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-     @OneToOne
+    @OneToOne
     private Consulta consulta;
     private String nombreAnalisis;
     private String descripcion;
@@ -82,5 +82,4 @@ public class Estudio {
         this.paciente = paciente;
     }
    
-    
 }
