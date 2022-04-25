@@ -41,5 +41,6 @@ public class Consulta {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
- 
+    
 }
+
