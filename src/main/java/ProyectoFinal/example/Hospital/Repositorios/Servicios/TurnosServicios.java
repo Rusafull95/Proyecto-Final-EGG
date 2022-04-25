@@ -30,6 +30,7 @@ public class TurnosServicios {
     @Autowired
     private TurnosRepositorio turnosRepositorio;
     
+    //crear turno recibe una fecha(cita), un objeto paciente, un objeto medico, un estado, un objeto consulta, un objeto especialidad y un objeto secretaria para crear un turno
     @Transactional
     public void crearTurnos(Date cita, Paciente paciente, Medico medico, EstadoDelTurno estado, Consulta consulta, Especialidad especialidad, Secretaria secretaria) throws Exception{
         if(cita == null){
@@ -55,6 +56,7 @@ public class TurnosServicios {
         turnosRepositorio.save(turnos);
     }
     
+    //modificarTurno recibe el código del turno que se desea modificar y los mismos parametros que el metodo crearTurno para modificar el turno seleccionado
     @Transactional
     public void modificarTurno(Integer codigo, Date cita, Paciente paciente, Medico medico, EstadoDelTurno estado, Consulta consulta, Especialidad especialidad, Secretaria secretaria) throws Exception{
         if(cita == null){
@@ -86,6 +88,7 @@ public class TurnosServicios {
         }
     }
     
+    //cancelarTurno recibe el código del turno que se desea eliminar y modifica el estado del turno a "CANCELADO"
     public void cancelarTurno(Integer codigo) throws Exception{
         Optional<Turnos> respuesta = turnosRepositorio.findById(codigo);
         if(respuesta.isPresent()){
@@ -98,6 +101,7 @@ public class TurnosServicios {
         }
     }
     
+    //mostrarTurnos muestra todos los turno incluso los cancelados
     public List<Turnos> mostrarTurnos(){
         List<Turnos>turnos = turnosRepositorio.findAll();
         return turnos;

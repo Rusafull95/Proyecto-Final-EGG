@@ -26,6 +26,7 @@ public class MedicoServicio {
     @Autowired
     private MedicoRepositorio medicoRepositorio;
     
+    //crearMedico recibe una matricula, una lista de especialidades y un usuario para crear un medico
     @Transactional
     public void crearMedico(String numMatricula, List<Especialidad>especialidades, Usuario usuario) throws Exception{
         if(numMatricula == null || "".equals(numMatricula.trim())){
@@ -41,8 +42,9 @@ public class MedicoServicio {
         medicoRepositorio.save(medico);
     }
     
+    //modificarMedico recibe la matricula del medico que desea modificar y una lista de especialidades que va a ser las nuevas especialidades
     @Transactional
-    public void modificarMedico(String numMatricula, List<Especialidad>especialidades, Usuario usuario) throws Exception{
+    public void modificarMedico(String numMatricula, List<Especialidad>especialidades) throws Exception{
         if(numMatricula == null || "".equals(numMatricula.trim())){
             throw new Exception("Debe ingresar su matricula");
         }
@@ -53,7 +55,6 @@ public class MedicoServicio {
         if(respuesta.isPresent()){
             Medico medico = respuesta.get();
             medico.setEspecialidades(especialidades);
-            medico.setUsuario(usuario);
         
             medicoRepositorio.save(medico);
         }else{
@@ -61,7 +62,8 @@ public class MedicoServicio {
         }
     }
     
-    public void cancelarTurno(String numMatricula) throws Exception{
+    //eliminarMedico recibe el número de matricula del medico que se desea eliminar y modifica el usuario.alta del medico y lo deja en false(este metodo puede que de problemas)
+    public void eliminarMedico(String numMatricula) throws Exception{
         Optional<Medico> respuesta = medicoRepositorio.findById(numMatricula);
         if(respuesta.isPresent()){
             Medico medico = respuesta.get();
@@ -73,6 +75,7 @@ public class MedicoServicio {
         }
     }
     
+    //mostrarMedicos devuelve una lista de todos los medico que posean el valor true en su alta de usuario
     public List<Medico> mostrarMedicos(){
         List<Medico>medico = medicoRepositorio.findAll();
         List<Medico>medicos = new ArrayList();

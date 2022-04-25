@@ -23,8 +23,9 @@ public class EspecialidadServicios {
     @Autowired
     private EspecialidadRepositorio especialidadRepositorio;
     
+    //crearEspecialidad recibe un nombre y crea una Especialidad
     @Transactional
-    public void crearAutor(String nombre) throws Exception{
+    public void crearEspecialidad(String nombre) throws Exception{
         if(nombre == null || "".equals(nombre.trim())){
             throw new Exception("El nombre no puede ser nulo");
         }
@@ -33,6 +34,7 @@ public class EspecialidadServicios {
         especialidadRepositorio.save(especialidad);
     }
     
+    //modificarEspecialidad recibe el id de la especialidad que se desea modificar y el nuevo nombre de la especialidad
     @Transactional
     public void modificarEspecialidad(String id, String nombre) throws Exception{
         if(nombre == null || "".equals(nombre.trim())){
@@ -49,6 +51,7 @@ public class EspecialidadServicios {
         }
     }
     
+    //mostrarEspecialidades devuelve una lista de todas las especialidades
     public List<Especialidad> mostrarEspecialidades(){
         List<Especialidad>especialidades = especialidadRepositorio.findAll();
         return especialidades;
