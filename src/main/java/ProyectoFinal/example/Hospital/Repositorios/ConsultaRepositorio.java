@@ -5,6 +5,8 @@
  */
 package ProyectoFinal.example.Hospital.Repositorios;
 
+import ProyectoFinal.example.Hospital.Entidades.Consulta;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author AXEL
  */
 @Repository
-public interface ConsultaRepositorio {
+public interface ConsultaRepositorio extends JpaRepository<Consulta, String>{
     
 }

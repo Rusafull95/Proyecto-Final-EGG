@@ -9,7 +9,6 @@ import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Repositorios.UsuarioRepositorio;
 import ProyectoFinal.example.Hospital.enums.Rol;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +16,7 @@ import org.springframework.stereotype.Service;
  *
  * @author AXEL
  */
+
 @Service
 public class UsuarioServicio {
     
@@ -128,6 +128,27 @@ public class UsuarioServicio {
     public List<Usuario> listarUsuarios(){
         return usuarioRepositorio.findAll();
     }
+    
+//    public void agregarUsuarioALaSesion(Usuario usuario) {
+//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+//        HttpSession session = attributes.getRequest().getSession(true);
+//        session.setAttribute("usuario", usuario);
+//    }
+//
+//    @Override
+//    public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
+//        try { // esta parte configura los permisos de los usuarios
+//            Usuario usuario = usuarioRepositorio.buscarUsuarioPorUsername(mail);
+//            List<GrantedAuthority> autorities = new ArrayList<>();
+//
+//            agregarUsuarioALaSesion(usuario);
+//            autorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRolUser()));
+//
+//            return new User(username, usuario.getContrasenha(), autorities);
+//        } catch (Exception e) {
+//            throw new UsernameNotFoundException("El usuario no existe");
+//        }
+//    }
     
     
 }

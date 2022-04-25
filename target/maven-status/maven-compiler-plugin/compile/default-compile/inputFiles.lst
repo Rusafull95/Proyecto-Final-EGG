@@ -1,7 +1,10 @@
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Estudio.java
+C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\ConsultaServicio.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Consulta.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Receta.java
+C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EstudioRepositorio.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Turnos.java
+C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\UsuarioServicio.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Usuario.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medico.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\enums\EstadoDelTurno.java
@@ -11,3 +14,6 @@ C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\Proyec
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\enums\Rol.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Especialidad.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medicamentos.java
+C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\ConsultaRepositorio.java
+C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\EstudioServicio.java
+C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\UsuarioRepositorio.java
