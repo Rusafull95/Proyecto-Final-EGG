@@ -1,13 +1,19 @@
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medicamentos.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\enums\EstadoDelTurno.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Usuario.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\enums\Rol.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Consulta.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Paciente.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\HospitalApplication.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Secretaria.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Especialidad.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Estudio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Receta.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Turnos.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Hospital\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medico.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Usuario.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EspecialidadRepositorio.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Secretaria.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\enums\EstadoDelTurno.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Especialidad.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\Servicios\MedicoServicio.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\Servicios\EspecialidadServicios.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Paciente.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Estudio.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\TurnosRepositorio.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\enums\Rol.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medicamentos.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medico.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Receta.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\HospitalApplication.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Turnos.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\MedicoRepositorio.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\Servicios\TurnosServicios.java
+C:\Users\Lucas\Desktop\Proyecto Final\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Consulta.java
