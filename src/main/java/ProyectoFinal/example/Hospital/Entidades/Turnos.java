@@ -5,22 +5,105 @@
  */
 package ProyectoFinal.example.Hospital.Entidades;
 
+import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 @Entity
 public class Turnos {
     @Id
-    @GeneratedValue(generator="uuid")
-    @GenericGenerator(name="uuid", strategy = "uuid2")
-    private String codigo;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer codigo;
+    @Temporal(TemporalType.DATE)
     private Date cita;
-    private boolean realizado;
+    @OneToOne
     private Paciente paciente;
+    @OneToOne
     private Medico medico;
+    @Enumerated(EnumType.STRING)
+    private EstadoDelTurno estado;
+    @OneToOne
+    private Consulta consulta;
+    @OneToOne
+    private Especialidad especialidad;
+    @OneToOne
+    private Secretaria secretaria;
+
+    public Turnos() {
+    }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public Date getCita() {
+        return cita;
+    }
+
+    public void setCita(Date cita) {
+        this.cita = cita;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public EstadoDelTurno getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoDelTurno estado) {
+        this.estado = estado;
+    }
+
+    public Consulta getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(Consulta consulta) {
+        this.consulta = consulta;
+    }
+
+    public Especialidad getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public Secretaria getSecretaria() {
+        return secretaria;
+    }
+
+    public void setSecretaria(Secretaria secretaria) {
+        this.secretaria = secretaria;
+    }
     
     
     
