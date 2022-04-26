@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ProyectoFinal.example.Hospital.Repositorios.Servicios;
+package ProyectoFinal.example.Hospital.Servicios;
 
 import ProyectoFinal.example.Hospital.Entidades.Especialidad;
 import ProyectoFinal.example.Hospital.Entidades.Medico;
