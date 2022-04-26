@@ -1,0 +1,24 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <h1>Registro Paciente</h1>
+        <form method="Form">
+            <p>Datos personales</p>
+            <input type="text"  name="nombres" th:value='${paciente.usuario.nombre}'/>  <input type="text"  name="Apellido" th:value='${paciente.usuario.apellido}'/> <input type="text"  name="dni" th:value='${paciente.dni}'/>
+            <input type="text"  name="fechaDeNacimiento" th:value='${paciente.fechaDeNacimiento}'/> 
+            <p>Imagen Perfil (opcional)</p>
+            <input type="image"  name="imagenPerfil" th:value='${}'/>
+            <p>Datos de Contacto</p>
+            <input type="text"  name="domicilio" th:value='${paciente.domicilio}'/>
+            <input type="text"  name="mail" th:value='${paciente.usuario.mail}'/>  <input type="text"  name="fechaDeNacimiento" th:value='${paciente.fechaDeNacimiento}'/>
+            <p>Obra Social</p>
+            <input type="text"  name="obraSocial" th:value='${paciente.obraSocial}'/>
+            <input type="submit" name="Crear Paciente"/>
+    </body>
+</html>
