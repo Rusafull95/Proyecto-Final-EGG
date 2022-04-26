@@ -8,17 +8,29 @@ package ProyectoFinal.example.Hospital.Servicios;
 import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Repositorios.UsuarioRepositorio;
 import ProyectoFinal.example.Hospital.enums.Rol;
+import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpSession;
+//
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.multipart.MultipartFile;
 /**
  *
  * @author AXEL
  */
 
 @Service
-public class UsuarioServicio {
+public class UsuarioServicio implements UserDetailsService{
     
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
@@ -129,26 +141,26 @@ public class UsuarioServicio {
         return usuarioRepositorio.findAll();
     }
     
-//    public void agregarUsuarioALaSesion(Usuario usuario) {
-//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-//        HttpSession session = attributes.getRequest().getSession(true);
-//        session.setAttribute("usuario", usuario);
-//    }
-//
-//    @Override
-//    public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
-//        try { // esta parte configura los permisos de los usuarios
-//            Usuario usuario = usuarioRepositorio.buscarUsuarioPorUsername(mail);
-//            List<GrantedAuthority> autorities = new ArrayList<>();
-//
+    public void agregarUsuarioALaSesion(Usuario usuario) {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        HttpSession session = attributes.getRequest().getSession(true);
+        session.setAttribute("usuario", usuario);
+    }
+    
+    @Override
+    public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
+        try { // esta parte configura los permisos de los usuarios
+            Usuario usuario = usuarioRepositorio.buscarPorMail(mail);
+            List<GrantedAuthority> autorities = new ArrayList<>();
+            
 //            agregarUsuarioALaSesion(usuario);
-//            autorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRolUser()));
-//
-//            return new User(username, usuario.getContrasenha(), autorities);
-//        } catch (Exception e) {
-//            throw new UsernameNotFoundException("El usuario no existe");
-//        }
-//    }
+            autorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()));
+            
+            return new User(mail, usuario.getPassword(), autorities);
+        } catch (Exception e) {
+            throw new UsernameNotFoundException("El usuario no existe");
+        }
+    }
     
     
 }
