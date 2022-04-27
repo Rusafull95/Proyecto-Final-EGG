@@ -9,19 +9,37 @@ body{
     background-color: thistle;
    
 }
+/*color-navbar*/
+.navbar-light{
+            background-color: purple;
+        }
+        .nav-link{
+            color: white !important;
+            font-style: oblique !important;
+
+        }
+        .nav-item{
+            font-variant-position: super;
+        }
+
 
 .imagen-fondo{
-    background-image: url("/img/salud-viajes-1.jpg");
-    height: 91vh;
     background-repeat: no-repeat;
     background-size: contain;
+    opacity: 0.3;
+   
+}
+/*tarjetas*/
+.card-img-top{
+    height: 50vh;
 }
 
 button{
     background-color: lightpink;
-    height: 125px;
+    height: 125vh;
     font-family: 'Anton', sans-serif;
     font-size: large; 
+  
 
 }
 
@@ -35,8 +53,22 @@ button{
     font-family: 'Bitter', serif;
     font-family: 'Libre Baskerville', serif;  
 }
+.servicios{
+    display: flex;
+   
+}
+ .servicios>*{
+    border: 1px solid black;
+ }
 
+ .item1{
+     
+ }
 
+/*color vista principal medico*/
 
-
-
+.color-button{
+    background-color: green;
+    color: white;
+    
+}

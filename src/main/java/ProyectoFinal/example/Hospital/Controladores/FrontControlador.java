@@ -29,5 +29,13 @@ public class FrontControlador {
     }
 
     
+<<<<<<< HEAD
 
+=======
+    @GetMapping("/generacionTurnosSec")
+    public String generacionTurnosSec(){
+        return "GeneracionTurnosSec";
+    }
+    
+>>>>>>> 65b9085084ad2f6f7d30cb6dab22a727d9dc716f
 }
