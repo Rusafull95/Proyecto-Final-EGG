@@ -2,10 +2,41 @@ h1{
     font-family: 'Bitter', serif;
     font-family: 'Libre Baskerville', serif;
 }
+h5{
+   font-family: 'Space Grotesk', sans-serif;
+}
 body{
-    background-color: rosybrown;
+    background-color: thistle;
+   
 }
+
+.imagen-fondo{
+    background-image: url("/img/salud-viajes-1.jpg");
+    height: 91vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 button{
-    background-color: mediumorchid;
+    background-color: lightpink;
+    height: 125px;
+    font-family: 'Anton', sans-serif;
+    font-size: large; 
+
 }
+
+.card{
+    background-color: whitesmoke;
+    font-family: 'Bitter', serif;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.p{
+    font-family: 'Bitter', serif;
+    font-family: 'Libre Baskerville', serif;  
+}
+
+
+
+
 

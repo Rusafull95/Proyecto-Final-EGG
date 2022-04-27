@@ -17,74 +17,66 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,100&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
 
-    
 
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">A cerca de</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gestion de citas</a>
-                    </li>
-                </ul>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">A cerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gestion de citas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
-    <br>
-    <br>
-    
-    <div style="text-align: left">
-         <h1>Ingreso al portal de Salud</h1>  
-    
-    
-    <fieldset>
-        <legend>Correo electronico</legend>
-        <div class="container">
-            <form  method="POST">
-                <div>
-                    <label for="email">Email</label>
-                </div>
+        <main class="justify-content-center d-flex">
 
-                <div class="user">
-                    <label for="password">Contraseña</label>
-                </div>
+            <div>
+                <form>
 
-                <div class="user">
-                    <input type="password" name="password" th:value="${paciente.usuario.password}"/>
-                </div>
+                    <h1>Ingreso al portal de Salud</h1>
+                    <div style = "text-align: left">
 
-                <div class="user">
-                    <input type="text" name="username" />
-                </div>
+                        <div>
+                            <label for="email">Correo electronico</label>
+                        </div>
 
+                        <div class="user">
+                            <label for="password">Contraseña</label>
+                        </div>
 
+                        <div class="user">
 
-                <div class="user">
-                    <input type="submit" value="Log In" />
-                    <h3>Si no esta registrado <a href="/usuario">Ingrese aquí</a></h3>
-                </div>
-            </form>
-        </div>
+                        </div>
+                </form>
+            </div>
 
-        <div class="justify-content">
-            <image th:src="@{/img/doctor-portal.jpg}"
-         
-        </div>
-    </fieldset>
+            <div class="justify-content-center">
+                <image th:src="@{/img/doctor-portal.jpg}"
+            </div>            
+        </main>
+
+        <br>
+        <button>Ingresar</button>
+
+    </form>             
+</div>
+
 </body>
 </html>
 
