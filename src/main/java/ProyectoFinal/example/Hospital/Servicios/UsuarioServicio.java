@@ -45,7 +45,8 @@ public class UsuarioServicio implements UserDetailsService{
         nuevoUsuario.setNombre(nombre);
         nuevoUsuario.setApellido(apellido);
         
-        nuevoUsuario.setPassword(password_1);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        nuevoUsuario.setPassword(encoder.encode(password_1));
         
         nuevoUsuario.setAlta(false);
         
@@ -126,7 +127,8 @@ public class UsuarioServicio implements UserDetailsService{
             throw new Exception("La nueva Contraseña debe tener 6 caracteres como minimo");
         }
         
-        usuarioAModificar.setPassword(passwordNueva);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        usuarioAModificar.setPassword(encoder.encode(passwordNueva));
         
         usuarioRepositorio.save(usuarioAModificar);
     }
