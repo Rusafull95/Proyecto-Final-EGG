@@ -21,9 +21,13 @@ public class FrontControlador {
     public String registroPaciente(){
         return "registroPaciente";
     }
+
    
       @GetMapping("/login")
     public String login(){
         return "login";
     }
+
+    
+
 }
