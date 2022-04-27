@@ -22,7 +22,6 @@ ProyectoFinal\example\Hospital\Controladores\FrontControlador.class
 ProyectoFinal\example\Hospital\Servicios\ConsultaServicio.class
 ProyectoFinal\example\Hospital\Controladores\PortalControlador.class
 ProyectoFinal\example\Hospital\Entidades\Turnos.class
-.netbeans_automatic_build
 ProyectoFinal\example\Hospital\Entidades\Estudio.class
 ProyectoFinal\example\Hospital\Repositorios\EstudioRepositorio.class
 ProyectoFinal\example\Hospital\Entidades\Secretaria.class
