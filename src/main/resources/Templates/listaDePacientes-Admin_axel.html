@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Hospital Admin -Pacientes</title>
         <meta charset="UTF-8">
@@ -92,12 +92,12 @@ and open the template in the editor.
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="libro, index: ${listaLibros}">
+                        <tr th:each="paciente, index: ${listaPacientes}">
                             <td th:text="${index.count}">Number</td>
-                            <td th:text="${libro.titulo}">Usuario/mail</td>
-                            <td th:text="${libro.titulo}">Nombre</td>
-                            <td th:text="${libro.titulo}">Apellido</td>
-                            <td th:text="${libro.titulo}">Dato_1</td>
+                            <td th:text="${paciente.usuario.mail}">Usuario/mail</td>
+                            <td th:text="${paciente.usuario.nombre}">Nombre</td>
+                            <td th:text="${paciente.usuario.apellido}">Apellido</td>
+                            <td th:text="${}">Dato_1</td>
                             <td th:text="${libro.alta}">Dato_2</td>
 <!--                            <td> 
                                 <span th:if="${libro.alta  == true}">
