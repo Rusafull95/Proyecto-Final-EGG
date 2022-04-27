@@ -19,7 +19,7 @@ public class PortalControlador {
     
     @GetMapping("")
     public String index(ModelMap modelMap){
-        return "index";
+        return "Index";
     }
     @GetMapping("/horarios")
     public String horario(ModelMap modelMap){

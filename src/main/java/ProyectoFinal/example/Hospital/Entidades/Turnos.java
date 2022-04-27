@@ -17,7 +17,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
 public class Turnos {
     @Id
@@ -25,6 +24,7 @@ public class Turnos {
     private Integer codigo;
     @Temporal(TemporalType.DATE)
     private Date cita;
+    private boolean realizado;
     @OneToOne
     private Paciente paciente;
     @OneToOne

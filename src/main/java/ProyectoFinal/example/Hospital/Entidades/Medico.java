@@ -14,7 +14,9 @@ import javax.persistence.OneToOne;
 @Entity
 public class Medico {
     @Id
-    private String numeroDeMatricula;
+    private String numeroDeMatricula; 
+    private String nombre;
+    private String Apellido;
     @OneToMany
     private List<Especialidad> especialidades;
     @OneToMany
