@@ -86,4 +86,16 @@ public class MedicoServicio {
         }
         return medicos;
     }
+    
+    //MostrarMedicoPorId devuelve un medico segun su número de matricula
+    public Medico mostrarMedicoPorId(String numMatricula) throws Exception{
+        Optional<Medico> respuesta = medicoRepositorio.findById(numMatricula);
+        if(respuesta.isPresent()){
+            Medico medico = respuesta.get();
+        
+            return medico;
+        }else{
+            throw new Exception("No se encontró el medico");
+        }
+    }
 }
