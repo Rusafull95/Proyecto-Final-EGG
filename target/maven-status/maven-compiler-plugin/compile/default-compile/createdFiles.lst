@@ -3,7 +3,9 @@ ProyectoFinal\example\Hospital\Entidades\Usuario.class
 ProyectoFinal\example\Hospital\Entidades\Medicamentos.class
 ProyectoFinal\example\Hospital\Servicios\EstudioServicio.class
 ProyectoFinal\example\Hospital\Entidades\Receta.class
+ProyectoFinal\example\Hospital\Controladores\AdministradorControlador.class
 ProyectoFinal\example\Hospital\Entidades\Medico.class
+ProyectoFinal\example\Hospital\Controladores\UsuarioControlador.class
 ProyectoFinal\example\Hospital\Entidades\Especialidad.class
 ProyectoFinal\example\Hospital\Entidades\Paciente.class
 ProyectoFinal\example\Hospital\Repositorios\MedicoRepositorio.class
