@@ -95,7 +95,6 @@ header{
 
 .button-sec{
     background-color: lightpink;
-    height: 100px;
     font-family: 'Anton', sans-serif;
     font-size: large; 
   
@@ -139,12 +138,42 @@ button{
      border: 1px solid black
  }
 
+/*color vista principal medico*/
+
+body {
+    background-color: thistle;
+}
+
+.container {
+    border: rgb(0, 0, 0) 5px solid;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.container-table{
+    border: rgb(0, 0, 0) 5px solid;
+    margin: 2rem;
+}
+
+.navbar-light{
+    background-color: purple;
+}
+.nav-link{
+    color: white !important;
+    font-style: oblique !important;
+
+}
+.nav-item{
+    font-variant-position: super;
+
  .padding-card {
     padding: 2em;
 }
 
 .margin-card {
     margin: 4em;
+
 }
 
 
