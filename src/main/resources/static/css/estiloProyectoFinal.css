@@ -36,11 +36,17 @@ body{
 
 button{
     background-color: lightpink;
-    height: 125vh;
+    height: 100px;
     font-family: 'Anton', sans-serif;
     font-size: large; 
   
 
+}
+.buttom-registroPaciente{
+    height: 25px;
+}
+.buttom-generarTurno{
+    height: 25px;
 }
 
 .card{
@@ -61,8 +67,8 @@ button{
     border: 1px solid black;
  }
 
- .item1{
-     
+ .border-form{
+     border: 1px solid black
  }
 
 /*color vista principal medico*/
