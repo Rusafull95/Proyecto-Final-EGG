@@ -9,6 +9,7 @@ body{
     background-color: thistle;
    
 }
+
 /*color-navbar*/
 .navbar-light{
             background-color: purple;
@@ -21,12 +22,40 @@ body{
         .nav-item{
             font-variant-position: super;
         }
+            
+/*footer*/
+            .card-group{
+                background-color: purple;
+            }
+            .card{
+                border-color: purple;
+            }
+            .card-body{
+                background-color: purple;    
+            }
+            .card-body-sec{
+                color: white;
+            }
+            .card-title{
+                color: white;
+                margin: 2px;
+                padding: 2px;
+            }
+            .card-title-sec{
+                color:black;
+            }
+            .card-text{
+                color: black;
+            }
+
+        
 
 
 .imagen-fondo{
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.3;
+    
    
 }
 /*tarjetas*/
@@ -36,7 +65,6 @@ body{
 
 button{
     background-color: lightpink;
-    height: 100px;
     font-family: 'Anton', sans-serif;
     font-size: large; 
   
@@ -47,6 +75,9 @@ button{
 }
 .buttom-generarTurno{
     height: 25px;
+}
+.buttom-usuario{
+    height: 35px;
 }
 
 .card{
@@ -63,8 +94,11 @@ button{
     display: flex;
    
 }
- .servicios>*{
+ .item1{
     border: 1px solid black;
+    padding: 50px;
+    border-radius: 20px;
+    border: black solid;
  }
 
  .border-form{
