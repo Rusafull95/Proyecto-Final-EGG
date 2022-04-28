@@ -42,7 +42,15 @@ public class FrontControlador {
         return "listaDePersonal-Admin_axel";
     }
 
+    @GetMapping("/listaDePacientesAdmin")
+    public String listaDePacientesAdmin(){
+        return "listaDePacientes-Admin_axel";
+    }
     
+     @GetMapping("/usuarioRegistroFormulario")
+    public String usuarioRegistroFormulario(){
+        return "usuarioRegistroFormulario_axel";
+    }
 
     
 
