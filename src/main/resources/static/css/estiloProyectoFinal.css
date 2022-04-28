@@ -5,10 +5,15 @@ h1{
 h5{
    font-family: 'Space Grotesk', sans-serif;
 }
+.form-label{
+    font-family: 'Space Grotesk', sans-serif;
+}
 body{
     background-color: thistle;
    
 }
+
+
 
 /*color-navbar*/
 .navbar-light{
@@ -24,7 +29,7 @@ body{
         }
             
 /*footer*/
-            .card-group{
+          .footer  .card-group{
                 background-color: purple;
             }
             .card{
@@ -58,12 +63,26 @@ body{
     
    
 }
+header{
+    background: url("/img/registroSuperior.jpg") ;
+    height: 300px;
+    background-repeat: repeat;
+    
+ 
+}
+
+*{
+       box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
 /*tarjetas*/
 .card-img-top{
     height: 50vh;
 }
 
-button{
+.button-sec{
     background-color: lightpink;
     font-family: 'Anton', sans-serif;
     font-size: large; 
@@ -76,8 +95,11 @@ button{
 .buttom-generarTurno{
     height: 25px;
 }
-.buttom-usuario{
+button{
     height: 35px;
+    background-color: lightpink;
+    font-family: 'Anton', sans-serif;
+    font-size: large; 
 }
 
 .card{
@@ -133,6 +155,14 @@ body {
 }
 .nav-item{
     font-variant-position: super;
+
+ .padding-card {
+    padding: 2em;
+}
+
+.margin-card {
+    margin: 4em;
+
 }
 
 
