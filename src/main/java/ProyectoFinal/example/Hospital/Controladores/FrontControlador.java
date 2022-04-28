@@ -22,4 +22,9 @@ public class FrontControlador {
         return "registroPaciente";
     }
     
+    @GetMapping("/generacionTurnosSec")
+    public String generacionTurnosSec(){
+        return "GeneracionTurnosSec";
+    }
+    
 }

@@ -2,46 +2,62 @@
 package ProyectoFinal.example.Hospital.Servicios;
 
 
-import ProyectoFinal.example.Hospital.Entidades.Consulta;
-import ProyectoFinal.example.Hospital.Entidades.Especialidad;
 import ProyectoFinal.example.Hospital.Entidades.Medico;
 import ProyectoFinal.example.Hospital.Entidades.Paciente;
-import ProyectoFinal.example.Hospital.Entidades.Secretaria;
 import ProyectoFinal.example.Hospital.Entidades.Turnos;
+import ProyectoFinal.example.Hospital.Entidades.Usuario;
+import ProyectoFinal.example.Hospital.Repositorios.MedicoRepositorio;
+import ProyectoFinal.example.Hospital.Repositorios.PacienteRepositorio;
 import ProyectoFinal.example.Hospital.Repositorios.SecretariaRepositorio;
+import ProyectoFinal.example.Hospital.Repositorios.TurnosRepositorio;
+import ProyectoFinal.example.Hospital.Repositorios.UsuarioRepositorio;
 import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import javax.transaction.Transactional;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SecretariaServicio {
+    
     @Autowired
     SecretariaRepositorio secretariaRepositorio;
+    TurnosRepositorio turnosRepositorio;
+    UsuarioRepositorio usuarioRepositorio;
+    PacienteRepositorio pacienteRepositorio;
+    MedicoRepositorio medicoRepositorio;
     
-    @Transactional
-    public void crearTurnos( LocalDate fechaActual, Paciente paciente, Medico medico, EstadoDelTurno estado, Consulta consulta, Especialidad especialidad, Secretaria secretaria) throws Exception{
-        if(cita == null){
-            throw new Exception("Debe indicar un día");
+    public void validarTurno(Integer codigo){
+        Optional<Turnos> repuesta = turnosRepositorio.findById(codigo);
+        if(repuesta.isPresent()){
+            Turnos turno = repuesta.get();
+            turno.setEstado(EstadoDelTurno.ENPROCESO);
+            
+            turnosRepositorio.save(turno);
         }
-        if(paciente == null){
-            throw new Exception("Debe indicar un paciente");
-        }
-        if(medico == null){
-            throw new Exception("Debe indicar un medico");
-        }
-        if(especialidad == null){
-            throw new Exception("Debe indicar una especialidad");
-        }
-        Turnos turnos = new Turnos();
-        turnos.setPaciente(paciente);
-        turnos.setMedico(medico);
-        turnos.setEstado(estado);
-        turnos.setConsulta(consulta);
-        turnos.setEspecialidad(especialidad);
-        turnos.setSecretaria(secretaria);
-        turnosRepositorio.save(turnos);
     }
+    
+    public void asignarUsuarioAPaciente(String usuario, Integer dni){
+        Optional<Usuario> repuestaUsuario = usuarioRepositorio.findById(usuario);
+        Optional<Paciente> repuestaPaciente = pacienteRepositorio.findById(dni);
+        if(repuestaUsuario.isPresent() && repuestaPaciente.isPresent()){
+            Paciente usuarioAsignado = pacienteRepositorio.getById(dni);
+            
+            usuarioAsignado.setUsuario(usuarioRepositorio.getById(usuario));
+            
+            pacienteRepositorio.save(usuarioAsignado);
+        }
+    }
+    
+    public void asignarMedicoATurno(String numeroMatricula, Integer codigo){
+        Optional<Medico> repuestaMedico = medicoRepositorio.findById(numeroMatricula);
+        Optional<Turnos> repuestaTurno = turnosRepositorio.findById(codigo);
+        if(repuestaMedico.isPresent() && repuestaTurno.isPresent()){
+            Turnos medicoAsignado = turnosRepositorio.getById(codigo);
+            
+            medicoAsignado.setMedico(medicoRepositorio.getById(numeroMatricula));
+            
+            turnosRepositorio.save(medicoAsignado);
+        }
+    }
+
 }
