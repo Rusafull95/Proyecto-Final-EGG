@@ -8,10 +8,17 @@ h5{
 .form-label{
     font-family: 'Space Grotesk', sans-serif;
 }
+head{
+    min-height: 10%
+}
 body{
     background-color: thistle;
-   
+        
+    }
+     body {
+     min-height: 60%;
 }
+
 
 
 
@@ -27,10 +34,14 @@ body{
         .nav-item{
             font-variant-position: super;
         }
+        head{
+            min-height: 10%
+        }
             
 /*footer*/
           .footer  .card-group{
                 background-color: purple;
+                min-height: 10%
             }
             .card{
                 border-color: purple;
