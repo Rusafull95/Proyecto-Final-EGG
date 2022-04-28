@@ -35,5 +35,9 @@ public class FrontControlador {
         return "GeneracionTurnosSec";
     }
     
-
+ @GetMapping("/principalMedico")
+    public String principalMedico(){
+        return "principal-Medico";
+    }
+    
 }
