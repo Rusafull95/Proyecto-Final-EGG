@@ -1,3 +1,40 @@
+<<<<<<< HEAD
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\ConsultaRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Usuario.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medicamentos.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\enums\EstadoDelTurno.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\UsuarioControlador.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\SecretariaServicio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medico.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\RecetaRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Turnos.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Receta.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\TurnosServicios.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\FrontControlador.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\EstudioServicio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\PortalControlador.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Seguridad.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Secretaria.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Consulta.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\enums\Rol.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Estudio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\HospitalApplication.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EstudioRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\TurnosRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Paciente.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Especialidad.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\UsuarioRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\ConsultaServicio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\EspecialidadServicios.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\MedicoRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\AdministradorControlador.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\SecretariaRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\UsuarioServicio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\SecretariaControlador.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EspecialidadRepositorio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\MedicoServicio.java
+C:\Users\usuario\Documents\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\RecetaServicio.java
+=======
 C:\Users\Belén\Documents\NetBeansProjects\PROYECTOFINALCOMPLETO\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EspecialidadRepositorio.java
 C:\Users\Belén\Documents\NetBeansProjects\PROYECTOFINALCOMPLETO\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\UsuarioServicio.java
 C:\Users\Belén\Documents\NetBeansProjects\PROYECTOFINALCOMPLETO\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\MedicoControlador.java
@@ -31,3 +68,4 @@ C:\Users\Belén\Documents\NetBeansProjects\PROYECTOFINALCOMPLETO\Proyecto-Final-E
 C:\Users\Belén\Documents\NetBeansProjects\PROYECTOFINALCOMPLETO\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\MedicoRepositorio.java
 C:\Users\Belén\Documents\NetBeansProjects\PROYECTOFINALCOMPLETO\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\UsuarioRepositorio.java
 C:\Users\Belén\Documents\NetBeansProjects\PROYECTOFINALCOMPLETO\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\HospitalApplication.java
+>>>>>>> d79d430d12adf2d463262993fdde347cc7710d43

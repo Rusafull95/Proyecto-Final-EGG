@@ -34,5 +34,9 @@ public class AdministradorControlador {
     public String listaPacientes(){
         return "listaDePacientes-Admin_axel";
     }
-    
+     
+    @GetMapping("/principalmiguel")
+    public String paginaAdmin(){
+        return "adminhospital-listas-migue";
+    }
 }

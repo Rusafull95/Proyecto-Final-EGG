@@ -5,22 +5,23 @@
  */
 package ProyectoFinal.example.Hospital.Controladores;
 
-import ProyectoFinal.example.Hospital.Entidades.Medico;
-import ProyectoFinal.example.Hospital.Entidades.Turnos;
 import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- *
- * @author Lucas
+ * IMPORTANTE: no se mandan todos los datos a todas las url asi que avisar si se necesitan más datos un algún html o si se quiere modificar algo(todo se puede cambiar).
+ * falta acomodar algunas rutas con los html
+ * 
+ *  Modelos:
+ * 1)_"turnosHoy"_ (URL: "/medico/turnos/hoy")turnos de hoy del médico(recibe un parametro llamado "matricula")
+ * 2)_"listaDeTurnos"_ (URL: "/medico/turnos") todos los turnos de un médico sin importar el estado (recibe un parametro llamado "matricula")
+ * 3)_"listaDeTurnosAtendidos"_ (URL: "/medico/turnos/atendidos") todos los turnos atendidos de un médico (recibe un parametro llamado "matricula")
+ * 4)_"listaDeTurnosEnProgreso"_ (URL: "/medico/turnos/enprogreso") todos los turnos en progreso de un médico (recibe un parametro llamado "matricula")
  */
 @Controller
 @RequestMapping("/medico")
@@ -34,26 +35,27 @@ public class MedicoControlador {
         return "principal-Medico";
     }
     
-    @GetMapping("/turnoshoy")
-    public String turnosHoy(ModelMap modelo, String numMatricula) throws Exception{
-        Medico medico = medicoServicio.mostrarMedicoPorId(numMatricula);
-        List<Turnos>turnos = medico.getListaDeTurnos();
-        List<Turnos>turnosHoy = new ArrayList();
-        Calendar calendar = Calendar.getInstance();
-        Date hoy = calendar.getTime();
-        for (Turnos aux : turnos) {
-            if(aux.getCita().getDay() == hoy.getDay())
-                turnosHoy.add(aux);
-        }
-        modelo.put("turnosHoy", turnosHoy);
+    @GetMapping("/turnos/hoy")
+    public String turnosHoy(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.put("turnosHoy", medicoServicio.turnosHoy(numMatricula));
         return "principal-Medico";
     }
     
     @GetMapping("/turnos")
-    public String turnos(ModelMap modelo, String numMatricula) throws Exception{
-        Medico medico = medicoServicio.mostrarMedicoPorId(numMatricula);
-        List<Turnos>turnos = medico.getListaDeTurnos();
-        modelo.put("listaDeTurnos", turnos);
-        return "principal-Medico";
+    public String turnos(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.put("listaDeTurnos", medicoServicio.medicoTurnos(numMatricula));
+        return "listaDeTurnosCompleta-Medico";
+    }
+
+    @GetMapping("/turnos/atendidos")
+    public String turnosAtendidos(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.put("listaDeTurnosAtendidos", medicoServicio.turnosAtendidos(numMatricula));
+        return "turnoAtendido-Medico";
+    }
+    
+    @GetMapping("/turnos/enproceso")
+    public String turnosEnProgreso(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.put("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
+        return "listaTurnoEnProgreso-Medico";
     }
 }
