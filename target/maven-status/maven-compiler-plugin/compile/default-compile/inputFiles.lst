@@ -18,14 +18,17 @@
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Repositorios/MedicoRepositorio.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Repositorios/EstudioRepositorio.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Seguridad.java
+/home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Controladores/MedicoControlador.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Entidades/Medico.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Entidades/Secretaria.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Repositorios/UsuarioRepositorio.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Controladores/PortalControlador.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Repositorios/RecetaRepositorio.java
+/home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Controladores/UsuarioControlador.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Entidades/Paciente.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Entidades/Especialidad.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Servicios/SecretariaServicio.java
+/home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Controladores/AdministradorControlador.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Repositorios/PacienteRepositorio.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/Repositorios/ConsultaRepositorio.java
 /home/dunuvan/workspace/EggTucuman/Proyecto-Final-EGG/src/main/java/ProyectoFinal/example/Hospital/HospitalApplication.java

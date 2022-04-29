@@ -27,4 +27,32 @@ public class FrontControlador {
         return "GeneracionTurnosSec";
     }
     
+    @GetMapping("/principalAdministrador")
+    public String principalaAdministrador(){
+        return "paginaPrincipal-Admin_axel";
+    }
+    
+        @GetMapping("/listaDeUsuariosAdmin")
+    public String listaDeUsuariosAdmin(){
+        return "listaDeUsuarios-Admin_axel";
+    }
+    
+         @GetMapping("/listaDePersonalAdmin")
+    public String listaDePersonalAdmin(){
+        return "listaDePersonal-Admin_axel";
+    }
+
+    @GetMapping("/listaDePacientesAdmin")
+    public String listaDePacientesAdmin(){
+        return "listaDePacientes-Admin_axel";
+    }
+    
+     @GetMapping("/usuarioRegistroFormulario")
+    public String usuarioRegistroFormulario(){
+        return "usuarioRegistroFormulario_axel";
+    }
+
+    
+
+    
 }

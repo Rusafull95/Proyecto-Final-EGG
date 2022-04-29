@@ -7,6 +7,7 @@ ProyectoFinal/example/Hospital/Repositorios/PacienteRepositorio.class
 ProyectoFinal/example/Hospital/Entidades/Medico.class
 ProyectoFinal/example/Hospital/Entidades/Receta.class
 ProyectoFinal/example/Hospital/Repositorios/ConsultaRepositorio.class
+ProyectoFinal/example/Hospital/Controladores/AdministradorControlador.class
 ProyectoFinal/example/Hospital/Servicios/EstudioServicio.class
 ProyectoFinal/example/Hospital/Entidades/Medicamentos.class
 ProyectoFinal/example/Hospital/Entidades/Consulta.class
@@ -18,8 +19,10 @@ ProyectoFinal/example/Hospital/Entidades/Usuario.class
 ProyectoFinal/example/Hospital/Repositorios/EspecialidadRepositorio.class
 ProyectoFinal/example/Hospital/Entidades/Turnos.class
 ProyectoFinal/example/Hospital/Servicios/UsuarioServicio.class
+ProyectoFinal/example/Hospital/Controladores/MedicoControlador.class
 ProyectoFinal/example/Hospital/HospitalApplication.class
 ProyectoFinal/example/Hospital/Servicios/MedicoServicio.class
+ProyectoFinal/example/Hospital/Controladores/UsuarioControlador.class
 ProyectoFinal/example/Hospital/Entidades/Especialidad.class
 ProyectoFinal/example/Hospital/Seguridad.class
 ProyectoFinal/example/Hospital/Controladores/FrontControlador.class
