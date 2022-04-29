@@ -41,11 +41,11 @@ public class RecetaServicio {
         nuevaReceta.setMedicamentos(medicamentos);
         nuevaReceta.setDescripcionAdministracion(descripcionAdministracion);
         
-        return RecetaRepositorio.save(nuevaReceta);
+        return recetaRepositorio.save(nuevaReceta);
     }
     
     public Receta modificarReceta(String id, String descripoionAdministracion) throws Exception{
-        Receta recetaModificada = RecetaRepositorio.findById(id).orElse(null);
+        Receta recetaModificada = recetaRepositorio.findById(id).orElse(null);
         
         if(recetaModificada == null){
             throw new Exception("No se encontro la Receta a Modificar");
@@ -60,7 +60,7 @@ public class RecetaServicio {
     }
     
     public Receta cambiarMedicamentos(String id, List<Medicamentos> medicamentos) throws Exception{
-        Receta recetaModificada = RecetaRepositorio.findById(id).orElse(null);
+        Receta recetaModificada = recetaRepositorio.findById(id).orElse(null);
         
         if(recetaModificada == null){
             throw new Exception("No se encontro la consulta a Modificar");
@@ -70,12 +70,12 @@ public class RecetaServicio {
         }
         recetaModificada.setMedicamentos(medicamentos);
         
-        return RecetaRepositorio.save(recetaModificada);
+        return recetaRepositorio.save(recetaModificada);
     }
     
     
     public List<Receta> listarRecetas(){
-        return RecetaRepositorio.findAll();
+        return recetaRepositorio.findAll();
     }
     
 }
