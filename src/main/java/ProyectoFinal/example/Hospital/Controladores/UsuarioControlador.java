@@ -34,7 +34,7 @@ public class UsuarioControlador {
     public String formularioRegistro(
             ModelMap modelo,
             @RequestParam(name = "idUsuario", required = false) String id,
-             RedirectAttributes redirectAttributes
+            RedirectAttributes redirectAttributes
     ) {
         try {
             if (id != null) {
@@ -63,10 +63,10 @@ public class UsuarioControlador {
 
     @PostMapping("/registrar")
     public String registroUsuario(Model modelo,
-            @RequestParam(name ="id", required=false) String id,
-            @RequestParam(name ="mail") String mail,
-            @RequestParam(name ="nombre") String nombre,
-            @RequestParam(name ="apellido") String apellido,
+            @RequestParam(name = "id", required = false) String id,
+            @RequestParam(name = "mail") String mail,
+            @RequestParam(name = "nombre") String nombre,
+            @RequestParam(name = "apellido") String apellido,
             @RequestParam(name = "password_1") String password_1,
             @RequestParam(name = "password_2") String password_2
     ) {
@@ -74,12 +74,12 @@ public class UsuarioControlador {
             Usuario usuario = null;
             if (id == null) {
                 usuario = usuarioServicio.crearUsuario(mail, nombre, apellido, password_1, password_2);
-            }else{
-                usuario = usuarioServicio.modificarDatosUsuario(id,mail,nombre,apellido);
+            } else {
+                usuario = usuarioServicio.modificarDatosUsuario(id, mail, nombre, apellido);
             }
             modelo.addAttribute("valido", "Usuario " + id != null ? "editado" : "registrado con exito");
             return "RegistroPaciente";
-            
+
         } catch (Exception ex) {
             ex.printStackTrace();
             modelo.addAttribute("id", id);
@@ -92,4 +92,33 @@ public class UsuarioControlador {
         }
     }
 
+    @GetMapping("/darBaja")
+    public String daBaja(ModelMap modelo,
+            @RequestParam(name = "idUsuario", required = true) String id
+    ) {
+
+        try {
+            Usuario usuario = usuarioServicio.buscarUsuarioPorId(id);
+            usuarioServicio.habilitar(usuario.getId());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return "redirect:/administrador/listarUsuarios";
+        }
+        return "redirect:/administrador/listarUsuarios";
+    }
+
+    @GetMapping("/darAlta")
+    public String daAlta(ModelMap modelo,
+            @RequestParam(name = "idUsuario", required = true) String id
+    ) {
+
+        try {
+            Usuario usuario = usuarioServicio.buscarUsuarioPorId(id);
+            usuarioServicio.deshabilitar(usuario.getId());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return "redirect:/administrador/listarUsuarios";
+        }
+        return "redirect:/administrador/listarUsuarios";
+    }
 }

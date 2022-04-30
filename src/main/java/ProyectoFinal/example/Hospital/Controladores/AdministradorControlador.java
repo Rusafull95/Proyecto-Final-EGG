@@ -5,7 +5,12 @@
  */
 package ProyectoFinal.example.Hospital.Controladores;
 
+import ProyectoFinal.example.Hospital.Entidades.Usuario;
+import ProyectoFinal.example.Hospital.Servicios.UsuarioServicio;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,13 +22,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/administrador")
 public class AdministradorControlador {
     
+    @Autowired
+    UsuarioServicio usuarioServicio;
+    
     @GetMapping("/principal")
     public String paginaPrincipal(){
         return "paginaPrincipal-Admin_axel";
     }
     
     @GetMapping("/listarUsuarios")
-    public String listaUsuarios(){
+    public String listaUsuarios(Model modelo){
+        List<Usuario> listaUsuarios = usuarioServicio.listarUsuarios();
+        
+        modelo.addAttribute("listaUsuarios", listaUsuarios);
         return "listaDeUsuarios-Admin_axel";
     }
     @GetMapping("/listarPersonal")
