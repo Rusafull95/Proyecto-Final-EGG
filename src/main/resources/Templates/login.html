@@ -35,22 +35,27 @@ and open the template in the editor.
         <main class="justify-content-center d-flex" layout:fragment="main">
 
             <div>
-                <form>
+                <p thif="${error !=null}" th:text="${error}">Error</p>
+                <form th:action="@{/logincheck}" method="POST">
 
                     <h1>Ingreso al portal de Salud</h1>
                     <div style = "text-align: left">
 
                         <div>
                             <label for="email">Correo electronico</label>
+                            <input name="mail" type="email">
                         </div>
 
                         <div class="user">
                             <label for="password">Contraseña</label>
+                            <input name="password" type="password">
                         </div>
 
                         <div class="user">
 
                         </div>
+                        
+                        <button type="submit" class="btn btn-primary" value="Log In">Ingresar</button>
                 </form>
             </div>
 
