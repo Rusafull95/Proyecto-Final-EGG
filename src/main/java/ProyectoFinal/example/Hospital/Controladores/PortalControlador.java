@@ -18,9 +18,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PortalControlador {
     
     @GetMapping("")
-    public String index(ModelMap modelMap){
+    public String index(ModelMap modelMap
+    ){
+        
         return "index";
     }
+    
+    
     @GetMapping("/horarios")
     public String horario(ModelMap modelMap){
         return "ListaEspecialidades";

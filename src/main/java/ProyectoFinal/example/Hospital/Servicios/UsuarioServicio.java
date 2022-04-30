@@ -49,6 +49,7 @@ public class UsuarioServicio implements UserDetailsService{
         nuevoUsuario.setPassword(encoder.encode(password_1));
         
         nuevoUsuario.setAlta(false);
+        nuevoUsuario.setRol(Rol.PACIENTE);
         
         return usuarioRepositorio.save(nuevoUsuario);
     }
@@ -130,6 +131,7 @@ public class UsuarioServicio implements UserDetailsService{
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         usuarioAModificar.setPassword(encoder.encode(passwordNueva));
         
+        
         usuarioRepositorio.save(usuarioAModificar);
     }
     
@@ -162,6 +164,10 @@ public class UsuarioServicio implements UserDetailsService{
         } catch (Exception e) {
             throw new UsernameNotFoundException("El usuario no existe");
         }
+    }
+
+    public Usuario modificarDatosUsuario(String id, String mail, String nombre, String apellido) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
