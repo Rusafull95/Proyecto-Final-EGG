@@ -22,6 +22,10 @@ and open the template in the editor.
                 <p th:if="${error != null}" th:text="${error}" style="color: red"> error </p>
                 <form class="row g-3" method="POST" th:action="@{/usuario/registrar}">
                     <div class="mb-3 row">
+                        <div class="col-md-4" hidden>
+                            <label for="validationDefault01" class="form-label ">ID</label>
+                            <input name="id" type="text" class="form-control" id="validationDefault01" th:value="${id}" >
+                        </div>
                         <div class="col-md-4">
                             <label for="validationDefault01" class="form-label ">Nombre</label>
                             <input name="nombre" type="text" class="form-control" id="validationDefault01" th:value="${nombre}" required >
@@ -66,7 +70,8 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="col-12">
-                        <button class="buttom-usuario" type="submit">Registrarse</button>
+                        <button class="buttom-usuario" type="submit" th:if="${id != null}">Guardar</button>
+                        <button class="buttom-usuario" type="submit" th:if="${id == null}">Registrar</button>
                     </div>
                 </form>
                 <p>¿YA Tienes una Cuenta? <a th:href="@{/login}">Ingresar</a> </p> 

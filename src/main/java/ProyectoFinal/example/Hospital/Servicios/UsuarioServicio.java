@@ -159,6 +159,37 @@ public class UsuarioServicio implements UserDetailsService {
         return usuarioRepositorio.findById(id).orElse(null);
     }
 
+    public Usuario modificarDatosUsuario(String id, String mail, String nombre, String apellido) throws Exception {
+        Usuario usuarioAModificar = buscarUsuarioPorId(id);
+        if (usuarioAModificar == null) {
+            throw new Exception("No se encontro el usuario a Cambiar sus Datos");
+        }
+        if (mail == null || mail.isEmpty()) {     //VERIFICA QUE El mail NO ESTE VACIO
+            throw new Exception("El mail no debe ser nulo");
+        }
+
+        if (!mail.equals(usuarioAModificar.getMail())) {
+            Usuario usuarioExistente = usuarioRepositorio.buscarPorMail(mail);
+
+            if (usuarioExistente != null) {
+                throw new Exception("El mail ya esta en uso, por favor Ingrese uno nuevo");
+            }
+        }
+
+        if (nombre == null || nombre.isEmpty()) {     //VERIFICA QUE El Nombre NO ESTE VACIO
+            throw new Exception("El nombre no debe estar vacio");
+        }
+        if (apellido == null || apellido.isEmpty()) {   //VERIFICA QUE El Apellido NO ESTE VACIO
+            throw new Exception("El apellido no debe estar vacio");
+        }
+
+        usuarioAModificar.setMail(mail);
+        usuarioAModificar.setNombre(nombre);
+        usuarioAModificar.setApellido(apellido);
+
+        return usuarioRepositorio.save(usuarioAModificar);
+    }
+
     //LISTAR USUARIOS
     public List<Usuario> listarUsuarios() {
         return usuarioRepositorio.findAll();
@@ -183,10 +214,6 @@ public class UsuarioServicio implements UserDetailsService {
         } catch (Exception e) {
             throw new UsernameNotFoundException("El usuario no existe");
         }
-    }
-
-    public Usuario modificarDatosUsuario(String id, String mail, String nombre, String apellido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
