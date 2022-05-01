@@ -1,116 +1,107 @@
+body {
+    background-color: thistle;
+    margin: 0;
+    padding: 0;
+}
+
+.imagen-fondo-sec{
+    background-image: url("/img/fondoSec2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+
+
+}
+
+
+.header-registro{
+    background: url("/img/hombrePC.png") ;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+*{
+    box-sizing: border-box;
+
+}
+
+main{
+
+    background-color: thistle;
+
+}
+
 h1{
     font-family: 'Bitter', serif;
     font-family: 'Libre Baskerville', serif;
 }
 h5{
-   font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
 }
 .form-label{
     font-family: 'Space Grotesk', sans-serif;
 }
-head{
-    min-height: 10%
+
+.p{
+    font-family: 'Bitter', serif;
+    font-family: 'Libre Baskerville', serif;  
 }
-body{
-    background-color: thistle;
-        
-    }
-     body {
-     min-height: 60%;
-}
-
-
-
 
 /*color-navbar*/
+
 .navbar-light{
-            background-color: purple;
-        }
-        .nav-link{
-            color: white !important;
-            font-style: oblique !important;
+    background-color: purple;
+}
+.nav-link{
+    color: white !important;
+    font-style: oblique !important;
 
-        }
-        .nav-item{
-            font-variant-position: super;
-        }
-        head{
-            min-height: 10%
-        }
-            
+}
+.nav-item{
+    font-variant-position: super;
+}
+
+.navbar-light{
+    background-color: purple;
+}
+.nav-link{
+    color: white !important;
+    font-style: oblique !important;
+
+}
+.nav-item{
+    font-variant-position: super;
+}
+
+
 /*footer*/
-          .footer  .card-group{
-                background-color: purple;
-                min-height: 10%
-            }
-            .card{
-                border-color: purple;
-            }
-            .card-body{
-                background-color: purple;    
-            }
-            .card-body-sec{
-                color: white;
-            }
-            .card-title{
-                color: white;
-                margin: 2px;
-                padding: 2px;
-            }
-            .card-title-sec{
-                color:black;
-            }
-            .card-text{
-                color: black;
-            }
+footer  
 
-        
+.card{
+    border-color: purple;
 
-
-.imagen-fondo{
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.3;
-    
-   
 }
-header{
-    background: url("/img/registroSuperior.jpg") ;
-    height: 300px;
-    background-repeat: repeat;
-    
- 
+.card-body{
+    background-color: purple;    
+
 }
 
-*{
-       box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
+.card-title{
+    color: white;
+    margin: 2px;
+    padding: 2px;
 }
-/*tarjetas*/
+.card-title-sec{
+    color:black;
+}
+.card-text{
+    color: black;
+}
+
 .card-img-top{
     height: 50vh;
-}
-
-.button-sec{
-    background-color: lightpink;
-    font-family: 'Anton', sans-serif;
-    font-size: large; 
-  
-
-}
-.buttom-registroPaciente{
-    height: 25px;
-}
-.buttom-generarTurno{
-    height: 25px;
-}
-button{
-    height: 35px;
-    background-color: lightpink;
-    font-family: 'Anton', sans-serif;
-    font-size: large; 
 }
 
 .card{
@@ -119,29 +110,64 @@ button{
     font-family: 'Libre Baskerville', serif;
 }
 
-.p{
-    font-family: 'Bitter', serif;
-    font-family: 'Libre Baskerville', serif;  
+.margin-card {
+    margin: 4em;
+
 }
+.card-header-pills{
+    background-color: lightblue;
+}
+.card-body-index{
+    background-color: whitesmoke;
+     
+}
+
+
+.button-sec{
+    height: 100px;
+    background-color: lightpink;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Secular One', sans-serif;
+    font-size: large; 
+
+
+}
+.buttom-registroPaciente{
+    height: 25px;
+}
+.buttom-generarTurno{
+    height: 25px;
+}
+.button-admin{
+    height:50px;
+}
+button{
+    height: 35px;
+    background-color: lightpink;
+    font-family: 'Anton', sans-serif;
+    font-size: large; 
+}
+
+.btn-warning{
+    height: 80px;
+    width: 150px;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
 .servicios{
     display: flex;
-   
+
 }
- .item1{
+.item1{
     border: 1px solid black;
     padding: 50px;
     border-radius: 20px;
     border: black solid;
- }
+}
 
- .border-form{
-     border: 1px solid black
- }
-
-/*color vista principal medico*/
-
-body {
-    background-color: thistle;
+.border-form{
+    border: 1px solid black
 }
 
 .container {
@@ -155,25 +181,89 @@ body {
     border: rgb(0, 0, 0) 5px solid;
     margin: 2rem;
 }
-
-.navbar-light{
-    background-color: purple;
-}
-.nav-link{
-    color: white !important;
-    font-style: oblique !important;
-
-}
-.nav-item{
-    font-variant-position: super;
-
- .padding-card {
+.container-video{
+    display: inline;
+    background-size: 100%;
     padding: 2em;
-}
-
-.margin-card {
-    margin: 4em;
+    margin: 0 auto;
 
 }
+.contenedor-boton-turnos{
+    display: flex;
+    height: 40px;
+    width: 300px;
+    color: white;
+    font-size: 40px;
+    line-height: 40px;
+    
+
+    
+    overflow: hidden;
+        
+        
+}
+.animacion{
+    list-style: none;
+    padding-left: 10px;
+    animation: cambiar 7s infinite;
+}
+.animacion,p{
+    margin: 0;
+}
+
+@keyframes cambiar {
+    
+    0%{margin-top:0;}
+    20%{margin-top:0;}
+    
+    25%{margin-top:-40px;}
+    50%{margin-top:-40px;}
+    
+    55%{margin-top:-80px;}
+    80%{margin-top:-80px;}
+    
+    85%{margin-top:-40px;}
+    95%{margin-top:-40px;}
+    
+    100%{margin-top:0;}
+    
+    
+}
+
+.texto-sec{
+    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Secular One', sans-serif;
+    color: paleturquoise;
+    text-shadow:3px 3px 3px black; 
+
+
+}
+
+.text-titulo-index{
+    font-family: 'Oswald', sans-serif;
+   color: orange;
+}
+
+.text-inicial{
+    margin: 2em;
+    background-color: white;
+    height: 400px;
+    font-size:large;
+
+
+}
+
+.novedades{
+    background-color: lightgray;
+    color: white;
+    text-shadow: 2px 2px 2px black
+    
+}
+.card-title-index{
+    color:black;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
 
 
