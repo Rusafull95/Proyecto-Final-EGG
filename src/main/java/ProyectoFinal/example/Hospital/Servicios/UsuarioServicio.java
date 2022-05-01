@@ -24,143 +24,196 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
+
 /**
  *
  * @author AXEL
  */
-
 @Service
-public class UsuarioServicio implements UserDetailsService{
-    
+public class UsuarioServicio implements UserDetailsService {
+
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
-    
+
     //CREAR UN USUARIO NUEVO
-    public Usuario crearUsuario(String mail, String nombre, String apellido, String password_1, String password_2) throws Exception{
+    public Usuario crearUsuario(String mail, String nombre, String apellido, String password_1, String password_2) throws Exception {
         Usuario nuevoUsuario = new Usuario();
-        
+
         verificarDatos(mail, nombre, apellido, password_1, password_2);
-        
+
         nuevoUsuario.setMail(mail);
         nuevoUsuario.setNombre(nombre);
         nuevoUsuario.setApellido(apellido);
-        
-        nuevoUsuario.setPassword(password_1);
-        
+
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        nuevoUsuario.setPassword(encoder.encode(password_1));
+
         nuevoUsuario.setAlta(false);
-        
+        nuevoUsuario.setRol(Rol.PACIENTE);
+
         return usuarioRepositorio.save(nuevoUsuario);
     }
-    
+
     // Asignar El Rol Correspondiente al Usuario
-    public Usuario asignarRol(Usuario usuario, String rol) throws Exception{
-        
+    public Usuario asignarRol(Usuario usuario, String rol) throws Exception {
+
         Usuario usuarioConRol = buscarUsuarioPorId(usuario.getId());
-        
-        if(usuarioConRol == null){
+
+        if (usuarioConRol == null) {
             throw new Exception("No se encontro el usuario para asignarle un rol");
         }
-        
+
         usuarioConRol.setRol(Rol.valueOf(rol));
-        
+
         return usuarioRepositorio.save(usuarioConRol);
     }
-    
+
     //VALIDACION DATOS CREACION USUARIO
-    public void verificarDatos(String mail, String nombre, String apellido, String password_1, String password_2) throws Exception{ 
-        
-        if(mail==null||mail.isEmpty()){     //VERIFICA QUE El mail NO ESTE VACIO
-            throw new Exception("El mail no debe ser nulo"); 
+    public void verificarDatos(String mail, String nombre, String apellido, String password_1, String password_2) throws Exception {
+
+        if (mail == null || mail.isEmpty()) {     //VERIFICA QUE El mail NO ESTE VACIO
+            throw new Exception("El mail no debe ser nulo");
         }
-        
+
         Usuario usuarioExistente = usuarioRepositorio.buscarPorMail(mail);
-        
-        if(usuarioExistente != null){
+
+        if (usuarioExistente != null) {
             throw new Exception("El mail ya esta en uso, por favor Ingrese uno nuevo");
         }
-        
-        if(nombre==null||nombre.isEmpty()){     //VERIFICA QUE El Nombre NO ESTE VACIO
+
+        if (nombre == null || nombre.isEmpty()) {     //VERIFICA QUE El Nombre NO ESTE VACIO
             throw new Exception("El nombre no debe estar vacio");
         }
-        if(apellido==null||apellido.isEmpty()){   //VERIFICA QUE El Apellido NO ESTE VACIO
-            throw new Exception("El apellido no debe estar vacio"); 
+        if (apellido == null || apellido.isEmpty()) {   //VERIFICA QUE El Apellido NO ESTE VACIO
+            throw new Exception("El apellido no debe estar vacio");
         }
-        
+
         //VERIFICA QUE LA 1ra CONTRASEÑA NO ESTE VACIA 
-        if(password_1==null||password_1.isEmpty()){
+        if (password_1 == null || password_1.isEmpty()) {
             throw new Exception("La contraseña no puede estar vacia");
-        }else if(password_1.length()<6){                                //VERIFICA QUE LA CONTRASEÑA TENGA COMO MINIMO 6 caracteres
+        } else if (password_1.length() < 6) {                                //VERIFICA QUE LA CONTRASEÑA TENGA COMO MINIMO 6 caracteres
             throw new Exception("La contraseña debe tener como minimo 6 caracteres");
         }
-        
-        
+
         //VERIFICA QUE LA 2da CONTRASEÑA NO ESTE VACIA
-        if(password_2==null||password_2.isEmpty()){
+        if (password_2 == null || password_2.isEmpty()) {
             throw new Exception("Debe escribir la contraseña nuevamente");
         }
-        
+
         // VERIFICA SI AMBAS CONTRASEÑAS SON IGUALES
-        if(!password_1.equals(password_2)){
+        if (!password_1.equals(password_2)) {
             throw new Exception("La contraseñas deben ser iguales");
         }
     }
-    
-    
+
     // Modificar Usuario, 
     // Cambiar contraseña Contraseña,
-    public void modificarPassword(Usuario usuario, String passwordAnterior, String passwordNueva) throws Exception{
+    public void modificarPassword(Usuario usuario, String passwordAnterior, String passwordNueva) throws Exception {
         Usuario usuarioAModificar = buscarUsuarioPorId(usuario.getId());
-        
-        if(usuarioAModificar==null){
+
+        if (usuarioAModificar == null) {
             throw new Exception("No se encontro el usuario");
         }
-        
-        if(!passwordAnterior.equals(usuarioAModificar.getPassword())){
+
+        if (!passwordAnterior.equals(usuarioAModificar.getPassword())) {
             throw new Exception("No es su contraseña actual, pruebe Nuevamente");
         }
-        
-        if(passwordNueva==null || passwordNueva.isEmpty()){
+
+        if (passwordNueva == null || passwordNueva.isEmpty()) {
             throw new Exception("Debe Ingresar Una Contraseña valida");
         }
-        if(passwordNueva.length()<6){
+        if (passwordNueva.length() < 6) {
             throw new Exception("La nueva Contraseña debe tener 6 caracteres como minimo");
         }
-        
-        usuarioAModificar.setPassword(passwordNueva);
-        
+
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        usuarioAModificar.setPassword(encoder.encode(passwordNueva));
+
         usuarioRepositorio.save(usuarioAModificar);
     }
-    
+
+    public void deshabilitar(String id) throws Exception {
+        Usuario editUsuario = buscarUsuarioPorId(id);
+        if (editUsuario != null) {
+            editUsuario.setAlta(false);
+            usuarioRepositorio.save(editUsuario);
+        } else {
+            throw new Exception("No se encontro el Usuario");
+        }
+
+    }
+
+    public void habilitar(String id) throws Exception {
+        Usuario editUsuario = buscarUsuarioPorId(id);
+        if (editUsuario != null) {
+            editUsuario.setAlta(true);
+            usuarioRepositorio.save(editUsuario);
+        } else {
+            throw new Exception("No se encontro el Usuario");
+        }
+
+    }
+
     // BUSCAR POR ID el USUARIO
-    public Usuario buscarUsuarioPorId(String id){
+    public Usuario buscarUsuarioPorId(String id) {
         return usuarioRepositorio.findById(id).orElse(null);
     }
-    
+
+    public Usuario modificarDatosUsuario(String id, String mail, String nombre, String apellido) throws Exception {
+        Usuario usuarioAModificar = buscarUsuarioPorId(id);
+        if (usuarioAModificar == null) {
+            throw new Exception("No se encontro el usuario a Cambiar sus Datos");
+        }
+        if (mail == null || mail.isEmpty()) {     //VERIFICA QUE El mail NO ESTE VACIO
+            throw new Exception("El mail no debe ser nulo");
+        }
+
+        if (!mail.equals(usuarioAModificar.getMail())) {
+            Usuario usuarioExistente = usuarioRepositorio.buscarPorMail(mail);
+
+            if (usuarioExistente != null) {
+                throw new Exception("El mail ya esta en uso, por favor Ingrese uno nuevo");
+            }
+        }
+
+        if (nombre == null || nombre.isEmpty()) {     //VERIFICA QUE El Nombre NO ESTE VACIO
+            throw new Exception("El nombre no debe estar vacio");
+        }
+        if (apellido == null || apellido.isEmpty()) {   //VERIFICA QUE El Apellido NO ESTE VACIO
+            throw new Exception("El apellido no debe estar vacio");
+        }
+
+        usuarioAModificar.setMail(mail);
+        usuarioAModificar.setNombre(nombre);
+        usuarioAModificar.setApellido(apellido);
+
+        return usuarioRepositorio.save(usuarioAModificar);
+    }
+
     //LISTAR USUARIOS
-    public List<Usuario> listarUsuarios(){
+    public List<Usuario> listarUsuarios() {
         return usuarioRepositorio.findAll();
     }
-    
+
     public void agregarUsuarioALaSesion(Usuario usuario) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpSession session = attributes.getRequest().getSession(true);
         session.setAttribute("usuario", usuario);
     }
-    
+
     @Override
     public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
         try { // esta parte configura los permisos de los usuarios
             Usuario usuario = usuarioRepositorio.buscarPorMail(mail);
             List<GrantedAuthority> autorities = new ArrayList<>();
-            
+
 //            agregarUsuarioALaSesion(usuario);
             autorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()));
-            
+
             return new User(mail, usuario.getPassword(), autorities);
         } catch (Exception e) {
             throw new UsernameNotFoundException("El usuario no existe");
         }
     }
-    
-    
+
 }

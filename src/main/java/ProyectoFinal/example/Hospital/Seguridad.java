@@ -39,7 +39,7 @@ public class Seguridad extends WebSecurityConfigurerAdapter{
         http.authorizeRequests().antMatchers("/css/*","/img/*","/js/*").permitAll()
                 .and().formLogin()
                       .loginPage("/login")
-                      .usernameParameter("username")
+                      .usernameParameter("mail")
                       .passwordParameter("password")
                       .defaultSuccessUrl("/") // a donde va la pagina al lograr
                       .loginProcessingUrl("/logincheck")

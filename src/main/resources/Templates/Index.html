@@ -15,6 +15,7 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
 
+
     <body layout:fragment="body">
         <div class="container-video">
 
@@ -104,4 +105,33 @@ and open the template in the editor.
             </section>
         </main>
     </body>
+
+    <body>
+        <div>TODO write content</div>
+        <div> 
+            <p> INDEX LOGRADO CON EXITO </p>
+            <p th:if="${error != null}" th:text="${error}"> errorDEregistro </p>
+            <p sec:authorize="isAuthenticated()">
+                Logged user: <span sec:authentication="name">Bob</span> 
+            </p>
+            <p sec:authorize="isAuthenticated()">
+            <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="POST">
+                <input sec:authorize="isAuthenticated()" type="submit" value="Log out">
+            </form>
+        </p>
+        <p sec:authorize="!isAuthenticated()">
+            <a sec:authorize="!isAuthenticated()" th:href="@{/login}">Login</a>
+        </p>
+
+        <p> Bienvenido <span sec:authentication="name">Bob</span>  </p>
+        <p th:if="${mail != null}" th:text="${mail}"></p>
+
+        <img sec:authorize="isAuthenticated()" th:if="${session.usuario != null and session.usuario.foto != null}" th:src="@{/foto/usuario(idUsuario=${session.usuario.id})}" alt="Foto Del Perfil Del Usuario"> 
+        <img sec:authorize="isAuthenticated()" th:if="${session.usuario != null and session.usuario.foto == null}" th:src="@{/img/perfil-generico.png}" alt="Foto Del Perfil Del Usuario"> 
+        <!--esto es para mostrar imagen por sesion-->
+    </div>
+
+
+</body>
+
 </html>
