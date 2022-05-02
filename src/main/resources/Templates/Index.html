@@ -4,12 +4,109 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
+
+
+    <body layout:fragment="body">
+        <div class="container-video">
+
+            <video  autoplay muted  loop playsinline poster=""  >
+                <source th:src="@{/videos/HOSPITAL VIDEO SPOT PUBLICITARIO _ SERVICIOS MEDICOS CLINICA _ REDES SOCIALES _ EVERT FERNANDEZ.mp4}"/>
+        </div>
+        <main >
+            <section class="text-inicial">
+                <h1 class="text-titulo-index" style="text-align: center">
+                    Hospital group One
+                </h1>
+                <h3 style="text-align: center" >Nuestros centros médicos ambulatorios cuentan con prestigiosos 
+                    profesionales,  cómodas instalaciones y la tecnología más
+                    avanzada para brindarte siempre la mejor atención </h3>
+                <section>
+                    <div class="d-flex bd-highlight" >
+                        <div class="p-2 flex-fill bd-highlight" style="text-align: center"><image th:src="@{/img/atencionTelefonica.jpg}" style="height: 150px; width: 150px"  />
+                            <br>
+                            ORIENTACIÓN MÉDICA
+                            <br>
+                            TELEFÓNICA 24hs.
+                            <br>
+                            0800-XXXX-XXXX (CABA)
+                            <br>
+                            0800-XXXX-XXXX (Int del país)
+                        </div>
+                        <div class="p-2 flex-fill bd-highlight" style="text-align: center"><image th:src="@{/img/ambulacia.jpg}" style="height: 120px; width: 120px" />
+                            <br>
+                            URGENCIAS y
+                            <br>
+                            EMERGENCIAS
+                            <br>
+                            0800-XXX-XXXX 
+                        </div>
+                        <div class="p-2 flex-fill bd-highlight" style="text-align: center"><image th:src="@{/img/maletin.jpg}" style="height: 150px; width: 150px" />
+                            <br>
+                            ATENCIÓN DE
+                            <br>
+                            VENTAS
+                            <br>
+                            0810-XXX-XXXX
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+            
+            <div class=" d-flex">
+                <button type="button" class="btn btn-warning">TURNOS</button>
+                <div class="contenedor-boton-turnos">
+                    <p>Hola</p>
+                    <ul class="animacion">
+                        <li>Usuario</li>
+                        <li>Solicita </li>
+                        <li>Turno!</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <br>
+            <section>
+                <div>
+                    <h3 class="novedades" style="text-align: center">Novedades</h3>
+
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <ul class="nav nav-pills card-header-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Covid 19</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Vacunacion antigripal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled">Novedades internas</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body-index margin-card">
+                            <h5 class="card-title-index">Ultimas noticias Covid 19</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Leer mas info</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </body>
+
     <body>
         <div>TODO write content</div>
         <div> 
@@ -37,4 +134,5 @@ and open the template in the editor.
 
 
 </body>
+
 </html>
