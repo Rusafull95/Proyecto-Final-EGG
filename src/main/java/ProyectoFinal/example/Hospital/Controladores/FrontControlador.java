@@ -67,7 +67,15 @@ public class FrontControlador {
     }
 
     
+ @GetMapping("/turnoAtendido")
+    public String turnoAtendido(){
+        return "turnoAtendido-Medico";
+    }
 
+ @GetMapping("/turnoEnProceso")
+    public String turnoEnProceso(){
+        return "listaTurnoEnProceso-Medico";
+    }    
     
 
 }
