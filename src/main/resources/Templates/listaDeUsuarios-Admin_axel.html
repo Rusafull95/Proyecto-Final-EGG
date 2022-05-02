@@ -13,13 +13,15 @@ and open the template in the editor.
     </head>
     <body layout:fragment="body">
 
-        <main>
+        <main  class="imagen-fondo-sec">
+            <br>
             <div> 
-                <a href="#"> <button type="button" class="buttom-usuario">Añadir Usuario</button> </a>
-
+                <a th:href="@{registrarUsuario}"> <button type="button" class="buttom-usuario">Añadir Usuario</button> </a>
+                <a th:href="@{principal}"> <button type="button" class="buttom-usuario">Menu Principal Admin</button> </a>
             </div>
+            <br>
 
-            <div style="padding: 50px; border-radius: 20px; border: black solid; background-color: white">
+            <div style="padding: 50px; border-radius: 20px; border: black solid; background-color: white" class="m-3">
 
                 <table class="table table-success table-striped" style="border:1px">
                     <thead >
@@ -35,26 +37,26 @@ and open the template in the editor.
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="libro, index: ${listaLibros}">
+                        <tr th:each="usuario, index: ${listaUsuarios}">
                             <td th:text="${index.count}">Number</td>
-                            <td th:text="${libro.titulo}">Usuario/mail</td>
-                            <td th:text="${libro.titulo}">Nombre</td>
-                            <td th:text="${libro.titulo}">Apellido</td>
-                            <td th:text="${libro.titulo}">Rol</td>
-                            <td th:text="${libro.alta}">Alta</td>
-                            <!--                            <td> 
-                                                            <span th:if="${libro.alta  == true}">
-                                                                <a th:href="@{/libro/darBaja(idLibro=${libro.id})}"><button type="button" class="btn btn-danger">Dar De Baja</button></a>
-                                                            </span>
-                            
-                                                            <span th:if="${libro.alta  == false}">
-                                                                <a th:href="@{/libro/darAlta(idLibro=${libro.id})}"><button type="button" class="btn btn-success">Dar De Alta</button></a>
-                            
-                                                            </span>
-                            
-                                                        </td>-->
+                            <td th:text="${usuario.mail}">Usuario/mail</td>
+                            <td th:text="${usuario.nombre}">Nombre</td>
+                            <td th:text="${usuario.apellido}">Apellido</td>
+                            <td th:text="${usuario.rol}">Rol</td>
+                            <td th:text="${usuario.alta}">Alta</td>
+                            <td> 
+                                <span th:if="${usuario.alta  == true}">
+                                    <a th:href="@{/usuario/darAlta(idUsuario=${usuario.id})}"><button type="button" class="btn btn-danger">Dar De Baja</button></a>
+                                </span>
 
-                            <td> <a th:href="@{/libro/formulario(idLibro=${libro.id})}"><button type="button" class="btn btn-dark">Editar</button></a> </td>
+                                <span th:if="${usuario.alta  == false}">
+                                    <a th:href="@{/usuario/darBaja(idUsuario=${usuario.id})}"><button type="button" class="btn btn-success">Dar De Alta</button></a>
+
+                                </span>
+
+                            </td>
+
+                            <td> <a th:href="@{/usuario/formulario(idUsuario=${usuario.id})}"><button type="button" class="btn btn-dark">Editar</button></a> </td>
                         </tr>
 
                     </tbody>

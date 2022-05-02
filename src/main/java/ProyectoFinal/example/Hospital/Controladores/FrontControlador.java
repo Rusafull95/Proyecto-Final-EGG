@@ -65,6 +65,11 @@ public class FrontControlador {
     public String usuarioRegistroFormulario(){
         return "usuarioRegistroFormulario_axel";
     }
+    
+    @GetMapping("/index")
+    public String index(){
+        return "Index";
+    }
 
     
  @GetMapping("/turnoAtendido")
