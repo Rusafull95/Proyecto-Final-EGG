@@ -5,7 +5,10 @@
  */
 package ProyectoFinal.example.Hospital.Controladores;
 
+import ProyectoFinal.example.Hospital.Entidades.Especialidad;
+import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * IMPORTANTE: no se mandan todos los datos a todas las url asi que avisar si se necesitan más datos un algún html o si se quiere modificar algo(todo se puede cambiar).
+ * IMPORTANTE: no se mandan todos los datos a todas las url asi que avisar si se necesitan más datos en algún html o si se quiere modificar algo(todo se puede cambiar).
  * falta acomodar algunas rutas con los html
  * 
  *  Modelos:
@@ -32,6 +35,16 @@ public class MedicoControlador {
     
     @GetMapping("/principal")
     public String paginaPrincipal(){
+        return "principal-Medico";
+    }
+    
+    @GetMapping("/crearmedico")
+    public String crearMedico(
+            @RequestParam("matricula") String numMatricula, 
+            @RequestParam("especialidades") List<Especialidad>especialidades, 
+            @RequestParam("usuario") Usuario usuario
+    ) throws Exception{
+        medicoServicio.crearMedico(numMatricula, especialidades, usuario);
         return "principal-Medico";
     }
     
