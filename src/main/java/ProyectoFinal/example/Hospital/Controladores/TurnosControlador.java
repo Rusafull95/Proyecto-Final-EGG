@@ -10,9 +10,10 @@ import ProyectoFinal.example.Hospital.Entidades.Especialidad;
 import ProyectoFinal.example.Hospital.Entidades.Medico;
 import ProyectoFinal.example.Hospital.Entidades.Paciente;
 import ProyectoFinal.example.Hospital.Entidades.Secretaria;
-import ProyectoFinal.example.Hospital.Entidades.Turnos;
+import ProyectoFinal.example.Hospital.Servicios.ConsultaServicio;
 import ProyectoFinal.example.Hospital.Servicios.TurnosServicios;
 import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
+import ProyectoFinal.example.Hospital.enums.Rol;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,27 +22,54 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- *  IMPORTANTE: generación turnos esta sujeta a cambios
+ *  
  * 
  */
+
 @Controller
 @RequestMapping("/turnos")
 public class TurnosControlador {
     
     @Autowired
+    private ConsultaServicio consultaServicio;
+    @Autowired
     private TurnosServicios turnosServicios;
+    
+    @GetMapping("")
+    public String paginaPrincipal(@RequestParam("rol") Rol rol){
+        if(rol == Rol.SECRETARIA){    
+            return "GeneracionTurnosSec";
+        }else{
+            return "solicitarTurno";
+        }
+    }
     
     @GetMapping("/generacionsec")
     public String generacionTurnosSec(
             @RequestParam("cita") Date cita, 
             @RequestParam("paciente") Paciente paciente, 
-            @RequestParam("medico") Medico medico, 
-            @RequestParam("estado") EstadoDelTurno estado, 
-            @RequestParam("consulta") Consulta consulta, 
+            @RequestParam("medico") Medico medico,  
             @RequestParam("especialidad") Especialidad especialidad, 
             @RequestParam("secretaria") Secretaria secretaria
     ) throws Exception{
-        turnosServicios.crearTurnos(cita, paciente, medico, estado, consulta, especialidad, secretaria);
+        turnosServicios.crearTurnos(cita, paciente, medico, especialidad, secretaria);
         return "GeneracionTurnosSec";
+    }
+    
+    @GetMapping("/solicitar")
+    public String solicitarTurno(
+            @RequestParam("cita") Date cita, 
+            @RequestParam("paciente") Paciente paciente, 
+            @RequestParam("medico") Medico medico,  
+            @RequestParam("especialidad") Especialidad especialidad 
+    ) throws Exception{
+        turnosServicios.crearTurnos(cita, paciente, medico, especialidad, null);
+        return "solicitarTurno";
+    }
+    
+    @GetMapping("/consulta")
+    public String crearConsulta(@RequestParam("num") Integer num, @RequestParam("descripcion") String descripcion, @RequestParam("turnoId") Integer turnoId) throws Exception{
+        turnosServicios.modificarTurno(turnoId, null, null, null, null, consultaServicio.crearConsulta(descripcion, num), null, null);
+        return "index";
     }
 }
