@@ -111,7 +111,7 @@ footer
 }
 
 .margin-card {
-    margin: 4em;
+    margin: 2em;
 
 }
 .card-header-pills{
@@ -268,6 +268,17 @@ button{
     
 }
 
+.Turnos{
+    background-color: white;
+    box-shadow: 10px 10px #00aa9a;
+    font-family: 'Oswald', sans-serif;
+    opacity: 0,6;
+
+}
+
+.tituloTurno{
+    font-family: initial;
+}
 
 
 
