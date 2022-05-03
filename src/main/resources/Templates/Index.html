@@ -17,14 +17,15 @@ and open the template in the editor.
 
 
     <body layout:fragment="body">
-        <div class="container-video d-flex justify-content-center">
+        <div>
+            <h1 class="hero-video__title">Nos mueve tu salud</h1>
 
-            <video  autoplay muted  loop class="mx-auto" height="400px"  >
+            <video  autoplay muted  loop class="m-5 container-video " >
                 <source th:src="@{/videos/HOSPITAL VIDEO SPOT PUBLICITARIO _ SERVICIOS MEDICOS CLINICA _ REDES SOCIALES _ EVERT FERNANDEZ.mp4}"/>
             </video>
         </div>
         <main >
-            <section class="text-inicial">
+            <section class="text-inicial" style="border-radius: 50px ">
                 <h1 class="text-titulo-index" style="text-align: center">
                     Hospital group One
                 </h1>
@@ -32,7 +33,7 @@ and open the template in the editor.
                     profesionales,  cómodas instalaciones y la tecnología más
                     avanzada para brindarte siempre la mejor atención </h3>
                 <section>
-                    <div class="d-flex bd-highlight" >
+                    <div class="d-flex bd-highlight " >
                         <div class="p-2 flex-fill bd-highlight" style="text-align: center"><image th:src="@{/img/atencionTelefonica.jpg}" style="height: 150px; width: 150px"  />
                             <br>
                             ORIENTACIÓN MÉDICA
@@ -42,6 +43,7 @@ and open the template in the editor.
                             0800-XXXX-XXXX (CABA)
                             <br>
                             0800-XXXX-XXXX (Int del país)
+                       
                         </div>
                         <div class="p-2 flex-fill bd-highlight" style="text-align: center"><image th:src="@{/img/ambulacia.jpg}" style="height: 120px; width: 120px" />
                             <br>
