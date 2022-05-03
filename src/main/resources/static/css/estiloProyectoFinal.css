@@ -73,6 +73,9 @@ h5{
 }
 .nav-item{
     font-variant-position: super;
+    font-family: fantasy;
+    font-size: larger;
+    text-shadow: 2px 2px black;
 }
 
 
@@ -182,10 +185,40 @@ button{
     margin: 2rem;
 }
 .container-video{
-    margin: 0 auto;
-    background-color: black;
+    display: block;
+    left: 50%;
+    top:50%;
+    transform: translate(-50px ,-50px);
+    z-index: 0;
+    top: 0;
+    left: 0;
 
 }
+@media(min-aspect-ratio:16/9){
+    .container-video{
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media(max-aspect-ratio:16/9){
+    .container-video{
+        height: 100%;
+        width: auto;
+    }
+}
+.hero-video__title{
+    margin: 0;
+    position: static;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+    z-index: 2;
+    margin-top: 80px;
+}
+
 .contenedor-boton-turnos{
     display: flex;
     height: 40px;
@@ -250,8 +283,10 @@ button{
 .text-inicial{
     margin: 2em;
     background-color: white;
-    height: 400px;
+    height: 450px;
     font-size:large;
+     border: 5px solid #204d74;
+     
 
 
 }
@@ -278,6 +313,13 @@ button{
 
 .tituloTurno{
     font-family: initial;
+}
+
+.text-alineado{
+    text-align: right;
+}
+.nav justify-content-end{
+    align-items: flex-end;
 }
 
 
