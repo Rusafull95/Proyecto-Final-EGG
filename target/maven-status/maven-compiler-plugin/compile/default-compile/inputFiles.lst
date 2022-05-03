@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\PacienteServicio.java
+C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\EspecialidadControlador.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Consulta.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Entidades\Receta.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EspecialidadRepositorio.java
@@ -42,44 +42,3 @@ C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\Proyec
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Repositorios\PacienteRepositorio.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Servicios\EstudioServicio.java
 C:\Users\AXEL\Documents\NetBeansProjects\Proyecto-Final-EGG\src\main\java\ProyectoFinal\example\Hospital\Controladores\FotoControlador.java
-=======
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Receta.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Controladores\AdministradorControlador.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Consulta.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Turnos.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Paciente.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\EstudioServicio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\MedicoServicio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\RecetaRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\PacienteServicio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Especialidad.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\enums\EstadoDelTurno.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Seguridad.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Controladores\FrontControlador.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Secretaria.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\ConsultaServicio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Usuario.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\SecretariaServicio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Estudio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\HospitalApplication.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Controladores\LoginControlador.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Controladores\PortalControlador.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EstudioRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\ConsultaRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\PacienteRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\UsuarioServicio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\EspecialidadRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medicamentos.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\RecetaServicio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Controladores\TurnosControlador.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\SecretariaRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Controladores\MedicoControlador.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\enums\Rol.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Controladores\UsuarioControlador.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\TurnosServicios.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\UsuarioRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Servicios\EspecialidadServicios.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Entidades\Medico.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\TurnosRepositorio.java
-C:\Users\NG\OneDrive\Documentos\NetBeansProjects\Proyecto final Egg\src\main\java\ProyectoFinal\example\Hospital\Repositorios\MedicoRepositorio.java
->>>>>>> 05c69e3f6f48fc91a2068950f18bc7cdaa249a05
