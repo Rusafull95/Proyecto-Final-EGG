@@ -122,7 +122,7 @@ footer
 }
 .card-body-index{
     background-color: whitesmoke;
-     
+    background-image: url("/img/fondoCovid.jpg")
 }
 
 
@@ -321,6 +321,8 @@ button{
 .nav justify-content-end{
     align-items: flex-end;
 }
+
+
 
 
 
