@@ -71,4 +71,10 @@ public class MedicoControlador {
         modelo.put("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
         return "listaTurnoEnProgreso-Medico";
     }
+    
+    @GetMapping("/especialidad")
+    public String buscarPorEspecialidad(ModelMap modelo, @RequestParam("especialidad") Especialidad especialidad){
+        modelo.put("listaMedEsp", medicoServicio.buscarMedPorEspecialidad(especialidad));
+        return "principal-Medico";
+    }
 }

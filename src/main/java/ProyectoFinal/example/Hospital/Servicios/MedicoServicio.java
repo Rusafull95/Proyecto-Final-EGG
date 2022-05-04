@@ -149,4 +149,17 @@ public class MedicoServicio {
         }
         return turnos;
     }
+    
+    public List<Medico>buscarMedPorEspecialidad(Especialidad especialidad){
+        List<Medico>medico = mostrarMedicos();
+        List<Medico>medicos = new ArrayList();
+        for (Medico aux : medico) {
+            for (Especialidad aux1 : aux.getEspecialidades()) {
+                if(aux1 == especialidad){
+                    medicos.add(aux);
+                }
+            }
+        }
+        return medicos;
+    }
 }
