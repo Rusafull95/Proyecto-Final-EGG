@@ -306,6 +306,11 @@ button{
     
 }
 
+
+.Texto-Login{
+    font-family: 'Secular One', sans-serif;
+}
+
 .Turnos{
     background-color: white;
     box-shadow: 10px 10px #00aa9a;
@@ -324,6 +329,7 @@ button{
 .nav justify-content-end{
     align-items: flex-end;
 }
+
 
 
 
