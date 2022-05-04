@@ -82,5 +82,19 @@ public class FrontControlador {
         return "listaTurnoEnProceso-Medico";
     }    
     
+    @GetMapping("/solicitarTurno")
+    public String solicitarTurno(){
+        return "solicitarTurno";
+    }    
+    
+       @GetMapping("/especialidades")
+    public String listaEspecialidades(){
+        return "ListaEspecialidades";
+    }  
+    
+    @GetMapping("/userRegistradoSec")
+    public String UserRegistrados(){
+        return "UserRegistradoSec";
+    }   
 
 }
