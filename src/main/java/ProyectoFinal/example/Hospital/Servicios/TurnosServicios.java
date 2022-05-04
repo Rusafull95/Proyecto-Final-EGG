@@ -137,4 +137,13 @@ public class TurnosServicios {
         List<Turnos>turnos = turnosRepositorio.findAll();
         return turnos;
     }
+    
+    public Turnos buscarTurnoPorCodigo(Integer codigo) throws Exception{
+        Optional<Turnos> respuesta = turnosRepositorio.findById(codigo);
+        if(respuesta.isPresent()){
+            return respuesta.get();
+        }else{
+            throw new Exception("No se encontró el turno");
+        }
+    }
 }
