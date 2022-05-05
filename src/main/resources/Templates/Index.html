@@ -13,10 +13,20 @@ and open the template in the editor.
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+  
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
 
 
     <body layout:fragment="body">
+      
+        <script class="pop" >
+        
+            swal("Bienvenido a Hospital Group one! \nSi aun no te encuentras registrado crea tu cuenta Para poder solicitar un turno" );
+        
+            
+        </script>
+
         <div>
             <h1 class="hero-video__title">Nos mueve tu salud</h1>
 
@@ -68,7 +78,7 @@ and open the template in the editor.
             
             <div class=" d-flex">
                 <form action="/front/solicitarTurno">
-                <button type="submit"  class="btn btn-warning"><a href="/front/solicitarTurno"></a>TURNOS</button>
+                <button type="submit"  class="btn btn-warning">TURNOS</button>
                </form>
                 <div class="contenedor-boton-turnos">
                     <p>Hola</p>
