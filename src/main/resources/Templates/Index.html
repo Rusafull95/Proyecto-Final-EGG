@@ -13,16 +13,20 @@ and open the template in the editor.
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+  
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
 
 
     <body layout:fragment="body">
-        <script>
-         alert("Ya te registraste? si no tenes cuenta ingresa aqui") 
-        <a href="/front/login">Ingresar</a>
-        alert("sino registrate ingresando a este link")
-        <a href="/front/usuarioRegistroFormulario">Registrarse</a>
-    </script>
+      
+        <script class="pop" >
+        
+            swal("Bienvenido a Hospital Group one! \nSi aun no te encuentras registrado crea tu cuenta Para poder solicitar un turno" );
+        
+            
+        </script>
+
         <div>
             <h1 class="hero-video__title">Nos mueve tu salud</h1>
 
