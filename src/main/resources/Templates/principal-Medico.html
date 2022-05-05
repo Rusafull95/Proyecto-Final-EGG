@@ -35,6 +35,19 @@
                 </thead>
 
                 <tbody>
+<!--                    <tr th:each="turno : ${turnosHoy}">
+                        <th scope="row" th:value="${turno.codigo}"></th>
+                        <td th:value="${turno.paciente.usuario.apellido}"></td>
+                        <td th:value="${turno.paciente.usuario.nombre}"></td>
+                        <td th:value="${turno.estado}"></td>
+                        <td>
+                            <form action="/medico/turno" method="POST">
+                                <input name="codigo" type="hidden" th:value="${turno.codigo}">
+                                <button type="submit" class="btn btn-primary">Ver Turno</button>
+                            </form>
+                        </td>
+                    </tr>-->
+                    
                     <tr>
                         <th scope="row">1</th>
                         <td>Jerez</td>
@@ -87,6 +100,19 @@
                 </thead>
 
                 <tbody>
+<!--                    <tr th:each="turno : ${4Turnos}">
+                        <th scope="row" th:value="${turno.codigo}"></th>
+                        <td th:value="${turno.paciente.usuario.apellido}"></td>
+                        <td th:value="${turno.paciente.usuario.nombre}"></td>
+                        <td th:value="${turno.estado}"></td>
+                        <td>
+                            <form action="/medico/turno" method="POST">
+                                <input name="codigo" type="hidden" th:value="${turno.codigo}">
+                                <button type="submit" class="btn btn-primary">Ver Turno</button>
+                            </form>
+                        </td>
+                    </tr>-->
+                    
                     <tr>
                         <th scope="row">1</th>
                         <td>Jerez</td>
