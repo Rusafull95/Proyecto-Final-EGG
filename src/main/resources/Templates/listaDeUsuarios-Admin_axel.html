@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+    <head>
+        <title>Hospital Admin -Usuarios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body layout:fragment="body">
+
+        <main>
+            <div> 
+                <a href="#"> <button type="button" class="buttom-usuario">Añadir Usuario</button> </a>
+
+            </div>
+
+            <div style="padding: 50px; border-radius: 20px; border: black solid; background-color: white">
+
+                <table class="table table-success table-striped" style="border:1px">
+                    <thead >
+                        <tr>
+                            <th scope="col">Nº</th>
+                            <th scope="col">Mail</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Alta</th>
+                            <th scope="col">Habilitar/Deshabilitar</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="libro, index: ${listaLibros}">
+                            <td th:text="${index.count}">Number</td>
+                            <td th:text="${libro.titulo}">Usuario/mail</td>
+                            <td th:text="${libro.titulo}">Nombre</td>
+                            <td th:text="${libro.titulo}">Apellido</td>
+                            <td th:text="${libro.titulo}">Rol</td>
+                            <td th:text="${libro.alta}">Alta</td>
+                            <!--                            <td> 
+                                                            <span th:if="${libro.alta  == true}">
+                                                                <a th:href="@{/libro/darBaja(idLibro=${libro.id})}"><button type="button" class="btn btn-danger">Dar De Baja</button></a>
+                                                            </span>
+                            
+                                                            <span th:if="${libro.alta  == false}">
+                                                                <a th:href="@{/libro/darAlta(idLibro=${libro.id})}"><button type="button" class="btn btn-success">Dar De Alta</button></a>
+                            
+                                                            </span>
+                            
+                                                        </td>-->
+
+                            <td> <a th:href="@{/libro/formulario(idLibro=${libro.id})}"><button type="button" class="btn btn-dark">Editar</button></a> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>

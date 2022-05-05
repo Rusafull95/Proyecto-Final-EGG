@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>AdminHospital-Listas</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="../static/css/miguel/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/miguel/bootstrap-material-design.min.css">
+        <link rel="stylesheet" href="../static/css/miguel/ripples.min.css">
+        <link rel="stylesheet" href="../static/css/miguel/sweetalert2.css">
+        <link rel="stylesheet" href="../static/css/miguel/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../static/css/miguel/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="../static/css/miguel/main.css">
+</head>
+<body>
+	<!-- SideBar -->
+	<section class="full-box cover dashboard-sideBar">
+		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+		<div class="full-box dashboard-sideBar-ct">
+			<!--SideBar Title -->
+			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+				Hospital <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+			</div>
+			<!-- SideBar User info -->
+			<div class="full-box dashboard-sideBar-UserInfo">
+				<figure class="full-box">
+                                    <img src="../static/img/avatar.jpg" alt="UserIcon">
+					<figcaption class="text-center text-titles">NombredeUsuario</figcaption>
+				</figure>
+				<ul class="full-box list-unstyled text-center">
+					<li>
+						<a href="#!">
+							<i class="zmdi zmdi-settings"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#!" class="btn-exit-system">
+							<i class="zmdi zmdi-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- SideBar Menu -->
+			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
+				<li>
+					<a href="#!">
+						<i</i> Panel
+					</a>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i</i> Administracion <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+			
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i</i> Usuarios <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i</i> Datos <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a href="#"><i</i>Listas</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Content page-->
+	<section class="full-box dashboard-contentPage">
+		<!-- NavBar -->
+		<nav class="full-box dashboard-Navbar">
+			<ul class="full-box list-unstyled text-right">
+				<li class="pull-left">
+					<a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+				</li>
+				<li>
+					<a href="#!" class="btn-Notifications-area">
+						<i class="zmdi zmdi-notifications-none"></i>
+						<span class="badge">7</span>
+					</a>
+				</li>
+				<li>
+					<a href="#!" class="btn-modal-help">
+						<i class="zmdi zmdi-help-outline"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- Content page -->
+		<div class="container-fluid">
+			<div class="page-header">
+			  <h1 class="text-titles"><i</i>Datos <small>Hospital</small></h1>
+			</div>
+			<p class="lead">Listas</p>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+					  	<li><a href="#listUsuario" data-toggle="tab"><i</i> Usuarios</a></li>
+					  	<li><a href="#listPersonal" data-toggle="tab"><i</i> Personal</a></li>
+					    <li><a href="#listPacientes" data-toggle="tab"><i</i> Pacientes</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane fade active in">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-12 col-md-10 col-md-offset-1">
+									</div>
+								</div>
+							</div>
+						</div>
+					  	<div class="tab-pane fade" id="listUsuario">
+							<div class="table-responsive">
+								<table class="table table-hover text-center">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th class="text-center">DNI</th>
+											<th class="text-center">Apellido y Nombre</th>
+											<th class="text-center">Editar Usuario</th>
+											<th class="text-center">Habilitar</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>123456789</td>
+											<td>Perez Juan Ignacio</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar Hora</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Suspender</i></a></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>123456789</td>
+											<td>Perez Juan Ignacio</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar Hora</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Suspender</i></a></td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>123456789</td>
+											<td>Perez Juan Ignacio</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar Hora</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Suspender</i></a></td>
+										</tr>
+									</tbody>
+								</table>
+								<ul class="pagination pagination-sm">
+								  	<li class="disabled"><a href="#!">«</a></li>
+								  	<li class="active"><a href="#!">1</a></li>
+								  	<li><a href="#!">2</a></li>
+								  	<li><a href="#!">3</a></li>
+								  	<li><a href="#!">4</a></li>
+								  	<li><a href="#!">5</a></li>
+								  	<li><a href="#!">»</a></li>
+								</ul>
+							</div>
+					  	</div>
+					  	<div class="tab-pane fade" id="listPersonal">
+							<div class="table-responsive">
+								<table class="table table-hover text-center">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th class="text-center">Apellido y Nombre</th>
+											<th class="text-center">Puesto</th>
+											<th class="text-center">Hora</th>
+											<th class="text-center">Editar Usuario</th>
+											<th class="text-center">Habilitar</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Perez Juan Ignacio</td>
+											<td>Medico</td>
+											<td>16:20</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar Hora</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Suspender</i></a></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Perez Juan Ignacio</td>
+											<td>Secretario</td>
+											<td>6:20</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar Hora</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Suspender</i></a></td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Perez Juan Ignacio</td>
+											<td>Administrador</td>
+											<td>10:00</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar Hora</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Suspender</i></a></td>
+										</tr>
+									</tbody>
+								</table>
+								<ul class="pagination pagination-sm">
+								  	<li class="disabled"><a href="#!">«</a></li>
+								  	<li class="active"><a href="#!">1</a></li>
+								  	<li><a href="#!">2</a></li>
+								  	<li><a href="#!">3</a></li>
+								  	<li><a href="#!">4</a></li>
+								  	<li><a href="#!">5</a></li>
+								  	<li><a href="#!">»</a></li>
+								</ul>
+							</div>
+					  	</div>
+						  <div class="tab-pane fade" id="listPacientes">
+							<div class="table-responsive">
+								<table class="table table-hover text-center">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th class="text-center">Apellido y Nombre</th>
+											<th class="text-center">Dia</th>
+											<th class="text-center">Hora</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Perez Juan Ignacio</td>
+											<td>20/04/2022</td>
+											<td>16:20</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Ver Datos</i></a></td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Eliminar</i></a></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>De Nazareth Jesus</td>
+											<td>01/01/0001</td>
+											<td>00:00</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Ver Datos</i></a></td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Eliminar</i></a></td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Perez Juan Ignacio</td>
+											<td>26/05/2022/</td>
+											<td>10:00</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Ver Datos</i></a></td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="text-center">Editar</i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="text-center">Eliminar</i></a></td>
+										</tr>
+									</tbody>
+								</table>
+								<ul class="pagination pagination-sm">
+									  <li class="disabled"><a href="#!">«</a></li>
+									  <li class="active"><a href="#!">1</a></li>
+									  <li><a href="#!">2</a></li>
+									  <li><a href="#!">3</a></li>
+									  <li><a href="#!">4</a></li>
+									  <li><a href="#!">5</a></li>
+									  <li><a href="#!">»</a></li>
+								</ul>
+							</div>
+						  </div>
+					</div>
+				</div>
+				</div>
+				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+
+	
+	</section>
+
+	<!-- Dialog help -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="Dialog-Help">
+	  	<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+			    <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			    	<h4 class="modal-title">Ayuda</h4>
+			    </div>
+			    <div class="modal-body">
+			        <p>
+			        	Descripcion
+			        </p>
+			    </div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-primary btn-raised" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> Ok</button>
+		      	</div>
+		    </div>
+	  	</div>
+	</div>
+	<!--====== Scripts -->
+        <script src="../static/js/jquery-3.1.1.min.js"></script>
+        <script src="../static/js/sweetalert2.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/material.min.js"></script>
+        <script src="../static/js/ripples.min.js"></script>
+        <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../static/js/main.js"></script>
+	<script>
+		$.material.init();
+	</script>
+</body>
+</html>

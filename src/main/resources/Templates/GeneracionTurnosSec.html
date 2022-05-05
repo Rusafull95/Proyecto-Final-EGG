@@ -4,13 +4,45 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+    <head> 
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body layout:fragment="body">
+        <main >
+            <h1 class=" text-center">Generacion de Turnos</h1>
+            <form class="text-center border-form" style= "padding: 50px; border-radius: 100px; border: black solid">
+                        <h5>Datos personales</h5>
+                        <br>
+                        <input type="text"  name="nombres" placeholder="Nombres"/>    <input type="text"  name="Apellido" placeholder="Apellido"/> <input type="text"  name="dni" placeholder="DNI"/>
+                        <input type="text"  name="fechaDeNacimiento" placeholder="Fecha de nacimiento" /> 
+                        <br>
+                        <br>
+                        <h5>Datos de Contacto</h5>
+                        <input type="text"  name="domicilio" placeholder="Domicilio"/>
+                        <input type="text"  name="mail" placeholder="Correo electronico"/>  
+                        <br>
+                        <br>
+                        <h5>Obra Social</h5>
+                        <input type="text"  name="ObraSocial" placeholder="obra social" />
+                        <input type="text"  name="numeroDeAfiliado" placeholder="Numero de afiliado"/>
+                        <input type="text"  name="CantGrupoFamiliar" placeholder="Numero grupo familiar"/>
+                        <input type="text"  name="plan" placeholder="Plan"/>
+                        <br>
+                        <br>
+                        <h5>Datos Para el Turno</h5>
+                        <input type="text" name="especialidad" placeholder="Especialidad" />   <input type="text" name="medicos" placeholder="Nombre medico"/>
+                        <input type="text" name="horariosDisponibles" placeholder="Horario"/>  <input type="text" name="Numero de turno" placeholder="Numero de Turno"/>
+                         <br>
+                         <br>
+                         <button class=" buttom-generarTurno">Generar Turno</button>
+                         
+                        
+                
+            </form>
+        </main>
+        
     </body>
 </html>
