@@ -22,6 +22,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+
+
+import org.springframework.web.bind.annotation.PatchMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,6 +52,7 @@ public class TurnosControlador {
             return "solicitarTurno";
         }
     }
+
 
     @PostMapping("/generacionsec")
     public String generacionTurnosSec(
@@ -95,8 +100,34 @@ public class TurnosControlador {
         return "solicitarTurno";
     }
 
-    @GetMapping("/consulta")
-    public String crearConsulta(@RequestParam("num") Integer num, @RequestParam("descripcion") String descripcion, @RequestParam("turnoId") Integer turnoId) throws Exception {
+    
+    
+    @PostMapping("/generacionsec")
+    public String generacionTurnosSec(
+            @RequestParam("cita")@DateTimeFormat(pattern = "yyyy-mm-dd") Date cita, 
+            @RequestParam("paciente") Paciente paciente, 
+            @RequestParam("medico") Medico medico,  
+            @RequestParam("especialidad") Especialidad especialidad, 
+            @RequestParam("secretaria") Secretaria secretaria
+    ) throws Exception{
+        turnosServicios.crearTurnos(cita, paciente, medico, especialidad, secretaria);
+        return "GeneracionTurnosSec";
+    }
+    
+    @PostMapping("/solicitar")
+    public String solicitarTurno(
+            @RequestParam("cita")@DateTimeFormat(pattern = "yyyy-mm-dd") Date cita, 
+            @RequestParam("paciente") Paciente paciente, 
+            @RequestParam("medico") Medico medico,  
+            @RequestParam("especialidad") Especialidad especialidad 
+    ) throws Exception{
+        turnosServicios.crearTurnos(cita, paciente, medico, especialidad, null);
+        return "solicitarTurno";
+    }
+    
+    @PatchMapping("/consulta")
+    public String crearConsulta(@RequestParam("num") Integer num, @RequestParam("descripcion") String descripcion, @RequestParam("turnoId") Integer turnoId) throws Exception{
+
         turnosServicios.modificarTurno(turnoId, null, null, null, null, consultaServicio.crearConsulta(descripcion, num), null, null);
         return "index";
     }

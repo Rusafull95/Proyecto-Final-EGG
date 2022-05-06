@@ -35,6 +35,19 @@
                 </thead>
 
                 <tbody>
+<!--                    <tr th:each="turno : ${turnosHoy}">
+                        <th scope="row" th:value="${turno.codigo}"></th>
+                        <td th:value="${turno.paciente.usuario.apellido}"></td>
+                        <td th:value="${turno.paciente.usuario.nombre}"></td>
+                        <td th:value="${turno.estado}"></td>
+                        <td>
+                            <form action="/medico/turno" method="POST">
+                                <input name="codigo" type="hidden" th:value="${turno.codigo}">
+                                <button type="submit" class="btn btn-primary">Ver Turno</button>
+                            </form>
+                        </td>
+                    </tr>-->
+                    
                     <tr>
                         <th scope="row">1</th>
                         <td>Jerez</td>
@@ -87,25 +100,38 @@
                 </thead>
 
                 <tbody>
+<!--                    <tr th:each="turno : ${4Turnos}">
+                        <th scope="row" th:value="${turno.codigo}"></th>
+                        <td th:value="${turno.paciente.usuario.apellido}"></td>
+                        <td th:value="${turno.paciente.usuario.nombre}"></td>
+                        <td th:value="${turno.estado}"></td>
+                        <td>
+                            <form action="/medico/turno" method="POST">
+                                <input name="codigo" type="hidden" th:value="${turno.codigo}">
+                                <button type="submit" class="btn btn-primary">Ver Turno</button>
+                            </form>
+                        </td>
+                    </tr>-->
+                    
                     <tr>
                         <th scope="row">1</th>
                         <td>Jerez</td>
                         <td>Juan</td>
-                        <td>atendido</td>
+                        <td>Atendido</td>
                         <td><button type="button" class="btn btn-primary">Ver Turno</button></td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>Salvatierra</td>
                         <td>Miguel</td>
-                        <td>suspendido</td>
+                        <td>Cancelado</td>
                         <td><button type="button" class="btn btn-primary">Ver Turno</button></td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
                         <td>Rodriguez</td>
                         <td>Marcos</td>
-                        <td>en espera</td>
+                        <td>Atendido</td>
                         <td><button type="button" class="btn btn-primary">Ver Turno</button></td>
                     </tr>
 
@@ -113,7 +139,7 @@
                         <th scope="row">4</th>
                         <td>Gomez</td>
                         <td>Fernanda</td>
-                        <td>atendido</td>
+                        <td>Cancelado</td>
                         <td><button type="button" class="btn btn-primary">Ver Turno</button></td>
                     </tr>
                 </tbody>

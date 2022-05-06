@@ -97,4 +97,8 @@ public class FrontControlador {
         return "UserRegistradoSec";
     }   
 
+     @GetMapping("/quienesSomos")
+    public String quieneSomos(){
+        return "QuieneSomos";
+    }   
 }

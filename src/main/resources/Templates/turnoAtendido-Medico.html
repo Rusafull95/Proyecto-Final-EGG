@@ -18,9 +18,19 @@
     crossorigin="anonymous"></script>
 
 
+<<<<<<< HEAD
   <h2 style="margin-top: 15px">
     Informacion del Paciente
   </h2>
+=======
+ <strong>
+  <h5>
+    Informacion del Paciente
+  </h5>
+ </strong> 
+   
+  
+>>>>>>> 12eedae78c71586c9853b62ea91d28ab7c6e15d2
 
   <br>
 
@@ -397,54 +407,53 @@
       <label for="inputState" class="form-label">Especialidad</label>
       <select id="inputState" class="form-select">
         <option selected>Por Favor Seleccionar</option>
-        <option value="1">Consultar especialidad</option>
+        <option value="1">Cardiología</option>
+        <option value="1">Cirugpia General</option>
+        <option value="1">Dermatología</option>
+        <option value="1">Fonoaudiología</option>
+        <option value="1">Gatroenterología</option>
+        <option value="1">Ginecología</option>
+        <option value="1">Medicina General</option>
+        <option value="1">Oftalmología</option>
+        <option value="1">Pediatría</option>
       </select>
     </div>
   </div>
 
   <hr style="color:rgb(88, 87, 87);" />
 
-  <div class="row g-3">
-    <div class="col-md-4">
-      <div class="mb-3">
-        <label for="formFile" class="form-label">Diagnostico</label>
-        <input class="form-control" type="file" id="formFile">
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="mb-3">
-        <label for="formFileMultiple" class="form-label">Alergias</label>
-        <input class="form-control" type="file" id="formFileMultiple" multiple>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="mb-3">
-        <label for="formFileMultiple" class="form-label">Alergias</label>
-        <input class="form-control" type="file" id="formFileMultiple" multiple>
-      </div>
-    </div>
+  <div class="mb-3">
+    <label for="formFileLg" class="form-label">Diagnostico</label>
+    <input type="file" class="form-control" aria-label="file example" required>
+    <div class="invalid-feedback">Example invalid form file feedback</div>
   </div>
-  <div class="row g-3">
-    <div class="col-md-4">
 
-    </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
+  <div class="mb-3">
+    <label for="formFileLg" class="form-label">Laboratorio</label>
+    <input type="file" class="form-control" aria-label="file example" required>
+    <div class="invalid-feedback">Example invalid form file feedback</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="formFileLg" class="form-label">Medicamentos</label>
+    <input type="file" class="form-control" aria-label="file example" required>
+    <div class="invalid-feedback">Example invalid form file feedback</div>
   </div>
   
-  
   <div class="mb-3">
-    <label for="formFileDisabled" class="form-label">Laboratorio</label>
-    <input class="form-control" type="file" id="formFileDisabled" disabled>
-  </div>
-  <div class="mb-3">
-    <label for="formFileSm" class="form-label">Medicamentos</label>
-    <input class="form-control form-control-sm" id="formFileSm" type="file">
-  </div>
-  <div>
     <label for="formFileLg" class="form-label">Imagenes</label>
-    <input class="form-control form-control-lg" id="formFileLg" type="file">
+    <input type="file" class="form-control" aria-label="file example" required>
+    <div class="invalid-feedback">Example invalid form file feedback</div>
   </div>
+
+  <div class="mb-3">
+    <button class="btn btn-primary" type="submit" disabled>Guardar</button>
+  </div>
+</form>
+  
+ 
+ 
+ 
 
 </form>
 

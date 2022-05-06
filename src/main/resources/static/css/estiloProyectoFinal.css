@@ -331,6 +331,13 @@ button{
     align-items: flex-end;
 }
 
+
+.tamaño-imagen-Quien{
+    height:196px;
+    width: 339px;
+     
+}
+
 .pop{
     font-family: sans-serif;
 }
@@ -338,6 +345,7 @@ button{
     width: 300px;
     height: 30px;
 }
+
 
 
 

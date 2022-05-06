@@ -150,6 +150,23 @@ public class MedicoServicio {
         return turnos;
     }
     
+    public List<Turnos>cTurnosEnProceso(String numMatricula) throws Exception{
+        Medico medico = mostrarMedicoPorId(numMatricula);
+        List<Turnos>turnosMedico = medico.getListaDeTurnos();
+        List<Turnos>turnos = new ArrayList();
+        int i = 0;
+        for (Turnos aux : turnosMedico) {
+            if(aux.getEstado() == EstadoDelTurno.ENPROCESO){
+                turnos.add(aux);
+                i++;
+            }
+            if(i == 4){
+                break;
+            }
+        }
+        return turnos;
+    }
+    
     public List<Medico>buscarMedPorEspecialidad(Especialidad especialidad){
         List<Medico>medico = mostrarMedicos();
         List<Medico>medicos = new ArrayList();
