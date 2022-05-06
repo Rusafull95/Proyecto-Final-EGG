@@ -149,15 +149,17 @@ public class TurnosServicios {
     
    public Turno guardarTurno(Turno turno) throws Exception {
 
-        
+        if(turno.getCita()== null ){
+         throw new Exception(" la cita no puede estar vacia");
+        }
         if (turno.getMedico().getUsuario().getNombre().isEmpty()) {
             throw new Exception(" el nombre del medico no puede estar vacio");
         }
-        if (turno.getEspecialidad().) {
+        if (turno.getEspecialidad().getNombre().isEmpty()) {
             throw new Exception(" el nombre de la editorial no puede estar vacio");
         }
       
 
-        return libroRepository.save(libro);
+        return turnosRepositorio.save(turno);
     }
 }
