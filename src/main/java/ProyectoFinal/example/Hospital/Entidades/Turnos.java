@@ -25,6 +25,8 @@ public class Turnos {
     private Integer codigo;
     @Temporal(TemporalType.DATE)
     private Date cita;
+    @Temporal(TemporalType.TIME)
+    private Date hora;
     @OneToOne
     private Paciente paciente;
     @OneToOne
