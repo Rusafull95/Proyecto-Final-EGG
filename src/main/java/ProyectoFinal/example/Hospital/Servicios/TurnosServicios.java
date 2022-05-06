@@ -10,7 +10,7 @@ import ProyectoFinal.example.Hospital.Entidades.Especialidad;
 import ProyectoFinal.example.Hospital.Entidades.Medico;
 import ProyectoFinal.example.Hospital.Entidades.Paciente;
 import ProyectoFinal.example.Hospital.Entidades.Secretaria;
-import ProyectoFinal.example.Hospital.Entidades.Turnos;
+import ProyectoFinal.example.Hospital.Entidades.Turno;
 import ProyectoFinal.example.Hospital.Repositorios.TurnosRepositorio;
 import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
 import java.util.Date;
@@ -54,7 +54,7 @@ public class TurnosServicios {
         if(!medEspe){
             throw new Exception("El médico no es experto en el campo ingresado");
         }
-        Turnos turnos = new Turnos();
+        Turno turnos = new Turno();
         turnos.setCita(cita);
         turnos.setPaciente(paciente);
         turnos.setMedico(medico);
@@ -88,9 +88,9 @@ public class TurnosServicios {
 //        if(!medEspe){
 //            throw new Exception("El médico no es experto en el campo ingresado");
 //        }
-        Optional<Turnos> respuesta = turnosRepositorio.findById(codigo);
+        Optional<Turno> respuesta = turnosRepositorio.findById(codigo);
         if(respuesta.isPresent()){
-            Turnos turno = respuesta.get();
+            Turno turno = respuesta.get();
             if(cita != null){
             turno.setCita(cita); 
             }
@@ -121,9 +121,9 @@ public class TurnosServicios {
     
     //cancelarTurno recibe el código del turno que se desea eliminar y modifica el estado del turno a "CANCELADO"
     public void cancelarTurno(Integer codigo) throws Exception{
-        Optional<Turnos> respuesta = turnosRepositorio.findById(codigo);
+        Optional<Turno> respuesta = turnosRepositorio.findById(codigo);
         if(respuesta.isPresent()){
-            Turnos turno = respuesta.get();
+            Turno turno = respuesta.get();
             turno.setEstado(EstadoDelTurno.CANCELADO);
         
             turnosRepositorio.save(turno);
@@ -133,17 +133,31 @@ public class TurnosServicios {
     }
     
     //mostrarTurnos muestra todos los turno incluso los cancelados
-    public List<Turnos> mostrarTurnos(){
-        List<Turnos>turnos = turnosRepositorio.findAll();
+    public List<Turno> mostrarTurnos(){
+        List<Turno>turnos = turnosRepositorio.findAll();
         return turnos;
     }
     
-    public Turnos buscarTurnoPorCodigo(Integer codigo) throws Exception{
-        Optional<Turnos> respuesta = turnosRepositorio.findById(codigo);
+    public Turno buscarTurnoPorCodigo(Integer codigo) throws Exception{
+        Optional<Turno> respuesta = turnosRepositorio.findById(codigo);
         if(respuesta.isPresent()){
             return respuesta.get();
         }else{
             throw new Exception("No se encontró el turno");
         }
+    }
+    
+   public Turno guardarTurno(Turno turno) throws Exception {
+
+        
+        if (turno.getMedico().getUsuario().getNombre().isEmpty()) {
+            throw new Exception(" el nombre del medico no puede estar vacio");
+        }
+        if (turno.getEspecialidad().) {
+            throw new Exception(" el nombre de la editorial no puede estar vacio");
+        }
+      
+
+        return libroRepository.save(libro);
     }
 }
