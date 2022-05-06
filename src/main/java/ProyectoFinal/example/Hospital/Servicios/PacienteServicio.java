@@ -55,7 +55,7 @@ public class PacienteServicio {
     }
     
     public List<Paciente> mostrarPacientes(){
-        List<Paciente> paciente = pacienteRepositorio.findAll();
+        List<Paciente> paciente = pacienteRepositorio.findAll(); 
         List<Paciente> pacientes = new ArrayList();
         for (Paciente aux : pacientes) {
             if (aux.getUsuario().isAlta()){
