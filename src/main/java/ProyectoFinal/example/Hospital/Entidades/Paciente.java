@@ -7,6 +7,7 @@ package ProyectoFinal.example.Hospital.Entidades;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -22,7 +23,7 @@ public class Paciente {
     private String obraSocial;
     @Temporal(TemporalType.DATE)
     private Date fechaDeNacimiento;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Usuario usuario;
 
     public Paciente() {

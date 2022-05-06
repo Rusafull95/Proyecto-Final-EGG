@@ -92,7 +92,7 @@ public class FrontControlador {
         return "ListaEspecialidades";
     }  
     
-    @GetMapping("/UserRegistradoSec")
+    @GetMapping("/userRegistradoSec")
     public String UserRegistrados(){
         return "UserRegistradoSec";
     }   

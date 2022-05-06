@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-public class Turnos {
+public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer codigo;
@@ -40,7 +40,7 @@ public class Turnos {
     @OneToOne
     private Secretaria secretaria;
 
-    public Turnos() {
+    public Turno() {
     }
 
     public Integer getCodigo() {

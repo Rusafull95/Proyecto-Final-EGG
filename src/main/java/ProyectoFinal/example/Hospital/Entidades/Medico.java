@@ -18,7 +18,7 @@ public class Medico {
     @OneToMany
     private List<Especialidad> especialidades;
     @OneToMany
-    private List<Turnos> ListaDeTurnos;
+    private List<Turno> ListaDeTurnos;
     @OneToOne
     private Usuario usuario;
 
@@ -41,11 +41,11 @@ public class Medico {
         this.especialidades = especialidades;
     }
 
-    public List<Turnos> getListaDeTurnos() {
+    public List<Turno> getListaDeTurnos() {
         return ListaDeTurnos;
     }
 
-    public void setListaDeTurnos(List<Turnos> ListaDeTurnos) {
+    public void setListaDeTurnos(List<Turno> ListaDeTurnos) {
         this.ListaDeTurnos = ListaDeTurnos;
     }
 
