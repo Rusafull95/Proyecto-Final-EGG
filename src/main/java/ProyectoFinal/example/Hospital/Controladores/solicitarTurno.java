@@ -1,7 +1,10 @@
 
 package ProyectoFinal.example.Hospital.Controladores;
 
+import ProyectoFinal.example.Hospital.Entidades.Turnos;
+import java.util.Date;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,16 +18,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class solicitarTurno {
     
      @GetMapping("/solicitarTurno")
-    public String solicitarTurno(){
-        @ModelAttribute(@)
-        @RequestParam("cita") Date cita;
-        @RequestParam("hora") Time hora;
-        @RequestParam("especialidad") String especialidad;
-        
-        
+    public String solicitarTurno(Model model){
+       Turnos turno= new Turnos();
+//       turno.setCita(new Date);
+//       turno.sethora(new Date);
+//       turno.setEspecialidad(new String);
+        model.addAttribute("turno",turno);
         
         return "solicitarTurno";
     }   
     
-    
+   
 }
