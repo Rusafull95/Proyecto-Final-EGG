@@ -65,9 +65,40 @@ public class FrontControlador {
     public String usuarioRegistroFormulario(){
         return "usuarioRegistroFormulario_axel";
     }
+    
+    @GetMapping("/index")
+    public String index(){
+        return "Index";
+    }
 
     
+ @GetMapping("/turnoAtendido")
+    public String turnoAtendido(){
+        return "turnoAtendido-Medico";
+    }
 
+ @GetMapping("/turnoEnProceso")
+    public String turnoEnProceso(){
+        return "listaTurnoEnProceso-Medico";
+    }    
     
+    @GetMapping("/solicitarTurno")
+    public String solicitarTurno(){
+        return "solicitarTurno";
+    }    
+    
+       @GetMapping("/especialidades")
+    public String listaEspecialidades(){
+        return "ListaEspecialidades";
+    }  
+    
+    @GetMapping("/userRegistradoSec")
+    public String UserRegistrados(){
+        return "UserRegistradoSec";
+    }   
 
+     @GetMapping("/quienesSomos")
+    public String quieneSomos(){
+        return "QuieneSomos";
+    }   
 }

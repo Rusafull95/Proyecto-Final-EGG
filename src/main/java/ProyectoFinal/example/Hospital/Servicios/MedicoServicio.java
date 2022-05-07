@@ -7,7 +7,7 @@ package ProyectoFinal.example.Hospital.Servicios;
 
 import ProyectoFinal.example.Hospital.Entidades.Especialidad;
 import ProyectoFinal.example.Hospital.Entidades.Medico;
-import ProyectoFinal.example.Hospital.Entidades.Turnos;
+import ProyectoFinal.example.Hospital.Entidades.Turno;
 import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Repositorios.MedicoRepositorio;
 import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
@@ -104,13 +104,13 @@ public class MedicoServicio {
     }
     
     //turnosHoy devuelve los turnos de hoy de un médico ségun su número matrícula
-    public List<Turnos>turnosHoy(String numMatricula) throws Exception{
+    public List<Turno>turnosHoy(String numMatricula) throws Exception{
         Medico medico = mostrarMedicoPorId(numMatricula);
-        List<Turnos>turnos = medico.getListaDeTurnos();
-        List<Turnos>turnosHoy = new ArrayList();
+        List<Turno>turnos = medico.getListaDeTurnos();
+        List<Turno>turnosHoy = new ArrayList();
         Calendar calendar = Calendar.getInstance();
         Date hoy = calendar.getTime();
-        for (Turnos aux : turnos) {
+        for (Turno aux : turnos) {
             if(aux.getCita().getDay() == hoy.getDay())
                 turnosHoy.add(aux);
         }
@@ -118,18 +118,18 @@ public class MedicoServicio {
     }
     
     //medicoTurnos devuelve todos los turnos de un médico ségun su número de matrícula
-    public List<Turnos>medicoTurnos(String numMatricula) throws Exception{
+    public List<Turno>medicoTurnos(String numMatricula) throws Exception{
         Medico medico = mostrarMedicoPorId(numMatricula);
-        List<Turnos>turnos = medico.getListaDeTurnos();
+        List<Turno>turnos = medico.getListaDeTurnos();
         return turnos;
     }
     
     //turnosAtendidos devuelve los turnos atendidos de los médicos
-    public List<Turnos>turnosAtendidos(String numMatricula) throws Exception{
+    public List<Turno>turnosAtendidos(String numMatricula) throws Exception{
         Medico medico = mostrarMedicoPorId(numMatricula);
-        List<Turnos>turnosMedico = medico.getListaDeTurnos();
-        List<Turnos>turnos = new ArrayList();
-        for (Turnos aux : turnosMedico) {
+        List<Turno>turnosMedico = medico.getListaDeTurnos();
+        List<Turno>turnos = new ArrayList();
+        for (Turno aux : turnosMedico) {
             if(aux.getEstado() == EstadoDelTurno.ATENDIDO){
                 turnos.add(aux);
             }
@@ -138,15 +138,45 @@ public class MedicoServicio {
     }
     
         //turnosAtendidos devuelve los turnos atendidos de los médicos
-    public List<Turnos>turnosEnProceso(String numMatricula) throws Exception{
+    public List<Turno>turnosEnProceso(String numMatricula) throws Exception{
         Medico medico = mostrarMedicoPorId(numMatricula);
-        List<Turnos>turnosMedico = medico.getListaDeTurnos();
-        List<Turnos>turnos = new ArrayList();
-        for (Turnos aux : turnosMedico) {
+        List<Turno>turnosMedico = medico.getListaDeTurnos();
+        List<Turno>turnos = new ArrayList();
+        for (Turno aux : turnosMedico) {
             if(aux.getEstado() == EstadoDelTurno.ENPROCESO){
                 turnos.add(aux);
             }
         }
         return turnos;
+    }
+    
+    public List<Turno>cTurnosEnProceso(String numMatricula) throws Exception{
+        Medico medico = mostrarMedicoPorId(numMatricula);
+        List<Turno>turnosMedico = medico.getListaDeTurnos();
+        List<Turno>turnos = new ArrayList();
+        int i = 0;
+        for (Turno aux : turnosMedico) {
+            if(aux.getEstado() == EstadoDelTurno.ENPROCESO){
+                turnos.add(aux);
+                i++;
+            }
+            if(i == 4){
+                break;
+            }
+        }
+        return turnos;
+    }
+    
+    public List<Medico>buscarMedPorEspecialidad(Especialidad especialidad){
+        List<Medico>medico = mostrarMedicos();
+        List<Medico>medicos = new ArrayList();
+        for (Medico aux : medico) {
+            for (Especialidad aux1 : aux.getEspecialidades()) {
+                if(aux1 == especialidad){
+                    medicos.add(aux);
+                }
+            }
+        }
+        return medicos;
     }
 }

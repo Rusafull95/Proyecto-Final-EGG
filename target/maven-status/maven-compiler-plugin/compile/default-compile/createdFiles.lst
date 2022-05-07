@@ -24,7 +24,6 @@ ProyectoFinal/example/Hospital/Controladores/TurnosControlador.class
 ProyectoFinal/example/Hospital/Servicios/SecretariaServicio.class
 ProyectoFinal/example/Hospital/Entidades/Paciente.class
 ProyectoFinal/example/Hospital/Entidades/Secretaria.class
-ProyectoFinal/example/Hospital/Entidades/Turnos.class
 ProyectoFinal/example/Hospital/Servicios/UsuarioServicio.class
 ProyectoFinal/example/Hospital/HospitalApplication.class
 ProyectoFinal/example/Hospital/Servicios/MedicoServicio.class

@@ -4,7 +4,7 @@ package ProyectoFinal.example.Hospital.Servicios;
 
 import ProyectoFinal.example.Hospital.Entidades.Medico;
 import ProyectoFinal.example.Hospital.Entidades.Paciente;
-import ProyectoFinal.example.Hospital.Entidades.Turnos;
+import ProyectoFinal.example.Hospital.Entidades.Turno;
 import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Repositorios.MedicoRepositorio;
 import ProyectoFinal.example.Hospital.Repositorios.PacienteRepositorio;
@@ -27,9 +27,9 @@ public class SecretariaServicio {
     MedicoRepositorio medicoRepositorio;
     
     public void validarTurno(Integer codigo){
-        Optional<Turnos> repuesta = turnosRepositorio.findById(codigo);
+        Optional<Turno> repuesta = turnosRepositorio.findById(codigo);
         if(repuesta.isPresent()){
-            Turnos turno = repuesta.get();
+            Turno turno = repuesta.get();
             turno.setEstado(EstadoDelTurno.ENPROCESO);
             
             turnosRepositorio.save(turno);
@@ -50,9 +50,9 @@ public class SecretariaServicio {
     
     public void asignarMedicoATurno(String numeroMatricula, Integer codigo){
         Optional<Medico> repuestaMedico = medicoRepositorio.findById(numeroMatricula);
-        Optional<Turnos> repuestaTurno = turnosRepositorio.findById(codigo);
+        Optional<Turno> repuestaTurno = turnosRepositorio.findById(codigo);
         if(repuestaMedico.isPresent() && repuestaTurno.isPresent()){
-            Turnos medicoAsignado = turnosRepositorio.getById(codigo);
+            Turno medicoAsignado = turnosRepositorio.getById(codigo);
             
             medicoAsignado.setMedico(medicoRepositorio.getById(numeroMatricula));
             

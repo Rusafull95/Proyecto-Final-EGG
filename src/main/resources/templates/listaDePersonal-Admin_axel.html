@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+    <head>
+        <title>Hospital Admin -Personal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body layout:fragment="body">
+
+ 
+        <main  class="imagen-fondo-sec">
+            <br>
+            <div> 
+                    <a href="#"> <button type="button" class="buttom-usuario">Añadir Personal</button> </a>
+
+                </div>
+            <br>
+
+
+        <main>
+            <div> 
+                <a href="#"> <button type="button" class="buttom-usuario">Añadir Personal</button> </a>
+                <a th:href="@{principal}"> <button type="button" class="buttom-usuario">Menu Principal Admin</button> </a>
+            </div>
+
+
+            <div style="padding: 50px; border-radius: 20px; border: black solid; background-color: white" class="m-3">
+
+                <table class="table table-success table-striped" style="border:1px">
+                    <thead >
+                        <tr>
+                            <th scope="col">Nº</th>
+                            <th scope="col">Usuario/mail</th>
+                            <th scope="col">Matricula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Alta</th>
+                            <th scope="col">Habilitar/Deshabilitar</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="medico, index: ${listaMedicos}">
+                            <td th:text="${index.count}">Number</td>
+                            <td th:text="${medico.usuario.mail}">Usuario/mail</td>
+                            <td th:text="${medico.numeroDeMatricula}">Matricula</td>
+                            <td th:text="${medico.usuario.nombre}">Nombre</td>
+                            <td th:text="${medico.usuario.apellido}">apellido</td>
+                            <td th:text="${medico.usuario.alta}">Alta</td>
+                            <td> 
+                                <span th:if="${medico.usuario.alta  == true}">
+                                    <a th:href="@{/medico/darAlta}"><button type="button" class="btn btn-danger">Dar De Baja</button></a>
+                                </span>
+
+                                <span th:if="${medico.usuario.alta  == false}">
+                                    <a th:href="@{/medico/darAlta}"><button type="button" class="btn btn-success">Dar De Alta</button></a>
+
+                                </span>
+
+                            </td>
+
+                            <td> <a th:href="@{/medico/formulario(idMedico=${medico.numeroDeMatricula})}"><button type="button" class="btn btn-dark">Editar</button></a> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>

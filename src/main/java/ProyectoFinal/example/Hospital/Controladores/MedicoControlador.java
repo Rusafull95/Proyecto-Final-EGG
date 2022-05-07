@@ -5,16 +5,21 @@
  */
 package ProyectoFinal.example.Hospital.Controladores;
 
+import ProyectoFinal.example.Hospital.Entidades.Especialidad;
+import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
+import ProyectoFinal.example.Hospital.Servicios.TurnosServicios;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * IMPORTANTE: no se mandan todos los datos a todas las url asi que avisar si se necesitan más datos un algún html o si se quiere modificar algo(todo se puede cambiar).
+ * IMPORTANTE: no se mandan todos los datos a todas las url asi que avisar si se necesitan más datos en algún html o si se quiere modificar algo(todo se puede cambiar).
  * falta acomodar algunas rutas con los html
  * 
  *  Modelos:
@@ -30,8 +35,28 @@ public class MedicoControlador {
     @Autowired
     private MedicoServicio medicoServicio;
     
+    @Autowired
+    private TurnosServicios turnosServicios;
+    
     @GetMapping("/principal")
     public String paginaPrincipal(){
+        return "principal-Medico";
+    }
+    
+    @GetMapping("/principal1")
+    public String paginaPrincipal1(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.put("turnosHoy", medicoServicio.turnosHoy(numMatricula));
+        modelo.put("4Turnos", medicoServicio.cTurnosEnProceso(numMatricula));
+        return "principal-Medico";
+    }
+    
+    @PostMapping("/crearmedico")
+    public String crearMedico(
+            @RequestParam("matricula") String numMatricula, 
+            @RequestParam("especialidades") List<Especialidad>especialidades, 
+            @RequestParam("usuario") Usuario usuario
+    ) throws Exception{
+        medicoServicio.crearMedico(numMatricula, especialidades, usuario);
         return "principal-Medico";
     }
     
@@ -57,5 +82,17 @@ public class MedicoControlador {
     public String turnosEnProgreso(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
         modelo.put("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
         return "listaTurnoEnProgreso-Medico";
+    }
+    
+    @GetMapping("/especialidad")
+    public String buscarPorEspecialidad(ModelMap modelo, @RequestParam("especialidad") Especialidad especialidad){
+        modelo.put("listaMedEsp", medicoServicio.buscarMedPorEspecialidad(especialidad));
+        return "principal-Medico";
+    }
+    
+    @GetMapping("/turno")
+    public String turno(ModelMap modelo, @RequestParam("codigo")Integer codigo) throws Exception{
+        modelo.put("turnoX", turnosServicios.buscarTurnoPorCodigo(codigo));
+        return "index";
     }
 }

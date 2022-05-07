@@ -12,15 +12,21 @@ and open the template in the editor.
 
     </head>
     <body layout:fragment="body">
-        <header>
+        <header class="header-registro">
            
         </header>
 
-        <main>
+        <main  class="imagen-fondo-sec">
             <h1>Registro usuario</h1>
+
+            <div style="padding: 50px; border-radius: 20px; border: black solid" >
+
+                <form class="row g-3">
+
             <div style="padding: 50px; border-radius: 20px; border: black solid">
                 <p th:if="${error != null}" th:text="${error}" style="color: red"> error </p>
                 <form class="row g-3" method="POST" th:action="@{/usuario/registrar}">
+
                     <div class="mb-3 row">
                         <div class="col-md-4" hidden>
                             <label for="validationDefault01" class="form-label ">ID</label>

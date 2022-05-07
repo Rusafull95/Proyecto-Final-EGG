@@ -1,149 +1,55 @@
+body {
+    background-color: thistle;
+    margin: 0;
+    padding: 0;
+}
+
+.imagen-fondo-sec{
+    background-image: url("/img/fondoSec2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+
+
+}
+
+
+.header-registro{
+    background: url("/img/hombrePC.png") ;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+*{
+    box-sizing: border-box;
+
+}
+
+main{
+
+    background-color: thistle;
+
+}
+
 h1{
     font-family: 'Bitter', serif;
     font-family: 'Libre Baskerville', serif;
 }
 h5{
-   font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
 }
 .form-label{
     font-family: 'Space Grotesk', sans-serif;
-}
-body{
-    background-color: thistle;
-   
-}
-
-
-
-/*color-navbar*/
-.navbar-light{
-            background-color: purple;
-        }
-        .nav-link{
-            color: white !important;
-            font-style: oblique !important;
-
-        }
-        .nav-item{
-            font-variant-position: super;
-        }
-            
-/*footer*/
-          .footer  .card-group{
-                background-color: purple;
-            }
-            .card{
-                border-color: purple;
-            }
-            .card-body{
-                background-color: purple;    
-            }
-            .card-body-sec{
-                color: white;
-            }
-            .card-title{
-                color: white;
-                margin: 2px;
-                padding: 2px;
-            }
-            .card-title-sec{
-                color:black;
-            }
-            .card-text{
-                color: black;
-            }
-
-        
-
-
-.imagen-fondo{
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.3;
-    
-   
-}
-header{
-    background: url("/img/registroSuperior.jpg") ;
-    height: 300px;
-    background-repeat: repeat;
-    
- 
-}
-
-*{
-       box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
-}
-/*tarjetas*/
-.card-img-top{
-    height: 50vh;
-}
-
-.button-sec{
-    background-color: lightpink;
-    font-family: 'Anton', sans-serif;
-    font-size: large; 
-  
-
-}
-.buttom-registroPaciente{
-    height: 25px;
-}
-.buttom-generarTurno{
-    height: 25px;
-}
-button{
-    height: 35px;
-    background-color: lightpink;
-    font-family: 'Anton', sans-serif;
-    font-size: large; 
-}
-
-.card{
-    background-color: whitesmoke;
-    font-family: 'Bitter', serif;
-    font-family: 'Libre Baskerville', serif;
 }
 
 .p{
     font-family: 'Bitter', serif;
     font-family: 'Libre Baskerville', serif;  
 }
-.servicios{
-    display: flex;
-   
-}
- .item1{
-    border: 1px solid black;
-    padding: 50px;
-    border-radius: 20px;
-    border: black solid;
- }
 
- .border-form{
-     border: 1px solid black
- }
-
-/*color vista principal medico*/
-
-body {
-    background-color: thistle;
-}
-
-.container {
-    border: rgb(0, 0, 0) 5px solid;
-    padding: 1rem;
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.container-table{
-    border: rgb(0, 0, 0) 5px solid;
-    margin: 2rem;
-}
+/*color-navbar*/
 
 .navbar-light{
     background-color: purple;
@@ -157,12 +63,295 @@ body {
     font-variant-position: super;
 }
 
- .padding-card {
-    padding: 2em;
+.navbar-light{
+    background-color: purple;
+}
+.nav-link{
+    color: white !important;
+    font-style: oblique !important;
+
+}
+.nav-item{
+    font-variant-position: super;
+    font-family: fantasy;
+    font-size: larger;
+    text-shadow: 2px 2px black;
+}
+
+
+/*footer*/
+footer  
+
+.card{
+    border-color: purple;
+
+}
+.card-body{
+    background-color: purple;    
+
+}
+
+.card-title{
+    color: white;
+    margin: 2px;
+    padding: 2px;
+}
+.card-title-sec{
+    color:black;
+}
+.card-text{
+    color: black;
+}
+
+.card-img-top{
+    height: 50vh;
+}
+
+.card{
+    background-color: whitesmoke;
+    font-family: 'Bitter', serif;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .margin-card {
-    margin: 4em;
+    margin: 2em;
 
 }
+.card-header-pills{
+    background-color: lightblue;
+}
+.card-body-index{
+    background-color: whitesmoke;
+    background-image: url("/img/fondoCovid.jpg");
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.button-sec{
+    height: 120px;
+    width: 600px;
+    background-color: lightpink;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Secular One', sans-serif;
+    font-size: large; 
+
+
+}
+.buttom-registroPaciente{
+    height: 25px;
+}
+.buttom-generarTurno{
+    height: 25px;
+}
+.button-admin{
+    height:50px;
+}
+button{
+    height: 35px;
+    background-color: lightpink;
+    font-family: 'Anton', sans-serif;
+    font-size: large; 
+}
+
+.btn-warning{
+    height: 80px;
+    width: 150px;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+.servicios{
+    display: flex;
+
+}
+.item1{
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 20px;
+    border: black solid;
+}
+
+.border-form{
+    border: 1px solid black
+}
+
+.container {
+    border: rgb(0, 0, 0) 5px solid;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.container-table{
+    border: rgb(0, 0, 0) 5px solid;
+    margin: 2rem;
+}
+.container-video{
+    display: block;
+    left: 50%;
+    top:50%;
+    transform: translate(-50px ,-50px);
+    z-index: 0;
+    top: 0;
+    left: 0;
+
+}
+@media(min-aspect-ratio:16/9){
+    .container-video{
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media(max-aspect-ratio:16/9){
+    .container-video{
+        height: 100%;
+        width: auto;
+    }
+}
+
+.hero-video__title{
+    margin: 0;
+    position: static;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+    z-index: 2;
+    margin-top: 80px;
+}
+
+.contenedor-boton-turnos{
+    display: flex;
+    height: 40px;
+    width: 300px;
+    color: white;
+    font-size: 40px;
+    line-height: 40px;
+    
+
+
+    
+    overflow: hidden;
+        
+        
+}
+.animacion{
+    list-style: none;
+    padding-left: 10px;
+    animation: cambiar 7s infinite;
+}
+.animacion,p{
+    margin: 0;
+}
+
+@keyframes cambiar {
+    
+    0%{margin-top:0;}
+    20%{margin-top:0;}
+    
+    25%{margin-top:-40px;}
+    50%{margin-top:-40px;}
+    
+    55%{margin-top:-80px;}
+    80%{margin-top:-80px;}
+    
+    85%{margin-top:-40px;}
+    95%{margin-top:-40px;}
+    
+    100%{margin-top:0;}
+    
+    
+}
+
+.texto-sec{
+    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Secular One', sans-serif;
+    color: paleturquoise;
+    text-shadow:3px 3px 3px black; 
+
+
+}
+
+.padding-buttom{
+    padding: 5em;
+}
+
+
+.text-titulo-index{
+    font-family: 'Oswald', sans-serif;
+   color: orange;
+}
+
+.text-inicial{
+    margin: 2em;
+    background-color: white;
+    height: 450px;
+    font-size:large;
+     border: 5px solid #204d74;
+     
+
+
+}
+
+.novedades{
+    background-color: lightgray;
+    color: white;
+    text-shadow: 2px 2px 2px black
+    
+}
+.card-title-index{
+    color:black;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+
+.Texto-Login{
+    font-family: 'Secular One', sans-serif;
+}
+
+.Turnos{
+    background-color: white;
+    box-shadow: 10px 10px #00aa9a;
+    font-family: 'Oswald', sans-serif;
+    opacity: 0,6;
+
+}
+
+
+.tituloTurno{
+    font-family: initial;
+}
+
+.text-alineado{
+    text-align: right;
+}
+.nav justify-content-end{
+    align-items: flex-end;
+}
+
+
+.tamaño-imagen-Quien{
+    height:196px;
+    width: 339px;
+     
+}
+
+.pop{
+    font-family: sans-serif;
+}
+.btn-secondary {
+    width: 300px;
+    height: 30px;
+}
+
+
+
+
+
+
 
