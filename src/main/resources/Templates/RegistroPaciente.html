@@ -20,7 +20,7 @@
                        <form method="FORM">
                         <h5 >Datos personales</h5>
                         <input type="text"  name="nombres" placeholder="Nombres"/>    <input type="text"  name="Apellido" placeholder="Apellido"/> <input type="text"  name="dni" placeholder="DNI" />
-                        <input type="text"  name="fechaDeNacimiento" placeolder="Fecha de nacimiento"/> 
+                        <input type="text"  name="fechaDeNacimiento" placeholder="Fecha de nacimiento"/> 
                         <br>
                         <br>
                         <h5>Imagen Perfil (opcional)</h5>
@@ -44,8 +44,9 @@
                          
                         <br>
                         <br>
-                        <button class="buttom-registroPaciente">Generar turno</button>
-
+                        <form action="/front/generacionTurnosSec">
+                        <button class="buttom-registroPaciente" type="submit">Generar turno</button>
+                        </form>
                 </div> 
                 <div class="imagen-fondo w-50">
                     <div class="d-flex align-items-stretch">

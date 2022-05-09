@@ -37,7 +37,6 @@ ProyectoFinal\example\Hospital\Entidades\Consulta.class
 ProyectoFinal\example\Hospital\HospitalApplication.class
 ProyectoFinal\example\Hospital\Controladores\PortalControlador.class
 ProyectoFinal\example\Hospital\Entidades\Foto.class
-ProyectoFinal\example\Hospital\Entidades\Turnos.class
 ProyectoFinal\example\Hospital\Repositorios\EstudioRepositorio.class
 ProyectoFinal\example\Hospital\Controladores\LoginControlador.class
 ProyectoFinal\example\Hospital\enums\Rol.class

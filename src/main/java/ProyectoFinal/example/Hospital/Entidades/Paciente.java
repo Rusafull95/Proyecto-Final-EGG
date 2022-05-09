@@ -21,6 +21,9 @@ public class Paciente {
     private Integer dni;
     private String domicilio;
     private String obraSocial;
+    private String plan;
+    private String cantGrupoFamiliar;
+    private String numeroDeAfiliado;
     @Temporal(TemporalType.DATE)
     private Date fechaDeNacimiento;
     @OneToOne(cascade = CascadeType.ALL)
@@ -69,6 +72,27 @@ public class Paciente {
         this.usuario = usuario;
     }
     
+      public String getPlan() {
+        return plan;
+    }
+
+    public void setPlan(String plan) {
+        this.plan = plan;
+    }
     
+      public String getCantGrupoFamiliar() {
+        return cantGrupoFamiliar;
+    }
+
+    public void setCantGrupoFamiliar(String cantGrupoFamiliar) {
+        this.cantGrupoFamiliar = cantGrupoFamiliar;
+    }
     
+      public String getNumeroDeAfiliado() {
+        return numeroDeAfiliado;
+    }
+
+    public void setNumeroDeAfiliado(String numeroDeAfiliado) {
+        this.numeroDeAfiliado = numeroDeAfiliado;
+    }
 }

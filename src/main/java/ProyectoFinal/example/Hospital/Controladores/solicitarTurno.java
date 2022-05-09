@@ -1,7 +1,7 @@
 
 package ProyectoFinal.example.Hospital.Controladores;
 
-import ProyectoFinal.example.Hospital.Entidades.Turnos;
+import ProyectoFinal.example.Hospital.Entidades.Turno;
 import java.util.Date;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +19,7 @@ public class solicitarTurno {
     
      @GetMapping("/solicitarTurno")
     public String solicitarTurno(Model model){
-       Turnos turno= new Turnos();
+       Turno turno= new Turno();
 //       turno.setCita(new Date);
 //       turno.sethora(new Date);
 //       turno.setEspecialidad(new String);

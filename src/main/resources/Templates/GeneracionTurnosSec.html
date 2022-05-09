@@ -13,30 +13,33 @@ and open the template in the editor.
     <body layout:fragment="body">
         <main  class="imagen-fondo-sec">
             <h1 class=" text-center">Generacion de Turnos</h1>
-            <form class="text-center border-form" style= "padding: 50px; border-radius: 100px; border: black solid">
+            <form th:action= "@{/turnos/generacionsec}" method="POST" th:object="${turno}" class="text-center border-form" style= "padding: 50px; border-radius: 100px; border: black solid">
+                 <p th:if='${succes != null}' th:text="${succes}" style="color: green"></p>
+                  <input hidden  th:field="${turno.codigo}" />
                         <h5>Datos personales</h5>
                         <br>
-                        <input type="text"  name="nombres" placeholder="Nombres"/>    <input type="text"  name="Apellido" placeholder="Apellido"/> <input type="text"  name="dni" placeholder="DNI"/>
-                        <input type="Date"  name="fechaDeacimiento" placeholder="Fecha de nacimiento" /> 
+                        <input type="text"   placeholder="Nombres" th:field="${turno.paciente.usuario.nombre}"/>    <input type="text"   placeholder="Apellido" th:field="${turno.paciente.usuario.apellido}"/> <input type="text" placeholder="DNI" th:field="${turno.paciente.dni}" />
+                        <input type="Date"   placeholder="Fecha de nacimiento" th:field="${turno.paciente.fechaDeNacimiento}" /> 
                         <br>
                         <br>
                         <h5>Datos de Contacto</h5>
-                        <input type="text"  name="domicilio" placeholder="Domicilio"/>
-                        <input type="text"  name="mail" placeholder="Correo electronico"/>  
+                        <input type="text"   placeholder="Domicilio" th:field="${turno.paciente.domicilio}" />
+                        <input type="text"   placeholder="Correo electronico" th:field="${turno.paciente.usuario.mail}"/>  
                         <br>
                         <br>
                         <h5>Obra Social</h5>
-                        <input type="text"  name="ObraSocial" placeholder="obra social" />
-                        <input type="text"  name="numeroDeAfiliado" placeholder="Numero de afiliado"/>
-                        <input type="text"  name="CantGrupoFamiliar" placeholder="Numero grupo familiar"/>
-                        <input type="text"  name="plan" placeholder="Plan"/>
+                        <input type="text"   placeholder="obra social" th:field="${turno.paciente.obraSocial}"/>
+                        <input type="text"   placeholder="Numero de afiliado" th:field="${turno.paciente.numeroDeAfiliado}"/>
+                        <input type="text"   placeholder="Numero grupo familiar" th:field="${turno.paciente.cantGrupoFamiliar}"/>
+                        <input type="text"   placeholder="Plan" th:field="${turno.paciente.plan}"/>
                         <br>
                         <br>
                         <h5>Datos Para el Turno</h5>
-                        <input type="text" name="especialidad" placeholder="Especialidad"  />   <input type="text" name="medicos" placeholder="Nombre medico"/>
-                        <input type="Date" name="cita" placeholder="Horario"/>  <input type="text" name="Numero de turno" placeholder="Numero de Turno"/>
-                         <br>
-                         <br>
+                        <input type="text"  placeholder="Especialidad"  th:field="${turno.especialidad.nombre}" />   <input type="text"  placeholder="Nombre medico" th:field="${turno.medico.usuario.nombre}"/>
+                        <input type="Date"  placeholder="Dia" th:field="${turno.cita}"/> <input type="time"  placeholder="Horario" th:field="${turno.hora}"/> 
+                        <br>
+                        <br>
+                        
                          <button class=" buttom-generarTurno">Generar Turno</button>
                          
                         
