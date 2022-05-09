@@ -40,22 +40,13 @@ and open the template in the editor.
 
                 <div class="d-flex m-2 justify-content-center" >
                     <strong><p style="text-align:center; margin-right: 15px">Olvidaste tu contraseña?</p></strong> 
-                    <button style="text-align:center" type="button" class="btn btn-secondary btn-sm justify-content-center">Recuperar contraseña</button>
+                    <a th:href="@{/recuperarCuenta}" style="text-align:center" class="btn btn-secondary btn-sm justify-content-center">Recuperar contraseña</a> 
                 </div>
 
                 <div class="d-flex m-2 justify-content-center" >
                     <strong><p style="text-align:center; margin-right: 30px">No tienes una cuenta?</p></strong> 
-
-                <div class="d-flex" >
-                    <p style="text-align:center">No tienes una cuenta?</p>
-                    <br>
-
-                    <button style="text-align:center" type="button" class="btn btn-secondary btn-sm">Registrate</button>
+                    <a th:href="@{/usuario/formulario}" style="text-align:center" class="btn-secondary btn-sm justify-content-center">Registrarse</a>
                 </div>
-
-
-           
-        </div>
     </main>
     </div>
     </form>

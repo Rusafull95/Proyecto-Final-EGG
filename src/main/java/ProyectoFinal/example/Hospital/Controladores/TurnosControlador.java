@@ -84,7 +84,7 @@ public class TurnosControlador {
             return "GeneracionTurnosSec";
         }
     }
-
+/*
     @GetMapping("/solicitar")
     public String solicitarTurno(
             HttpSession httpSession, RedirectAttributes redirectAttributes
@@ -96,12 +96,14 @@ public class TurnosControlador {
             redirectAttributes.addFlashAttribute("error", "debe completar sus datos para poder solicitar un turno");
             return "redirect:/rutaquellevaametodoparacompletardatos";
         }
-         */
+         
         return "solicitarTurno";
     }
+*/
     
     @PostMapping("/solicitar")
     public String solicitarTurno(
+            @RequestParam("codigo") Integer codigo,
             @RequestParam("cita")@DateTimeFormat(pattern = "yyyy-mm-dd") Date cita, 
             @RequestParam("paciente") Paciente paciente, 
             @RequestParam("medico") Medico medico,  
