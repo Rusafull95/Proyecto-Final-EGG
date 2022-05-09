@@ -19,6 +19,9 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -146,4 +149,26 @@ public class TurnosServicios {
             throw new Exception("No se encontró el turno");
         }
     }
+    
+    //Solicitar turno-Belen-
+    
+     @Autowired
+    private SolicitarTurnoServicio solicitarTurnoServicio;
+            
+      private String solicitarTurno(Model model){
+       Turnos turno= new Turnos();
+//       turno.setCita(new Date);
+//       turno.sethora(new Date);
+//       turno.setEspecialidad(new String);
+        model.addAttribute("turno",turno);
+        
+        return "solicitarTurno";
+    }   
+    
+   @PostMapping("/save")
+   public String save(@RequestParam("solicitarTurno") string solicitarTurno) {
+       System.out.println("El contenido es:" +solicitarTurno);
+       Turno turno = new turno();
+       solicitarTurnoServicio.guardarTurno(turno)
+   }
 }
