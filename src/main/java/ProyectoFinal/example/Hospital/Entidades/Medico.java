@@ -6,6 +6,7 @@
 package ProyectoFinal.example.Hospital.Entidades;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -15,11 +16,11 @@ import javax.persistence.OneToOne;
 public class Medico {
     @Id
     private String numeroDeMatricula;
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL)
     private List<Especialidad> especialidades;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Turno> ListaDeTurnos;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Usuario usuario;
 
     public Medico() {
