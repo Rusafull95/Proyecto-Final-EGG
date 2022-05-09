@@ -72,11 +72,12 @@ public class UsuarioControlador {
     ) {
         try {
             Usuario usuario = null;
-            if (id == null) {
+            if (id.length() ==0) {
                 usuario = usuarioServicio.crearUsuario(mail, nombre, apellido, password_1, password_2);
             } else {
                 usuario = usuarioServicio.modificarDatosUsuario(id, mail, nombre, apellido);
             }
+            
             modelo.addAttribute("valido", "Usuario " + id != null ? "editado" : "registrado con exito");
             return "RegistroPaciente";
 
