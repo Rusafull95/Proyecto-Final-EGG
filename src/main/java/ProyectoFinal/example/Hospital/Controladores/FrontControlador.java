@@ -6,9 +6,11 @@
 package ProyectoFinal.example.Hospital.Controladores;
 
 import ProyectoFinal.example.Hospital.Entidades.Especialidad;
+import ProyectoFinal.example.Hospital.Entidades.Medico;
 import ProyectoFinal.example.Hospital.Entidades.Paciente;
 import ProyectoFinal.example.Hospital.Entidades.Turno;
 import ProyectoFinal.example.Hospital.Servicios.EspecialidadServicios;
+import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -41,14 +43,18 @@ public class FrontControlador {
 
     @Autowired
     EspecialidadServicios especialidadServicios;
+    @Autowired
+    MedicoServicio medicoServicio;
 
     @GetMapping("/generacionTurnosSec")
-    public String generacionTurnosSec(Model modelo, String especialidad) {
-        List<Especialidad> especialidades = new ArrayList<Especialidad>();
+    public String generacionTurnosSec(Model modelo) {
+     
         try {
-            especialidades = (List<Especialidad>) especialidadServicios.guardarEspecialidad(especialidad);
+            List <Especialidad> especialidad2 =  especialidadServicios.mostrarTodos();
+            List<Medico> medico2 = medicoServicio.mostrarTodos();
             Turno turno = new Turno();
-            modelo.addAttribute("especialidades", especialidades);
+            modelo.addAttribute("medicos", medico2);
+            modelo.addAttribute("especialidades", especialidad2);
             modelo.addAttribute("turno", turno);
             return "GeneracionTurnosSec";
         } catch (Exception ex) {
