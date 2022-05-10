@@ -33,6 +33,43 @@ and open the template in the editor.
           </tr>
         </thead>
         <tbody>
+            
+<!--            <tr th:each="turno : ${listaDeTurnosEnProceso}">
+                
+                <th scope="row" th:value="${turno.codigo}"></th>
+                
+                <td th:value="turno.paciente.apellido"></td>
+                <td th:value="turno.paciente.nombre"></td>
+                <td th:value="turno.cita"></td>
+                <td th:if="${id == turno.codigo}" th:value="turno.hora"></td>
+                <td th:if="${id == turno.codigo}">
+                    <form action="/medico/turnos/enproceso/darbaja" method="POST">
+                        <input type="hidden" name="codigo" th:value="${turno.codigo}">
+                            <button type="submit" class="btn btn-danger">Suspender</button>
+                    </form>
+                </td>
+                <td th:if="${id == turno.codigo}">
+                    <form action="/medico/turnos/enproceso/editar" method="POST">
+                        <input type="hidden" name="codigo" th:value="${turno.codigo}">
+                        <button type="submit" class="btn btn-primary">Editar Hora</button>
+                    </form>
+                </td>
+                
+                <form th:if="${id != turno.codigo}" action="/medico/turnos/enproceso/editado" method="POST" th:object="${Turno}">
+                    <td th:if="${id != turno.codigo}">
+                        <input type="time" th:field="${Turno.hora}" th:value="${turno.hora}">
+                    </td>
+                    <td th:if="${id != turno.codigo}">
+                        <input type="hidden" th:field="${Turno.codigo}" th:value="${turno.codigo}">
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </td>
+                </form>
+                <td th:if="${id != turno.codigo}">
+                    <a href="/medico/turnos/enproceso" class="btn btn-danger">Atras</a>
+                </td>
+                
+            </tr>-->
+            
           <tr>
             <th scope="row">1</th>
             <td>Perez</td>
