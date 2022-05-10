@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Turno {
@@ -26,6 +27,7 @@ public class Turno {
     private Date cita;
     private boolean realizado;
     @Temporal(TemporalType.TIME)
+    @DateTimeFormat(pattern = "HH:mm:ss")
     private Date hora;
     @OneToOne
     private Paciente paciente;
@@ -57,6 +59,14 @@ public class Turno {
 
     public void setCita(Date cita) {
         this.cita = cita;
+    }
+    
+    public Date getHora() {
+        return hora;
+    }
+
+    public void setHora(Date hora) {
+        this.hora = hora;
     }
 
     public Paciente getPaciente() {

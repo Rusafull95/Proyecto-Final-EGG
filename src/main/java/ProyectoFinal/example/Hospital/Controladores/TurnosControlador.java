@@ -15,6 +15,8 @@ import ProyectoFinal.example.Hospital.Servicios.ConsultaServicio;
 import ProyectoFinal.example.Hospital.Servicios.TurnosServicios;
 import ProyectoFinal.example.Hospital.enums.Rol;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -22,6 +24,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 
 
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -45,84 +49,77 @@ public class TurnosControlador {
     private TurnosServicios turnosServicios;
 
     @GetMapping("")
-    public String paginaPrincipal(@RequestParam("rol") Rol rol) {
-        if (rol == Rol.SECRETARIA) {
-            return "GeneracionTurnosSec";
-        } else {
-            return "solicitarTurno";
-        }
+     public String formulario(Model modelo) {
+       
+        modelo.addAttribute("turno", new Turno());
+        return "GeneracionTurnosSec";
     }
-
-
+    
+    
     @PostMapping("/generacionsec")
-    public String generacionTurnosSec(
-            @RequestParam("codigo") Integer codigo,
-            @RequestParam("cita") @DateTimeFormat(pattern = "yyyy-mm-dd") Date cita,
-            @RequestParam("paciente") Paciente paciente,
-            @RequestParam("medico") Medico medico,
-            @RequestParam("especialidad") Especialidad especialidad,
-            @RequestParam("secretaria") Secretaria secretaria,
-            Model modelo
-    ) {
+    public String generacionTurnosSec(@ModelAttribute("turno") Turno turno , Model modelo) {
         try {
-            Turno turno = new Turno();
-            turno.setCita(cita);
-            turno.setPaciente(paciente);
-            turno.setMedico(medico);
-            turno.setEspecialidad(especialidad);
-            turno.setSecretaria(secretaria);
-
+            
             turnosServicios.guardarTurno(turno);
-            modelo.addAttribute("Turno", turno);
-            //String succes = codigo != null ? "libro modificado con exito" ;
+            //String succes = codigo != null ?: "turno creado con exito" ;
            // modelo.addAttribute("succes", succes);
-            return "Libro-Formulario";
-           // return "GeneracionTurnosSec";
+            return "GeneracionTurnosSec";
         } catch (Exception ex) {
             ex.printStackTrace();
             modelo.addAttribute("error", ex.getMessage());
             return "GeneracionTurnosSec";
         }
+           
+        }
     }
-/*
-    @GetMapping("/solicitar")
-    public String solicitarTurno(
-            HttpSession httpSession, RedirectAttributes redirectAttributes
-    ) throws Exception {
-        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+
+//public String paginaPrincipal(@RequestParam("rol") Rol rol) {
+//        if (rol == Rol.SECRETARIA) {
+//            return "GeneracionTurnosSec";
+//        } else {
+//            return "solicitarTurno";
+//        }
+//    }
+
+//    @GetMapping("/solicitar")
+//    public String solicitarTurno(
+//            HttpSession httpSession, RedirectAttributes redirectAttributes
+//    ) throws Exception {
+//        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
         //Paciente paciente = pacienteServicio.traerPacienteByUsuario(usuario);
         /*
         if(!pacienteServicio.tieneDatosCompletos(paciente)) {
             redirectAttributes.addFlashAttribute("error", "debe completar sus datos para poder solicitar un turno");
             return "redirect:/rutaquellevaametodoparacompletardatos";
         }
-         
-        return "solicitarTurno";
-    }
-*/
-    
-    @PostMapping("/solicitar")
-    public String solicitarTurno(
-            @RequestParam("codigo") Integer codigo,
-            @RequestParam("cita")@DateTimeFormat(pattern = "yyyy-mm-dd") Date cita, 
-            @RequestParam("paciente") Paciente paciente, 
-            @RequestParam("medico") Medico medico,  
-            @RequestParam("especialidad") Especialidad especialidad 
-    ) throws Exception{
-        turnosServicios.crearTurnos(cita, paciente, medico, especialidad, null);
-        return "solicitarTurno";
-    }
-    
-    @PatchMapping("/consulta")
-    public String crearConsulta(@RequestParam("num") Integer num, @RequestParam("descripcion") String descripcion, @RequestParam("turnoId") Integer turnoId) throws Exception{
 
-        turnosServicios.modificarTurno(turnoId, null, null, null, null, consultaServicio.crearConsulta(descripcion, num), null, null);
-        return "index";
-    }
+         */
+//        return "solicitarTurno";
+//    }
 
-    @GetMapping("/buscar")
-    public String buscarTurno(ModelMap modelo, @RequestParam("codigo") Integer codigo) throws Exception {
-        modelo.put("turno", turnosServicios.buscarTurnoPorCodigo(codigo));
-        return "index";
-    }
-}
+    
+    
+//    @PostMapping("/solicitar")
+//    public String solicitarTurno(
+//            @RequestParam("cita")@DateTimeFormat(pattern = "yyyy-mm-dd") Date cita, 
+//            @RequestParam("paciente") Paciente paciente, 
+//            @RequestParam("medico") Medico medico,  
+//            @RequestParam("especialidad") Especialidad especialidad 
+//    ) throws Exception{
+//        turnosServicios.crearTurnos(cita, paciente, medico, especialidad, null);
+//        return "solicitarTurno";
+//    }
+    
+//    @PatchMapping("/consulta")
+//    public String crearConsulta(@RequestParam("num") Integer num, @RequestParam("descripcion") String descripcion, @RequestParam("turnoId") Integer turnoId) throws Exception{
+//
+//        turnosServicios.modificarTurno(turnoId, null, null, null, null, consultaServicio.crearConsulta(descripcion, num), null, null);
+//        return "index";
+//    }
+//
+//    @GetMapping("/buscar")
+//    public String buscarTurno(ModelMap modelo, @RequestParam("codigo") Integer codigo) throws Exception {
+//        modelo.put("turno", turnosServicios.buscarTurnoPorCodigo(codigo));
+//        return "index";
+//    }
+//}

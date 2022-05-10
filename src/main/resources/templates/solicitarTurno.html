@@ -17,7 +17,7 @@ and open the template in the editor.
     <body layout:fragment="body">
         <div  >
             <h1 class="tituloTurno m-5" style="text-align: center" >Solicitud de Turnos</h1>
-            <form th:object="${turnos}" th:action="@{/turnos/solicitar}" method="post">
+            <form  >
                 <div class="Turnos margin-card "  style="text-align: center; padding: 50px;margin: 50px; border-bottom-left-radius: 100px; border-bottom-right-radius: 100px; border: black solid ">
                     <h3><label style="background-color: lightgray;">Fecha del Turno</label></h3> 
                     <input type="Date" name="Fecha" placeholder="Fecha">
@@ -36,11 +36,10 @@ and open the template in the editor.
                     <option value="Oftalmologia">Oftalmologia</option>
                     <option value="Pediatria">Pediatria</option>
                           </select> 
-                    <center><button class="btn btn-success" type="submit" style="height: 50px; width: 100px"> Solicitar</button></center>
-
+                  
                 </div>
             </form>
-            <center><button class="btn btn-success" type="submit" style="height: 50px; width: 100px"> Solicitar</button></center>
+            <center><button style="height: 50px; width: 100px"> Solicitar</button></center>
             <br>
         </div>
     </body>

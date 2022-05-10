@@ -46,7 +46,7 @@ public class MedicoControlador {
     @GetMapping("/principal1")
     public String paginaPrincipal1(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
         modelo.put("turnosHoy", medicoServicio.turnosHoy(numMatricula));
-        modelo.put("4Turnos", medicoServicio.cTurnosEnProceso(numMatricula));
+       // modelo.put("4Turnos", medicoServicio.TurnosEnProceso(numMatricula));
         return "principal-Medico";
     }
     
