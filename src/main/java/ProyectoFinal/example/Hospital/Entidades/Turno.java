@@ -6,6 +6,7 @@
 package ProyectoFinal.example.Hospital.Entidades;
 
 import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
+import java.sql.Time;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -25,8 +26,10 @@ public class Turno {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer codigo;
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern= "yyyy-mm-dd")
     private Date cita;
-    @DateTimeFormat(pattern = "HH:mm:ss")
+    @Temporal(TemporalType.TIME)
+    @DateTimeFormat(pattern= "HH:mm")
     private Date hora;
     @OneToOne
     private Paciente paciente;
@@ -114,6 +117,11 @@ public class Turno {
 
     public void setSecretaria(Secretaria secretaria) {
         this.secretaria = secretaria;
+    }
+
+    @Override
+    public String toString() {
+        return "Turno{" + "codigo=" + codigo + ", cita=" + cita + ", hora=" + hora + ", paciente=" + paciente + ", medico=" + medico + ", estado=" + estado + ", consulta=" + consulta + ", especialidad=" + especialidad + ", secretaria=" + secretaria + '}';
     }
     
     

@@ -59,7 +59,7 @@ public class TurnosControlador {
     @PostMapping("/generacionsec")
     public String generacionTurnosSec(@ModelAttribute("turno") Turno turno , Model modelo) {
         try {
-            
+            System.out.println("turno: " + turno.toString());
             turnosServicios.guardarTurno(turno);
             //String succes = codigo != null ?: "turno creado con exito" ;
            // modelo.addAttribute("succes", succes);
@@ -67,6 +67,7 @@ public class TurnosControlador {
         } catch (Exception ex) {
             ex.printStackTrace();
             modelo.addAttribute("error", ex.getMessage());
+            modelo.addAttribute("turno", turno);
             return "GeneracionTurnosSec";
         }
            
