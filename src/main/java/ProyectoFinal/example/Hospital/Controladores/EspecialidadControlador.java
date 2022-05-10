@@ -8,7 +8,7 @@ package ProyectoFinal.example.Hospital.Controladores;
 import ProyectoFinal.example.Hospital.Servicios.EspecialidadServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,14 +26,14 @@ public class EspecialidadControlador {
     private EspecialidadServicios especialidadServicios;
     
     @GetMapping("/lista")
-    public String listaDeEspecialidades(ModelMap modelo){
-        modelo.put("listaEspecialidades", especialidadServicios.mostrarEspecialidades());
+    public String listaDeEspecialidades(Model modelo){
+        modelo.addAttribute("listaEspecialidades", especialidadServicios.mostrarEspecialidades());
         return "ListaEspecialidades";
     }
     
     @PatchMapping("/modificar")
     public String modificarListaDeEspecialidades(
-            ModelMap modelo, @RequestParam("idEspecialidad") String id, 
+            @RequestParam("idEspecialidad") String id, 
             @RequestParam("especialidadNombre") String nombre
     ) throws Exception{
         especialidadServicios.modificarEspecialidad(id, nombre);

@@ -32,7 +32,7 @@ public class TurnosServicios {
     
     //crear turno recibe una fecha(cita), un objeto paciente, un objeto medico, un objeto consulta, un objeto especialidad y un objeto secretaria para crear un turno (el estado se pone por solo en solicitado)
     @Transactional
-    public void crearTurnos(Date cita, Paciente paciente, Medico medico, Especialidad especialidad, Secretaria secretaria) throws Exception{
+    public void crearTurnos(Date cita, Date hora, Paciente paciente, Medico medico, Especialidad especialidad, Secretaria secretaria) throws Exception{
         boolean medEspe = false;
         for (Especialidad aux : medico.getEspecialidades()) {
             if(aux == especialidad){
@@ -41,6 +41,9 @@ public class TurnosServicios {
         }
         if(cita == null){
             throw new Exception("Debe indicar un día");
+        }
+        if(hora == null){
+            throw new Exception("Debe indicar una hora");
         }
         if(paciente == null){
             throw new Exception("Debe indicar un paciente");
@@ -56,6 +59,7 @@ public class TurnosServicios {
         }
         Turno turnos = new Turno();
         turnos.setCita(cita);
+        turnos.setHora(hora);
         turnos.setPaciente(paciente);
         turnos.setMedico(medico);
         turnos.setEstado(EstadoDelTurno.SOLICITADO);
@@ -66,7 +70,7 @@ public class TurnosServicios {
     
     //modificarTurno recibe el código del turno que se desea modificar y los mismos parametros que el metodo crearTurno para modificar el turno seleccionado
     @Transactional
-    public void modificarTurno(Integer codigo, Date cita, Paciente paciente, Medico medico, EstadoDelTurno estado, Consulta consulta, Especialidad especialidad, Secretaria secretaria) throws Exception{
+    public void modificarTurno(Integer codigo, Date cita, Date hora, Paciente paciente, Medico medico, EstadoDelTurno estado, Consulta consulta, Especialidad especialidad, Secretaria secretaria) throws Exception{
 //        boolean medEspe = false;
 //        for (Especialidad aux : medico.getEspecialidades()) {
 //            if(aux == especialidad){
@@ -93,6 +97,9 @@ public class TurnosServicios {
             Turno turno = respuesta.get();
             if(cita != null){
             turno.setCita(cita); 
+            }
+            if(hora != null){
+            turno.setHora(hora); 
             }
             if(paciente != null){   
             turno.setPaciente(paciente);
