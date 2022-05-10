@@ -72,7 +72,7 @@ public class UsuarioControlador {
     ) {
         try {
             Usuario usuario = null;
-            if (id == null) {
+            if (id == null || id.isEmpty()) {
                 usuario = usuarioServicio.crearUsuario(mail, nombre, apellido, password_1, password_2);
             } else {
                 usuario = usuarioServicio.modificarDatosUsuario(id, mail, nombre, apellido);
