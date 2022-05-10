@@ -6,14 +6,18 @@
 package ProyectoFinal.example.Hospital.Controladores;
 
 import ProyectoFinal.example.Hospital.Entidades.Especialidad;
+import ProyectoFinal.example.Hospital.Entidades.Turno;
 import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
 import ProyectoFinal.example.Hospital.Servicios.TurnosServicios;
+import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,8 +48,8 @@ public class MedicoControlador {
     }
     
     @GetMapping("/principal1")
-    public String paginaPrincipal1(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
-        modelo.put("turnosHoy", medicoServicio.turnosHoy(numMatricula));
+    public String paginaPrincipal1(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.addAttribute("turnosHoy", medicoServicio.turnosHoy(numMatricula));
        // modelo.put("4Turnos", medicoServicio.TurnosEnProceso(numMatricula));
         return "principal-Medico";
     }
@@ -61,38 +65,67 @@ public class MedicoControlador {
     }
     
     @GetMapping("/turnos/hoy")
-    public String turnosHoy(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
-        modelo.put("turnosHoy", medicoServicio.turnosHoy(numMatricula));
+    public String turnosHoy(@ModelAttribute("turnosHoy") List<Turno>turnosHoy){
         return "principal-Medico";
     }
     
     @GetMapping("/turnos")
-    public String turnos(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
-        modelo.put("listaDeTurnos", medicoServicio.medicoTurnos(numMatricula));
+    public String turnos(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.addAttribute("listaDeTurnos", medicoServicio.medicoTurnos(numMatricula));
         return "listaDeTurnosCompleta-Medico";
     }
 
     @GetMapping("/turnos/atendidos")
-    public String turnosAtendidos(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
-        modelo.put("listaDeTurnosAtendidos", medicoServicio.turnosAtendidos(numMatricula));
+    public String turnosAtendidos(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.addAttribute("listaDeTurnosAtendidos", medicoServicio.turnosAtendidos(numMatricula));
         return "turnoAtendido-Medico";
     }
     
     @GetMapping("/turnos/enproceso")
-    public String turnosEnProgreso(ModelMap modelo, @RequestParam("matricula") String numMatricula) throws Exception{
-        modelo.put("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
+    public String turnosEnProgreso(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+        modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
+        return "listaTurnoEnProgreso-Medico";
+    }
+    
+    @PostMapping("/turnos/enproceso/darbaja")
+    public String turnosEnProgresoBaja(Model modelo, @RequestParam("matricula") String numMatricula, @RequestParam("codigo") Integer codigo) throws Exception{
+        turnosServicios.cancelarTurno(codigo);
+        modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
+        return "listaTurnoEnProgreso-Medico";
+    }
+    
+    @PostMapping("/turnos/enproceso/editar")
+    public String turnosEnProgresoEditar(Model modelo, @RequestParam("matricula") String numMatricula, @RequestParam("codigo") Integer codigo) throws Exception{
+        modelo.addAttribute("id", codigo);
+        modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
+        return "listaTurnoEnProgreso-Medico";
+    }
+    
+    @PostMapping("/turnos/enproceso/editado")
+    public String turnosEnProgresoEditado(Model modelo, 
+            @RequestParam("matricula") String numMatricula, 
+            @RequestParam("codigo") Integer codigo, 
+            @ModelAttribute("id") Integer id,
+            @ModelAttribute("turno") Turno turno
+            ) throws Exception{
+        modelo.addAttribute("id", id);
+        modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
+
+            turnosServicios.modificarTurno(turno.getCodigo(), turno.getCita(), turno.getHora(), turno.getPaciente(), turno.getMedico(), turno.getEstado(), turno.getConsulta(), turno.getEspecialidad(), turno.getSecretaria());
+            modelo.addAttribute("id", null);
+
         return "listaTurnoEnProgreso-Medico";
     }
     
     @GetMapping("/especialidad")
-    public String buscarPorEspecialidad(ModelMap modelo, @RequestParam("especialidad") Especialidad especialidad){
-        modelo.put("listaMedEsp", medicoServicio.buscarMedPorEspecialidad(especialidad));
+    public String buscarPorEspecialidad(Model modelo, @RequestParam("especialidad") Especialidad especialidad){
+        modelo.addAttribute("listaMedEsp", medicoServicio.buscarMedPorEspecialidad(especialidad));
         return "principal-Medico";
     }
     
     @GetMapping("/turno")
-    public String turno(ModelMap modelo, @RequestParam("codigo")Integer codigo) throws Exception{
-        modelo.put("turnoX", turnosServicios.buscarTurnoPorCodigo(codigo));
+    public String turno(Model modelo, @RequestParam("codigo")Integer codigo) throws Exception{
+        modelo.addAttribute("turnoX", turnosServicios.buscarTurnoPorCodigo(codigo));
         return "index";
     }
 }
