@@ -12,9 +12,12 @@ import ProyectoFinal.example.Hospital.Entidades.Secretaria;
 import ProyectoFinal.example.Hospital.Entidades.Turno;
 import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Servicios.ConsultaServicio;
+import ProyectoFinal.example.Hospital.Servicios.EspecialidadServicios;
+import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
 import ProyectoFinal.example.Hospital.Servicios.TurnosServicios;
 import ProyectoFinal.example.Hospital.enums.Rol;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpSession;
@@ -47,6 +50,10 @@ public class TurnosControlador {
     private ConsultaServicio consultaServicio;
     @Autowired
     private TurnosServicios turnosServicios;
+    @Autowired
+    private EspecialidadServicios especialidadServicios;
+    @Autowired
+    private MedicoServicio medicoServicio;
 
     @GetMapping("")
      public String formulario(Model modelo) {
@@ -68,6 +75,10 @@ public class TurnosControlador {
             ex.printStackTrace();
             modelo.addAttribute("error", ex.getMessage());
             modelo.addAttribute("turno", turno);
+            List <Especialidad> especialidad2 =  especialidadServicios.mostrarTodos();
+            modelo.addAttribute("especialidades", especialidad2);
+            List<Medico> medico2 = medicoServicio.mostrarMedicos();
+            modelo.addAttribute("medicos", medico2);
             return "GeneracionTurnosSec";
         }
            

@@ -91,6 +91,10 @@ public class MedicoServicio {
         return medicos;
     }
     
+     public List<Medico> mostrarTodos (){
+        return medicoRepositorio.findAll();
+    }
+    
     //MostrarMedicoPorId devuelve un médico según su número de matrícula
     public Medico mostrarMedicoPorId(String numMatricula) throws Exception{
         Optional<Medico> respuesta = medicoRepositorio.findById(numMatricula);
