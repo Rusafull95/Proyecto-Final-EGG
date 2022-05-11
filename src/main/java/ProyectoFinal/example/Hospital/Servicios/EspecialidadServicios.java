@@ -36,6 +36,10 @@ public class EspecialidadServicios {
         
     }
     
+    public List<Especialidad> mostrarTodos (){
+        return especialidadRepositorio.findAll();
+    }
+    
     //modificarEspecialidad recibe el id de la especialidad que se desea modificar y el nuevo nombre de la especialidad
     @Transactional
     public void modificarEspecialidad(String id, String nombre) throws Exception{

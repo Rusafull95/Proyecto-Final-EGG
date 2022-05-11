@@ -199,6 +199,7 @@ public class UsuarioServicio implements UserDetailsService {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpSession session = attributes.getRequest().getSession(true);
         session.setAttribute("usuario", usuario);
+        System.out.println(session.getAttribute("usuario"));
     }
 
     @Override
@@ -207,7 +208,7 @@ public class UsuarioServicio implements UserDetailsService {
             Usuario usuario = usuarioRepositorio.buscarPorMail(mail);
             List<GrantedAuthority> autorities = new ArrayList<>();
 
-//            agregarUsuarioALaSesion(usuario);
+            agregarUsuarioALaSesion(usuario);
             autorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRol()));
 
             return new User(mail, usuario.getPassword(), autorities);

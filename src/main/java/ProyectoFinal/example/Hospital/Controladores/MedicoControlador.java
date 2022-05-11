@@ -10,13 +10,12 @@ import ProyectoFinal.example.Hospital.Entidades.Turno;
 import ProyectoFinal.example.Hospital.Entidades.Usuario;
 import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
 import ProyectoFinal.example.Hospital.Servicios.TurnosServicios;
-import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
+import ProyectoFinal.example.Hospital.Servicios.UsuarioServicio;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,20 +42,22 @@ public class MedicoControlador {
     @Autowired
     private TurnosServicios turnosServicios;
     
-    @GetMapping("/principal")
-    public String paginaPrincipal(){
-        return "principal-Medico";
-    }
+    @Autowired
+    private UsuarioServicio usuarioServicio;
     
-    @GetMapping("/principal1")
+    @GetMapping("/principal")
     public String paginaPrincipal1(Model modelo,
-            HttpSession httpSession
+            HttpSession httpSession,
+            @RequestParam(name = "idUsuario", required = false) String idUsuario
     ) throws Exception{
+//        httpSession.setAttribute("usuario", "87198f9d-e16b-478d-a985-4fd531c2b074");
         Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
-        System.out.println(usuario);
+//        Usuario usuario = usuarioServicio.buscarUsuarioPorId("87198f9d-e16b-478d-a985-4fd531c2b074");
+        System.out.println("Usuario " + httpSession.getAttributeNames());
 //        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
+//        System.out.println("matricula " + numMatricula);
 //        modelo.addAttribute("turnosHoy", medicoServicio.turnosHoy(numMatricula));
-       // modelo.put("4Turnos", medicoServicio.TurnosEnProceso(numMatricula));
+//        modelo.addAttribute("4Turnos", medicoServicio.turnosEnProceso(numMatricula));
         return "principal-Medico";
     }
     

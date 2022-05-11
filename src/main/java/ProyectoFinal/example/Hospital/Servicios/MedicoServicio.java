@@ -91,6 +91,7 @@ public class MedicoServicio {
         return medicos;
     }
     
+
     public Medico buscarMedicoByUsuario(Usuario usuario){
         List<Medico>medicos = medicoRepositorio.findAll();
         Medico medico = new Medico();
@@ -100,6 +101,10 @@ public class MedicoServicio {
             }
         }
         return medico;
+    }
+
+     public List<Medico> mostrarTodos (){
+        return medicoRepositorio.findAll();
     }
     
     //MostrarMedicoPorId devuelve un médico según su número de matrícula

@@ -18,6 +18,8 @@
                 Bienvenido al sistema: <br>
                 Nombre y apellido del medico
             </h5>
+            <p  th:text="${session.usuario}"></p>
+            Logged user: <span sec:authentication="name"></span>
         </div>
 
         <div class="container-table">
