@@ -8,6 +8,7 @@ package ProyectoFinal.example.Hospital.Entidades;
 import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
 import java.sql.Time;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -31,15 +32,15 @@ public class Turno {
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern= "HH:mm")
     private Date hora;
-    @OneToOne
+    @OneToOne (cascade=CascadeType.ALL)
     private Paciente paciente;
-    @OneToOne
+    @OneToOne (cascade=CascadeType.ALL)
     private Medico medico;
     @Enumerated(EnumType.STRING)
     private EstadoDelTurno estado;
     @OneToOne
     private Consulta consulta;
-    @OneToOne
+    @OneToOne (cascade=CascadeType.ALL)
     private Especialidad especialidad;
     @OneToOne
     private Secretaria secretaria;

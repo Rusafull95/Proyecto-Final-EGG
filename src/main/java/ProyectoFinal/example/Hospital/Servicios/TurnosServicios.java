@@ -68,9 +68,16 @@ public class TurnosServicios {
         turnosRepositorio.save(turnos);
     }
     
+    
+    
     //modificarTurno recibe el código del turno que se desea modificar y los mismos parametros que el metodo crearTurno para modificar el turno seleccionado
+
+//    @Transactional
+//    public void modificarTurno(Integer codigo, Date cita, Paciente paciente, Medico medico, EstadoDelTurno estado, Consulta consulta, Especialidad especialidad, Secretaria secretaria) throws Exception{
+
     @Transactional
     public void modificarTurno(Integer codigo, Date cita, Date hora, Paciente paciente, Medico medico, EstadoDelTurno estado, Consulta consulta, Especialidad especialidad, Secretaria secretaria) throws Exception{
+
 //        boolean medEspe = false;
 //        for (Especialidad aux : medico.getEspecialidades()) {
 //            if(aux == especialidad){
@@ -92,6 +99,58 @@ public class TurnosServicios {
 //        if(!medEspe){
 //            throw new Exception("El médico no es experto en el campo ingresado");
 //        }
+
+//        Optional<Turno> respuesta = turnosRepositorio.findById(codigo);
+//        if(respuesta.isPresent()){
+//            Turno turno = respuesta.get();
+//            if(cita != null){
+//            turno.setCita(cita); 
+//            }
+//            if(paciente != null){   
+//            turno.setPaciente(paciente);
+//            }
+//            if(medico != null){   
+//            turno.setMedico(medico);
+//            }
+//            if(estado != null){   
+//            turno.setEstado(estado);
+//            }
+//            if(consulta != null){
+//            turno.setConsulta(consulta);
+//            }
+//            if(especialidad != null){   
+//            turno.setEspecialidad(especialidad);
+//            }
+//            if(secretaria != null){   
+//            turno.setSecretaria(secretaria);
+//            }
+//        
+//            turnosRepositorio.save(turno);
+//        }else{
+//            throw new Exception("No se encontró el turno");
+//        }
+//    }
+//    
+//    //cancelarTurno recibe el código del turno que se desea eliminar y modifica el estado del turno a "CANCELADO"
+//    public void cancelarTurno(Integer codigo) throws Exception{
+//        Optional<Turno> respuesta = turnosRepositorio.findById(codigo);
+//        if(respuesta.isPresent()){
+//            Turno turno = respuesta.get();
+//            turno.setEstado(EstadoDelTurno.CANCELADO);
+//        
+//            turnosRepositorio.save(turno);
+//        }else{
+//            throw new Exception("No se encontró el turno");
+//        }
+//    }
+//    
+//    //mostrarTurnos muestra todos los turno incluso los cancelados
+//    public List<Turno> mostrarTurnos(){
+//        List<Turno>turnos = turnosRepositorio.findAll();
+//        return turnos;
+//    }
+//    
+
         Optional<Turno> respuesta = turnosRepositorio.findById(codigo);
         if(respuesta.isPresent()){
             Turno turno = respuesta.get();
@@ -145,6 +204,7 @@ public class TurnosServicios {
         return turnos;
     }
     
+
     public Turno buscarTurnoPorCodigo(Integer codigo) throws Exception{
         Optional<Turno> respuesta = turnosRepositorio.findById(codigo);
         if(respuesta.isPresent()){
@@ -163,7 +223,7 @@ public class TurnosServicios {
             throw new Exception(" el nombre del medico no puede estar vacio");
         }
         if (turno.getEspecialidad().getNombre().isEmpty()) {
-            throw new Exception(" el nombre de la editorial no puede estar vacio");
+            throw new Exception(" el nombre de la especialidad no puede estar vacio");
         }
       
 
