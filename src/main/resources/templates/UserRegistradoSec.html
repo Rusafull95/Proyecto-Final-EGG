@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body layout:fragment="body">
+        <main  class="imagen-fondo-sec">
+        <h2>Lista de Turnos recervados fecha actual</h2>
+        <p style="font-family: fantasy; font-size: larger; color: white; text-shadow:1px 1px 1px black;">Ingresar codigo del turno</p>
+       <nav class="navbar navbar-light bg-light " >
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar Paciente" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" style="background-color: #e4b9b9 ; color: blueviolet">Buscar </button>
+                    </form>
+                </div>
+            </nav>
+        
+        <table   class="table table-success table-striped" style="border:1px">
+
+            <thead>
+                <tr>
+                    <th scope="col">fila</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Cita</th>
+                    <th scope="col">Paciente</th>
+                    <th scope="col">Medico</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Generar el turno</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        </main>
+    </body>
+</html>

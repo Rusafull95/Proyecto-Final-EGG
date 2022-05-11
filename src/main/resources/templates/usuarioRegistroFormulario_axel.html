@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+    <head>
+        <title>Hospital Usuario Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body layout:fragment="body">
+        <header class="header-registro">
+           
+        </header>
+
+        <main  class="imagen-fondo-sec">
+            <h1>Registro usuario</h1>
+
+            <div style="padding: 50px; border-radius: 20px; border: black solid" >
+
+                <!-- <form class="row g-3"> -->
+
+            <div style="padding: 50px; border-radius: 20px; border: black solid">
+                <p th:if="${error != null}" th:text="${error}" style="color: red"> error </p>
+                <form class="row g-3" method="POST" th:action="@{/usuario/registrar}">
+
+                    <div class="mb-3 row">
+                        <div class="col-md-4" hidden>
+                            <label for="validationDefault01" class="form-label ">ID</label>
+                            <input name="id" type="text" class="form-control" id="validationDefault01" th:value="${id}" >
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault01" class="form-label ">Nombre</label>
+                            <input name="nombre" type="text" class="form-control" id="validationDefault01" th:value="${nombre}" required >
+                        </div>
+                        <div class="col-md-4">
+                            <label for="validationDefault02" class="form-label">Apellido</label>
+                            <input name="apellido" type="text" class="form-control" id="validationDefault02" th:value="${apellido}" required>
+                        </div>
+                    </div>
+
+                    <!--                    <div class="col-md-4">
+                                            <label for="validationDefaultUsername" class="form-label">Correo Electronico</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="inputGroupPrepend2">example@example.com</span>
+                                                <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                                            </div>
+                                        </div>-->
+                    <div class="mb-3 row">
+                        <label for="validationDefaultUsername" class="form-label">Correo Electronico</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="inputGroupPrepend2">example@example.com</span>
+                            <input th:value="${mail}" name="mail" type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input name="password_1" type="password" class="form-control" id="inputPassword" >
+                        </div>
+                    </div><div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Repetir Contraseña</label>
+                        <div class="col-sm-10">
+                            <input name="password_2" type="password" class="form-control" id="inputPassword" >
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                                Agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="buttom-usuario" type="submit" th:if="${id != null}">Guardar</button>
+                        <button class="buttom-usuario" type="submit" th:if="${id == null}">Registrar</button>
+                    </div>
+                </form>
+                <p>¿YA Tienes una Cuenta? <a th:href="@{/login}">Ingresar</a> </p> 
+            </div>
+
+
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>

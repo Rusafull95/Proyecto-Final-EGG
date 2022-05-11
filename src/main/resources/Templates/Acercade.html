@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+    <head>
+        <title>Acerca del Hospital</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body layout:fragment="body">
+
+            <div style="padding: 50px; border-radius: 20px; border: black solid; background-color: white">
+
+                <div class="main-content col-sm-12 col-lg-12 col-md-12 col-xs-12 no-padding ng-scope" ui-view="content-mini" style="">     <!-- ngRepeat: noti in noticia --><div ng-repeat="noti in noticia" class="ng-scope" style="">
+                    <!-- ngIf: noti.requiereNivel > 0 -->
+                    <!-- ngIf: noti.requiereNivel == 0 --><div ng-if="noti.requiereNivel == 0" class="ng-scope">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="panelBlanco  panelWidgetNoticiaCuerpo red" ng-class="color">
+                                <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 no-padding">
+                                    <div class="panel-heading panelWidgetTitulo red" ng-class="color">
+                                        <h2 ng-bind-html="noti.titulo" class="ng-binding">Acerca del Hospital</h2>
+                                    </div>
+                                    <div class="panel-heading panelWidgetTitulo red" ng-class="color">
+                                        <h4 ng-bind-html="noti.volanta" class="ng-binding"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="panel panel-default">
+                                <div ng-bind-html="noti.noticiaCuerpo" class="ng-binding"><div>
+            <div>
+                <span style="color:#000000;"><span style="font-size:20px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><strong>Nuestra Institución</strong></span></span></span></div>
+            <div>
+                &nbsp;</div>
+            <div>
+                <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><span trebuchet="">Nuestro hospital es una asociación civil sin fines de lucro dedicada al cuidado integral de la salud. Desde 0000, brinda asistencia médica, forma alumnos de grado y de posgrado, y realiza investigación básica, clínica y poblacional.</span></span></span></div>
+            <div>
+                <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><br>
+                </span></span></div>
+            <div>
+                <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><span size:="" trebuchet="">Cada año, el Hospital atiende&nbsp;</span><strong style="font-family: arial, helvetica, sans-serif; font-size: 16px;">XXXXXXXXX consultas</strong><span size:="" trebuchet="">, gestiona </span><strong style="font-family: arial, helvetica, sans-serif; font-size: 16px;">XXXXXX egresos</strong><span size:="" trebuchet=""> y realiza </span><strong style="font-family: arial, helvetica, sans-serif; font-size: 16px;">XXXXXX procedimientos quirúrgicos</strong><span size:="" trebuchet=""> en sus XX quirófanos. En la actualidad, dispone de XXXX camas para internación, XX de las cuales se destinan a cuidados críticos, y de XX camas de medicina domiciliaria. Su equipo de trabajo está conformado por </span><strong style="font-family: arial, helvetica, sans-serif; font-size: 16px;">XXXXXXX personas</strong><span size:="" trebuchet="">: XXXX médicos, XXXX miembros del staff de salud y XXXX personas de los sectores administrativos y de gestión.&nbsp;</span></span></span></div>
+            <div>
+                <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><br>
+                </span></span></div>
+            <div>
+                <span style="font-family:trebuchet ms, helvetica, sans-serif;"><span style="font-size:16px;">Desde el punto de vista asistencial, el Hospital ofrece más de <strong>XX especialidades médicas </strong>y cuenta con un equipamiento completo de diagnóstico y tratamiento, y con un plantel profesional reconocido.&nbsp;</span></span></div>
+            
+            </div>
+            <div>
+                <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><br>
+                </span></span></div>
+                <div>
+                    <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><br>
+                    </span></span></div>
+    
+        <div>
+            <span style="color:#000000;"><span style="font-size:20px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><strong>Mision y Vision</strong></span></span></span></div>
+        <div>
+            &nbsp;</div>
+        <div>
+        
+        <div>
+            <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><span trebuchet="">El Hospital trabaja con fuerte compromiso para mejorar cada día nuestra calidad de atención. Como resultado, logró diferentes certificaciones y reconocimientos que lo posicionan entre los mejores centros de salud del país y de la región</span></span></span></div>
+        <div>
+            <div>
+                <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><br>
+                </span></span></div>
+                <div>
+                    <span style="font-size:16px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><br>
+                    </span></span></div>
+    
+        <div>
+            <span style="color:#000000;"><span style="font-size:20px;"><span style="font-family:trebuchet ms, helvetica, sans-serif;"><strong>Ubicacion y Contacto</strong></span></span></span></div>
+        <div>
+            &nbsp;</div>
+        <div>
+        
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <p>
+        </p><h3 class="titulo-rojo"><b>Medios de Transporte</b></h3><br>
+        El Hospital se encuentra ubicado en <strong>tal lado.</strong> <br><br>
+
+
+        <h4><b>Transportes que lo acercan al Hospital</b></h4><br>
+          <b>Líneas de Colectivos:</b><br>
+        &nbsp;  &nbsp; &nbsp; &nbsp; 15, 19, 24, 26, 36, 52, 71<br><br>
+
+        <p>
+        </p><h3 class="titulo-rojo"><b>Contacto</b></h3><br>
+        <strong>Numero de Telefono:</strong> 0800-XXXX-XXXX<br><br>
+        <strong>Correo Electrónico:</strong> hospital@gmail.com<br><br>
+        
+    </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ng-scope">
+                <div class="panel panel-default panelBlanco ">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="margin-top-15">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.5782101389714!2d-65.20332968529644!3d-26.821555795867756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c180d4c93bd%3A0x4c8b607f693cf534!2sLaprida%2C%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1651563477401!5m2!1ses-419!2sar" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>

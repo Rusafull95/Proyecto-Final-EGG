@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+</head>
+
+<body layout:fragment="body">
+
+
+    <main class="justify-content-center my-4">
+
+
+
+        <h1 class="Texto-Login" style="text-align:center">Log In</h1>
+        <div style="text-align: left">
+
+            <form th:action="@{/logincheck}" method="POST" class="mx-auto w-50">
+                <p thif="${error !=null}" th:text="${error}" style="color: red">Error</p>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                    <input name="mail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input name="password"type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto m-5">
+                    <button type="submit" class="btn btn-primary btn-lg justify-content-center">Ingresar</button>
+                </div>
+            </form>
+
+                <div class="d-flex m-2 justify-content-center" >
+                    <strong><p style="text-align:center; margin-right: 15px">Olvidaste tu contraseña?</p></strong> 
+                    <button style="text-align:center" type="button" class="btn btn-secondary btn-sm justify-content-center">Recuperar contraseña</button>
+                </div>
+
+                <div class="d-flex m-2 justify-content-center" >
+                    <strong><p style="text-align:center; margin-right: 30px">No tienes una cuenta?</p></strong> 
+
+                <div class="d-flex" >
+                    <p style="text-align:center">No tienes una cuenta?</p>
+                    <br>
+                    
+                    <a th:href="@{usuario/formulario}">
+                        <button style="text-align:center" type="button" class="btn btn-secondary btn-sm">Registrate</button>
+                    </a>
+                    
+                </div>
+
+
+           
+        </div>
+    </main>
+    </div>
+    </form>
+
+</body>
+
+</html>

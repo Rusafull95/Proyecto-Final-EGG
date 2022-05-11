@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+    <head> 
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body layout:fragment="body">
+        <main  class="imagen-fondo-sec">
+            <h1 class=" text-center">Generacion de Turnos</h1>
+            <form th:action= "@{/turnos/generacionsec}" method="POST" th:object="${turno}" class="text-center border-form" style= "padding: 50px; border-radius: 100px; border: black solid">
+                 <p th:if='${succes != null}' th:text="${succes}" style="color: green"></p>
+                   <p th:if='${error != null}' th:text="${error}" style="color: red"></p>
+                   <input hidden  th:field="${turno.codigo}" />
+                        <h5>Datos personales</h5>
+                        <br>
+                        <input type="text"   placeholder="Nombres" th:field="${turno.paciente.usuario.nombre}"/>    <input type="text"   placeholder="Apellido" th:field="${turno.paciente.usuario.apellido}"/> <input type="text" placeholder="DNI" th:field="${turno.paciente.dni}" />
+                        <input type="Date"   placeholder="Fecha de nacimiento" th:field="${turno.paciente.fechaDeNacimiento}" /> 
+                        <br>
+                        <br>
+                        <h5>Datos de Contacto</h5>
+                        <input type="text"   placeholder="Domicilio" th:field="${turno.paciente.domicilio}" />
+                        <input type="text"   placeholder="Correo electronico" th:field="${turno.paciente.usuario.mail}"/>  
+                        <br>
+                        <br>
+                        <h5>Obra Social</h5>
+                        <input type="text"   placeholder="obra social" th:field="${turno.paciente.obraSocial}"/>
+                        <input type="text"   placeholder="Numero de afiliado" th:field="${turno.paciente.numeroDeAfiliado}"/>
+                        <input type="text"   placeholder="Numero grupo familiar" th:field="${turno.paciente.cantGrupoFamiliar}"/>
+                        <input type="text"   placeholder="Plan" th:field="${turno.paciente.plan}"/>
+                        <br>
+                        <br>
+                        <h5>Datos Para el Turno</h5>
+                        <select    th:field="${turno.especialidad}" > 
+                           <option th:each="especialidad : ${especialidades}" th:value="${especialidad}" th:text="${especialidad.nombre}"></option>
+                        </select> 
+                        <select  th:field="${turno.medico}">
+                             <option th:each="medico: ${medicos}" th:value="${medico}" th:text="${medico.usuario}"></option>
+                        </select>
+                        <input type="date"   th:field="${turno.cita}"/> <input type="time"  placeholder="Horario" th:field="${turno.hora}"/> 
+                        <br>
+                        <br>
+                        
+                         <button class=" buttom-generarTurno">Generar Turno</button>
+                         
+                        
+                
+            </form>
+        </main>
+        
+    </body>
+</html>
