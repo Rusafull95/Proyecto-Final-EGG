@@ -12,6 +12,7 @@ import ProyectoFinal.example.Hospital.Servicios.MedicoServicio;
 import ProyectoFinal.example.Hospital.Servicios.TurnosServicios;
 import ProyectoFinal.example.Hospital.enums.EstadoDelTurno;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,8 +49,13 @@ public class MedicoControlador {
     }
     
     @GetMapping("/principal1")
-    public String paginaPrincipal1(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
-        modelo.addAttribute("turnosHoy", medicoServicio.turnosHoy(numMatricula));
+    public String paginaPrincipal1(Model modelo,
+            HttpSession httpSession
+    ) throws Exception{
+        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+        System.out.println(usuario);
+//        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
+//        modelo.addAttribute("turnosHoy", medicoServicio.turnosHoy(numMatricula));
        // modelo.put("4Turnos", medicoServicio.TurnosEnProceso(numMatricula));
         return "principal-Medico";
     }
@@ -70,32 +76,42 @@ public class MedicoControlador {
     }
     
     @GetMapping("/turnos")
-    public String turnos(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+    public String turnos(Model modelo, HttpSession httpSession) throws Exception{
+        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
         modelo.addAttribute("listaDeTurnos", medicoServicio.medicoTurnos(numMatricula));
         return "listaDeTurnosCompleta-Medico";
     }
 
     @GetMapping("/turnos/atendidos")
-    public String turnosAtendidos(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+    public String turnosAtendidos(Model modelo, HttpSession httpSession) throws Exception{
+        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
         modelo.addAttribute("listaDeTurnosAtendidos", medicoServicio.turnosAtendidos(numMatricula));
         return "turnoAtendido-Medico";
     }
     
     @GetMapping("/turnos/enproceso")
-    public String turnosEnProgreso(Model modelo, @RequestParam("matricula") String numMatricula) throws Exception{
+    public String turnosEnProgreso(Model modelo, HttpSession httpSession) throws Exception{
+        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
         modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
         return "listaTurnoEnProgreso-Medico";
     }
     
     @PostMapping("/turnos/enproceso/darbaja")
-    public String turnosEnProgresoBaja(Model modelo, @RequestParam("matricula") String numMatricula, @RequestParam("codigo") Integer codigo) throws Exception{
+    public String turnosEnProgresoBaja(Model modelo, HttpSession httpSession, @RequestParam("codigo") Integer codigo) throws Exception{
+        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
         turnosServicios.cancelarTurno(codigo);
         modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
         return "listaTurnoEnProgreso-Medico";
     }
     
     @PostMapping("/turnos/enproceso/editar")
-    public String turnosEnProgresoEditar(Model modelo, @RequestParam("matricula") String numMatricula, @RequestParam("codigo") Integer codigo) throws Exception{
+    public String turnosEnProgresoEditar(Model modelo, HttpSession httpSession, @RequestParam("codigo") Integer codigo) throws Exception{
+        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
         modelo.addAttribute("id", codigo);
         modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
         return "listaTurnoEnProgreso-Medico";
@@ -103,11 +119,13 @@ public class MedicoControlador {
     
     @PostMapping("/turnos/enproceso/editado")
     public String turnosEnProgresoEditado(Model modelo, 
-            @RequestParam("matricula") String numMatricula, 
+            HttpSession httpSession, 
             @RequestParam("codigo") Integer codigo, 
             @ModelAttribute("id") Integer id,
             @ModelAttribute("turno") Turno turno
             ) throws Exception{
+        Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
+        String numMatricula = medicoServicio.buscarMedicoByUsuario(usuario).getNumeroDeMatricula();
         modelo.addAttribute("id", id);
         modelo.addAttribute("listaDeTurnosEnProgreso", medicoServicio.turnosEnProceso(numMatricula));
 
