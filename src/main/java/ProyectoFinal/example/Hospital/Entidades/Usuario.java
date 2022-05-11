@@ -99,4 +99,9 @@ public class Usuario {
         this.foto = foto;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", password=" + password + ", mail=" + mail + ", foto=" + foto + ", rol=" + rol + ", alta=" + alta + '}';
+    }
+
 }

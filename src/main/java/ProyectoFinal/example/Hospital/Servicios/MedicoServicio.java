@@ -91,6 +91,18 @@ public class MedicoServicio {
         return medicos;
     }
     
+
+    public Medico buscarMedicoByUsuario(Usuario usuario){
+        List<Medico>medicos = medicoRepositorio.findAll();
+        Medico medico = new Medico();
+        for (Medico aux : medicos) {
+            if(aux.getUsuario() == usuario){
+                medico = aux;
+            }
+        }
+        return medico;
+    }
+
      public List<Medico> mostrarTodos (){
         return medicoRepositorio.findAll();
     }
